@@ -13,6 +13,15 @@
     "dev": {
       "cache": false,
       "persistent": true
+    },
+    "biome:check": {
+      "dependsOn": ["^biome:check"],
+      "inputs": ["$TURBO_DEFAULT$"],
+      "outputs": []
+    },
+    "biome:fix": {
+      "dependsOn": ["^biome:fix"],
+      "cache": false
     }
   }
 }
