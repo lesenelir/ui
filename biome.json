@@ -22,7 +22,7 @@
   },
   "formatter": {
     "enabled": true,
-    "indentStyle": "tab",
+    "indentStyle": "space",
     "indentWidth": 2,
     "lineWidth": 120
   },
@@ -53,6 +53,17 @@
       "arrowParentheses": "asNeeded"
     }
   },
+  "json": {
+    "parser": {
+      "allowComments": false,
+      "allowTrailingCommas": false
+    },
+    "formatter": {
+      "enabled": true,
+      "indentWidth": 2,
+      "indentStyle": "space"
+    }
+  },
   "css": {
     "linter": {
       "enabled": true
@@ -60,7 +71,7 @@
     "formatter": {
       "enabled": true,
       "quoteStyle": "single",
-      "indentStyle": "tab",
+      "indentStyle": "space",
       "indentWidth": 2
     }
   }
