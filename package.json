@@ -1,5 +1,5 @@
 {
-  "name": "ui",
+  "name": "lesenelir",
   "private": true,
   "scripts": {
     "build": "turbo run build",
@@ -9,8 +9,8 @@
     "biome:fix": "turbo run biome:fix",
     "biome:web:check": "pnpm --filter web biome:check",
     "biome:web:fix": "pnpm --filter web biome:fix",
-    "biome:ui:check": "pnpm --filter @repo/ui biome:check",
-    "biome:ui:fix": "pnpm --filter @repo/ui biome:fix",
+    "biome:ui:check": "pnpm --filter @lesenelir/ui biome:check",
+    "biome:ui:fix": "pnpm --filter @lesenelir/ui biome:fix",
     "prepare": "husky"
   },
   "devDependencies": {

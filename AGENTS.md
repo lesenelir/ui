@@ -15,7 +15,7 @@
   - `pnpm check-types` — TypeScript type checks.
 - Filter to a project:
   - `pnpm --filter web dev` — start Next.js on port 3000.
-  - `pnpm --filter @repo/ui lint` — lint the UI package.
+  - `pnpm --filter @lesenelir/ui lint` — lint the UI package.
 - Production start (web app): `pnpm --filter web start` (after build).
 
 ## Coding Style & Naming Conventions

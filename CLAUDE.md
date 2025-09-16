@@ -39,7 +39,7 @@ This is a monorepo using:
 
 - **UI Package**: Components in `packages/ui/src/*.tsx` are exported using path mapping (`"./*": "./src/*.tsx"`)
 - **Component Pattern**: UI components follow a simple functional component pattern with TypeScript interfaces
-- **Import Pattern**: Web app imports UI components as `@repo/ui/component-name`
+- **Import Pattern**: Web app imports UI components as `@lesenelir/ui/component-name`
 
 ### Configuration Packages
 
