@@ -10,15 +10,23 @@
     "biome:web:check": "pnpm --filter web biome:check",
     "biome:web:fix": "pnpm --filter web biome:fix",
     "biome:ui:check": "pnpm --filter @repo/ui biome:check",
-    "biome:ui:fix": "pnpm --filter @repo/ui biome:fix"
+    "biome:ui:fix": "pnpm --filter @repo/ui biome:fix",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.4",
     "turbo": "^2.5.6",
-    "typescript": "5.9.2"
+    "typescript": "5.9.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.6"
   },
   "packageManager": "pnpm@9.0.0",
   "engines": {
     "node": ">=18"
+  },
+  "lint-staged": {
+    "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
+      "pnpm exec biome check --write --no-errors-on-unmatched --files-ignore-unknown=true"
+    ]
   }
 }
