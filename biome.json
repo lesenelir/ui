@@ -1,0 +1,110 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "ignoreUnknown": true,
+    "includes": [
+      "**",
+      "!node_modules",
+      "!.next",
+      "!dist",
+      "!build",
+      "!output",
+      "!out",
+      "!public",
+      "!references",
+      "!storybook-static"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "tab",
+    "indentWidth": 2,
+    "lineWidth": 100
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "suspicious": {
+        "noDuplicateProperties": "off",
+        "noDuplicateCustomProperties": "off",
+        "noUnknownAtRules": "off",
+        "noArrayIndexKey": "off"
+      },
+      "complexity": {
+        "noImportantStyles": "off"
+      }
+    },
+    "domains": {
+      "next": "recommended",
+      "react": "recommended"
+    }
+  },
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [
+              "react",
+              ":BLANK_LINE:",
+              [":NODE:", ":PACKAGE:"],
+              { "type": true },
+              ":BLANK_LINE:",
+              "@/**",
+              { "type": true, "source": ["@/**"] },
+              ":BLANK_LINE:",
+              ":PATH:",
+              { "type": true, "source": [":PATH:"] },
+              ":BLANK_LINE:",
+              ["**", "!**/*.css"],
+              "*.css"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "javascript": {
+    "linter": {
+      "enabled": true
+    },
+    "formatter": {
+      "enabled": true,
+      "quoteStyle": "single",
+      "jsxQuoteStyle": "single",
+      "trailingCommas": "es5",
+      "semicolons": "asNeeded",
+      "arrowParentheses": "asNeeded"
+    }
+  },
+  "json": {
+    "parser": {
+      "allowComments": false,
+      "allowTrailingCommas": false
+    },
+    "formatter": {
+      "enabled": true,
+      "indentWidth": 2,
+      "indentStyle": "space"
+    }
+  },
+  "css": {
+    "linter": {
+      "enabled": true
+    },
+    "formatter": {
+      "enabled": true,
+      "quoteStyle": "single",
+      "indentStyle": "space",
+      "indentWidth": 2
+    }
+  }
+}
