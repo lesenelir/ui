@@ -2,9 +2,9 @@ name: Biome CI
 
 on:
   push:
-    branches: [main, feat/**]
+    branches: [master, feat/**, fix/**, chore/**, docs/**, refactor/**, test/**, style/**, perf/**]
   pull_request:
-    branches: [main]
+    branches: [master]
 
 jobs:
   biome:
