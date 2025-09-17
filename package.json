@@ -5,6 +5,7 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
+    "clear": "pnpm -r exec rm -rf node_modules dist .turbo .next && rm -rf node_modules dist .next .turbo",
     "check-types": "turbo run check-types",
     "biome:check": "turbo run biome:check",
     "biome:fix": "turbo run biome:fix",
