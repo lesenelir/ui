@@ -1,9 +1,6 @@
 {
   "extends": "@lesenelir/typescript-config/react-library.json",
   "compilerOptions": {
-    "paths": {
-      "@/*": ["./src/*"]
-    },
     "outDir": "dist"
   },
   "include": ["src"],
