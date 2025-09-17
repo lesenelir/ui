@@ -1,3 +1,5 @@
+import { Button } from '@lesenelir/ui/button'
+
 export default function Home() {
-	return <div>hello</div>
+	return <Button appName='web'>Hello from your web app!</Button>
 }
