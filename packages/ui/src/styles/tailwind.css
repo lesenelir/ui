@@ -1,2 +1,30 @@
 /* Toggling dark mode manually instead of prefers-color-scheme media query  */
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@layer base {
+  :root,
+  [data-theme='light'] {
+    /* Color helpers */
+    --mix-factor: 100%;
+    --mix-base: oklch(100% 0 0);
+
+    /* OKLCH lightness helpers */
+    --fg-l: 30%;
+    --bg-l: 100%;
+    --ac-l: 64%;
+    --hl-l: 77.7%;
+  }
+
+  :root.dark,
+  [data-theme='dark'] {
+    /* Color helpers */
+    --mix-factor: 75%;
+    --mix-base: oklch(100% 0 0);
+
+    /* OKLCH lightness helpers */
+    --fg-l: 78%;
+    --bg-l: 0%;
+    --ac-l: 70%;
+    --hl-l: 33.66%;
+  }
+}
