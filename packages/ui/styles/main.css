@@ -2,4 +2,5 @@
 @import 'tw-animate-css';
 
 @import './colors.css';
+@import './headwind.css';
 @import './tailwind.css';

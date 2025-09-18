@@ -3,9 +3,16 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
+    "./styles/colors.css": "./styles/colors.css",
+    "./styles/headwind.css": "./styles/headwind.css",
+    "./styles/main.css": "./styles/main.css",
+    "./styles/tailwind.css": "./styles/tailwind.css",
     "./lib/*": "./src/lib/*.ts",
     "./*": "./src/components/*.tsx"
   },
+  "sideEffects": [
+    "./styles/*.css"
+  ],
   "scripts": {
     "generate:component": "turbo gen react-component",
     "check-types": "tsc --noEmit",
