@@ -9,6 +9,10 @@ import { fileURLToPath } from 'node:url'
 
 const dirname = path.dirname(fileURLToPath(import.meta.url))
 
+/**
+ * By default, Tailwind scans only the current workspace (apps/web/src/**),
+ * so we point its base at the monorepo root to include packages/ui as well.
+ */
 const config = {
 	plugins: {
 		'@tailwindcss/postcss': {
