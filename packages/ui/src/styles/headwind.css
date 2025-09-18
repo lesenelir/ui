@@ -9,6 +9,10 @@
   --font-serif: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 
+  /* Custom colors */
+  --color-black: oklch(calc(0% + var(--lch-l-offset)) 0 0);
+  --color-white: oklch(calc(100% + var(--lch-l-offset)) 0 0);
+
   /* Refine tailwind colors */
   --color-red-50: color-mix(in oklch, oklch(0.971 0.013 17.38) var(--mix-factor), var(--mix-base));
   --color-red-100: color-mix(in oklch, oklch(0.936 0.032 17.717) var(--mix-factor), var(--mix-base));
