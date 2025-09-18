@@ -14,11 +14,11 @@ const dirname = path.dirname(fileURLToPath(import.meta.url))
  * so we point its base at the monorepo root to include packages/ui as well.
  */
 const config = {
-	plugins: {
-		'@tailwindcss/postcss': {
-			base: path.join(dirname, '..', '..'),
-		},
-	},
+  plugins: {
+    '@tailwindcss/postcss': {
+      base: path.join(dirname, '..', '..'),
+    },
+  },
 }
 
 export default config
