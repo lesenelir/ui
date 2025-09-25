@@ -1,15 +1,13 @@
 # ui
 
-Accessible and customizable components based on shadcn components.
-
+Accessible and customizable components based on Radix Primitives.
 
 ### Stacks
 
-- React 
+- React 19
+- Tailwind CSS 4
+- Radix Primitives
 - TypeScript
-- Tailwind CSS
-- Radix UI
-- Shadcn UI
 - Storybook
 
 ### Color System
