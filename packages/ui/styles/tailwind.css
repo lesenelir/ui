@@ -9,13 +9,17 @@
     --mix-base: oklch(100% 0 0);
 
     /* Custom color helpers */
-    /*--fg-l: 30%;*/
-    /*--bg-l: 100%;*/
+    --bg-l: 100%;
+    --bg-c: 0;
+    --bg-h: 0;
+
+    --fg-l: 97.82%;
+    --fg-c: 0.0034;
+    --fg-h: 247.86;
 
     --ac-l: 64%;
     --ac-c: 0.28;
     --ac-h: 40;
-
     --lch-l-offset: 0%;
   }
 
@@ -26,13 +30,17 @@
     --mix-base: oklch(100% 0 0);
 
     /* Custom color helpers */
-    /*--fg-l: 78%;*/
-    /*--bg-l: 0%;*/
+    --bg-l: 21.32%;
+    --bg-c: 0.0042;
+    --bg-h: 264.48;
+
+    --fg-l: 17.85%;
+    --fg-c: 0.0041;
+    --fg-h: 285.98;
 
     --ac-l: 70%;
     --ac-c: 0.212;
     --ac-h: 8;
-
     --lch-l-offset: 20%;
   }
 }
