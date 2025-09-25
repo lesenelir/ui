@@ -1,3 +1,5 @@
+@plugin '@egoist/tailwindcss-icons';
+
 /* Toggling dark mode manually instead of prefers-color-scheme media query  */
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
