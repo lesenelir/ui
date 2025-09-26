@@ -285,30 +285,30 @@
   --color-stone-950: color-mix(in oklch, oklch(0.145 0.004 42.089) var(--mix-factor), var(--mix-base));
 
   /* Shadow */
-  --shadow-2xs: 0 1px color-mix(in oklch, var(--color-fg) 5%, var(--color-ac) 2.5%);
-  --shadow-xs: 0 1px 2px 0 color-mix(in oklch, var(--color-fg) 5%, var(--color-ac) 2.5%);
-  --shadow-sm: 0 1px 3px 0 color-mix(in oklch, var(--color-fg) 10%, var(--color-ac) 5%), 0 1px 2px -1px color-mix(in oklch, var(--color-fg) 10%, var(--color-ac) 5%);
-  --shadow-md: 0 4px 6px -1px color-mix(in oklch, var(--color-fg) 10%, var(--color-ac) 5%), 0 2px 4px -2px color-mix(in oklch, var(--color-fg) 10%, var(--color-ac) 5%);
-  --shadow-lg: 0 10px 15px -3px color-mix(in oklch, var(--color-fg) 10%, var(--color-ac) 5%), 0 4px 6px -4px color-mix(in oklch, var(--color-fg) 10%, var(--color-ac) 5%);
-  --shadow-xl: 0 20px 25px -5px color-mix(in oklch, var(--color-fg) 10%, var(--color-ac) 5%), 0 8px 10px -6px color-mix(in oklch, var(--color-fg) 10%, var(--color-ac) 5%);
-  --shadow-2xl: 0 25px 50px -12px color-mix(in oklch, var(--color-fg) 25%, var(--color-ac) 17.5%);
+  --shadow-2xs: 0 1px color-mix(in oklch, var(--color-bg-rev) 5%, var(--color-ac) 2.5%);
+  --shadow-xs: 0 1px 2px 0 color-mix(in oklch, var(--color-bg-rev) 5%, var(--color-ac) 2.5%);
+  --shadow-sm: 0 1px 3px 0 color-mix(in oklch, var(--color-bg-rev) 10%, var(--color-ac) 5%), 0 1px 2px -1px color-mix(in oklch, var(--color-bg-rev) 10%, var(--color-ac) 5%);
+  --shadow-md: 0 4px 6px -1px color-mix(in oklch, var(--color-bg-rev) 10%, var(--color-ac) 5%), 0 2px 4px -2px color-mix(in oklch, var(--color-bg-rev) 10%, var(--color-ac) 5%);
+  --shadow-lg: 0 10px 15px -3px color-mix(in oklch, var(--color-bg-rev) 10%, var(--color-ac) 5%), 0 4px 6px -4px color-mix(in oklch, var(--color-bg-rev) 10%, var(--color-ac) 5%);
+  --shadow-xl: 0 20px 25px -5px color-mix(in oklch, var(--color-bg-rev) 10%, var(--color-ac) 5%), 0 8px 10px -6px color-mix(in oklch, var(--color-bg-rev) 10%, var(--color-ac) 5%);
+  --shadow-2xl: 0 25px 50px -12px color-mix(in oklch, var(--color-bg-rev) 25%, var(--color-ac) 17.5%);
 
-  --inset-shadow-2xs: inset 0 1px color-mix(in oklch, var(--color-fg) 10%, transparent);
-  --inset-shadow-xs: inset 0 1px 1px color-mix(in oklch, var(--color-fg) 10%, transparent);
-  --inset-shadow-sm: inset 0 2px 4px color-mix(in oklch, var(--color-fg) 10%, transparent);
+  --inset-shadow-2xs: inset 0 1px color-mix(in oklch, var(--color-bg-rev) 10%, transparent);
+  --inset-shadow-xs: inset 0 1px 1px color-mix(in oklch, var(--color-bg-rev) 10%, transparent);
+  --inset-shadow-sm: inset 0 2px 4px color-mix(in oklch, var(--color-bg-rev) 10%, transparent);
 
-  --drop-shadow-xs: 0 1px 1px color-mix(in oklch, var(--color-fg) 5%, var(--color-ac) 2.5%);
-  --drop-shadow-sm: 0 2px 2px color-mix(in oklch, var(--color-fg) 12%, var(--color-ac) 6%);
-  --drop-shadow-md: 0 3px 3px color-mix(in oklch, var(--color-fg) 12%, var(--color-ac) 6%);
-  --drop-shadow-lg: 0 4px 4px color-mix(in oklch, var(--color-fg) 15%, var(--color-ac) 7.5%);
-  --drop-shadow-xl: 0 9px 7px color-mix(in oklch, var(--color-fg) 10%, var(--color-ac) 5%);
-  --drop-shadow-2xl: 0 25px 25px color-mix(in oklch, var(--color-fg) 15%, var(--color-ac) 7.5%);
+  --drop-shadow-xs: 0 1px 1px color-mix(in oklch, var(--color-bg-rev) 5%, var(--color-ac) 2.5%);
+  --drop-shadow-sm: 0 2px 2px color-mix(in oklch, var(--color-bg-rev) 12%, var(--color-ac) 6%);
+  --drop-shadow-md: 0 3px 3px color-mix(in oklch, var(--color-bg-rev) 12%, var(--color-ac) 6%);
+  --drop-shadow-lg: 0 4px 4px color-mix(in oklch, var(--color-bg-rev) 15%, var(--color-ac) 7.5%);
+  --drop-shadow-xl: 0 9px 7px color-mix(in oklch, var(--color-bg-rev) 10%, var(--color-ac) 5%);
+  --drop-shadow-2xl: 0 25px 25px color-mix(in oklch, var(--color-bg-rev) 15%, var(--color-ac) 7.5%);
 
   /* Custom shadows */
-  --shadow-border: 0 0 0 1px color-mix(in oklch, var(--color-fg) 30%, transparent);
-  --shadow-border-t: 0 -1px 0 0 color-mix(in oklch, var(--color-fg) 30%, transparent);
-  --shadow-border-b: 0 1px 0 0 color-mix(in oklch, var(--color-fg) 30%, transparent);
-  --shadow-border-r: 1px 0 0 0 color-mix(in oklch, var(--color-fg) 30%, transparent);
-  --shadow-border-l: -1px 0 0 0 color-mix(in oklch, var(--color-fg) 30%, transparent);
+  --shadow-border: 0 0 0 1px color-mix(in oklch, var(--color-bg-rev) 30%, transparent);
+  --shadow-border-t: 0 -1px 0 0 color-mix(in oklch, var(--color-bg-rev) 30%, transparent);
+  --shadow-border-b: 0 1px 0 0 color-mix(in oklch, var(--color-bg-rev) 30%, transparent);
+  --shadow-border-r: 1px 0 0 0 color-mix(in oklch, var(--color-bg-rev) 30%, transparent);
+  --shadow-border-l: -1px 0 0 0 color-mix(in oklch, var(--color-bg-rev) 30%, transparent);
   --inset-shadow-input: inset 0 1px 1px color-mix(in oklch, var(--color-black) 10%, transparent);
 }
