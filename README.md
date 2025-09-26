@@ -1,10 +1,10 @@
 # UI Component Library
 
-An accessible, and customizable component library built on top of Radix Primitives.
+Accessible and customizable components built on top of Radix Primitives.
 
 ## Overview
 
-This UI library provides a comprehensive set of accessible and customizable components, leveraging the power of Radix Primitives while offering a modern developer experience.
+This UI repo provides a comprehensive set of accessible and customizable components, leveraging the power of Radix Primitives while offering a modern developer experience.
 
 ## Tech Stack
 
