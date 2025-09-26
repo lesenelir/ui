@@ -11,7 +11,9 @@
 
   /* Custom colors */
   --color-bg: oklch(var(--bg-l) var(--bg-c) var(--bg-h));
+  --color-bg-rev: oklch(var(--bg-rev-l) var(--bg-rev-c) var(--bg-rev-h));
   --color-fg: oklch(var(--fg-l) var(--fg-c) var(--fg-h));
+  --color-fg-rev: oklch(var(--fg-rev-l) var(--fg-rev-c) var(--fg-rev-h));
   --color-ac: oklch(clamp(0%, calc(var(--ac-l) + var(--lch-l-offset)), 100%) var(--ac-c) var(--ac-h));
   --color-hl: oklch(clamp(0%, calc(var(--hl-l) + var(--lch-l-offset)), 100%) var(--hl-c) var(--hl-h));
   --color-black: oklch(calc(0% + var(--lch-l-offset)) 0 0);
