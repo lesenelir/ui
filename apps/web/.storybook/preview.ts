@@ -14,6 +14,11 @@ const preview: Preview = {
     a11y: {
       test: 'todo',
     },
+
+    darkMode: {
+      classTarget: 'html',
+      stylePreview: true,
+    },
   },
 }
 
