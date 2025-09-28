@@ -22,18 +22,16 @@ export const Button = ({
   ...props
 }: ButtonProps) => {
   const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary'
+  const customStyle = backgroundColor ? { backgroundColor } : undefined
+
   return (
     <button
       type='button'
       className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+      style={customStyle}
       {...props}
     >
       {label}
-      <style jsx>{`
-        button {
-          background-color: ${backgroundColor};
-        }
-      `}</style>
     </button>
   )
 }

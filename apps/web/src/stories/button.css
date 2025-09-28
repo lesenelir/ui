@@ -2,29 +2,47 @@
   display: inline-block;
   cursor: pointer;
   border: 0;
-  border-radius: 3em;
-  font-weight: 700;
-  line-height: 1;
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  line-height: 1.2;
+  font-family: system-ui, -apple-system, sans-serif;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid transparent;
 }
+
 .storybook-button--primary {
-  background-color: #555ab9;
-  color: white;
+  background-color: oklch(var(--ac-l) var(--ac-c) var(--ac-h));
+  color: oklch(var(--bg-l) var(--bg-c) var(--bg-h));
+  border-color: oklch(var(--ac-l) var(--ac-c) var(--ac-h));
 }
+
+.storybook-button--primary:hover {
+  background-color: oklch(calc(var(--ac-l) - 10%) var(--ac-c) var(--ac-h));
+  border-color: oklch(calc(var(--ac-l) - 10%) var(--ac-c) var(--ac-h));
+}
+
 .storybook-button--secondary {
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
-  background-color: transparent;
-  color: #333;
+  background-color: oklch(var(--bg-l) var(--bg-c) var(--bg-h));
+  color: oklch(var(--fg-rev-l) var(--fg-rev-c) var(--fg-rev-h));
+  border-color: oklch(var(--fg-rev-l) var(--fg-rev-c) var(--fg-rev-h) / 0.2);
 }
+
+.storybook-button--secondary:hover {
+  background-color: oklch(var(--bg-rev-l) var(--bg-rev-c) var(--bg-rev-h) / 0.1);
+  border-color: oklch(var(--fg-rev-l) var(--fg-rev-c) var(--fg-rev-h) / 0.4);
+}
+
 .storybook-button--small {
-  padding: 10px 16px;
-  font-size: 12px;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
 }
+
 .storybook-button--medium {
-  padding: 11px 20px;
-  font-size: 14px;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.875rem;
 }
+
 .storybook-button--large {
-  padding: 12px 24px;
-  font-size: 16px;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
 }
