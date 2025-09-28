@@ -1,4 +1,5 @@
 import type { Preview } from '@storybook/nextjs-vite'
+import { DarkModeDocsContainer } from '@storybook-community/storybook-dark-mode/docs'
 import type { ThemeVars } from 'storybook/theming'
 import { themes } from 'storybook/theming'
 
@@ -21,6 +22,11 @@ const preview: Preview = {
 
     a11y: {
       test: 'todo',
+    },
+
+    tags: ['autodocs'],
+    docs: {
+      container: DarkModeDocsContainer,
     },
 
     // https://github.com/storybook-community/storybook-dark-mode
