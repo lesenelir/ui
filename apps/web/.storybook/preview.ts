@@ -9,6 +9,7 @@ const brandMeta = {
   brandTitle: 'lesenelir/ui',
   brandUrl: 'https://ui.lesenelir.me',
   brandTarget: '_self',
+  brandImage: '/storybook-logo.svg',
 } as const satisfies Partial<ThemeVars>
 
 const preview: Preview = {
@@ -37,7 +38,6 @@ const preview: Preview = {
       dark: {
         ...themes.dark,
         ...brandMeta,
-        brandImage: '/storybook-dark.svg',
         appBg: 'oklch(17.85% 0.0041 285.98)',
         appContentBg: 'oklch(21.32% 0.0042 264.48)',
         appPreviewBg: 'oklch(21.32% 0.0042 264.48)',
@@ -46,7 +46,6 @@ const preview: Preview = {
       light: {
         ...themes.light,
         ...brandMeta,
-        brandImage: '/storybook-light.svg',
         appBg: 'oklch(97.82% 0.0034 247.86)',
         appContentBg: 'oklch(100% 0 0)',
         appPreviewBg: 'oklch(100% 0 0)',
