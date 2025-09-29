@@ -1,45 +1,19 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-- Monorepo managed by PNPM and Turborepo.
-- Apps: `apps/web` (Next.js 15, React 19).
-- Packages: `packages/ui` (shared React components), `packages/eslint-config`, `packages/typescript-config`.
-- UI components live in `packages/ui/src/*.tsx` (e.g., `button.tsx`, `card.tsx`).
+The workspace uses Turborepo with `pnpm-workspace.yaml` grouping `apps/*` and `packages/*`. `apps/web` is the Next.js host; routes live under `src/app`, while shared UI for pages sits in `src/components`. Reusable primitives live in `packages/ui/src/components`, with supporting helpers in `packages/ui/src/lib`. TypeScript base configs are centralized in `packages/typescript-config` so new packages can extend them. Static assets (favicons, Storybook build) stay inside each app’s `public/` folder.
 
 ## Build, Test, and Development Commands
-- Root (runs via Turborepo):
-  - `pnpm dev` — run `dev` across packages (non-cached, persistent).
-  - `pnpm build` — build all buildable apps/packages.
-  - `pnpm lint` — lint all workspaces.
-  - `pnpm format` — Prettier format `**/*.{ts,tsx,md}`.
-  - `pnpm check-types` — TypeScript type checks.
-- Filter to a project:
-  - `pnpm --filter web dev` — start Next.js on port 3000.
-  - `pnpm --filter @lesenelir/ui lint` — lint the UI package.
-- Production start (web app): `pnpm --filter web start` (after build).
+Run `pnpm install` once per clone to hydrate all workspaces. Use `pnpm dev` for a multi-package dev server (Turbo spawns `apps/web` via Turbopack). Ship builds with `pnpm build`, which runs every package’s `build` task and emits the Next.js output. For focused work, `pnpm --filter web dev` starts only the web app, and `pnpm --filter web storybook` serves component docs. Execute unit/interaction tests with `pnpm --filter web vitest run --coverage` and regenerate Chromatic assets with `pnpm --filter web storybook:build`.
 
 ## Coding Style & Naming Conventions
-- Use Prettier 3 for formatting; do not hand-format. Run `pnpm format`.
-- ESLint configs live in `packages/eslint-config` and are consumed by apps/packages.
-- TypeScript 5.9; Node >= 18.
-- React components export names in PascalCase; filenames in `packages/ui/src` are lowercase (e.g., `button.tsx`).
-- Prefer module boundaries: shared UI belongs in `packages/ui`, app-specific code in `apps/web`.
+Biome enforces formatting: two-space indentation, 100-character lines, single quotes, and no semicolons unless required. Prefer PascalCase for components (`ButtonGroup.tsx`), camelCase for utilities, and kebab-case for directories. Keep Tailwind classes grouped by purpose (layout → spacing → color) and emit shared tokens through `packages/ui/styles/*.css`. Let lint-staged (via `.husky/pre-commit`) fix minor issues; commit only clean trees.
 
 ## Testing Guidelines
-- No test runner is configured yet. If adding tests:
-  - Co-locate as `*.test.ts(x)` next to sources or in `__tests__/`.
-  - Prefer Vitest or Jest; add workspace scripts and a Turbo task.
-  - Keep fast unit tests in packages; e2e tests under `apps/web`.
+Vitest is configured in `apps/web/vitest.config.ts` with Storybook integration and Playwright-powered DOM shims. Place specs beside source as `ComponentName.test.tsx` so Vitest can pick them up. Run the suite locally with `pnpm --filter web vitest`, adding `--run` in CI-style loops, and track coverage through V8 reports in `coverage/`. Visual regressions should be exercised in Storybook; capture new states before opening PRs.
 
 ## Commit & Pull Request Guidelines
-- Use clear, present-tense messages; Conventional Commits encouraged: `feat:`, `fix:`, `chore:`.
-- PRs should include: purpose/summary, linked issues, screenshots for UI changes, and a checklist confirming `lint`, `build`, and `check-types` pass.
+Follow Conventional Commits (`feat:`, `fix:`, `chore:`) as seen in recent history, and pair them with matching branch prefixes (`feat/*`, `fix/*`) so Biome CI triggers. Squash commits that only address review feedback. PRs should describe scope, testing evidence, and link to tracking issues; include screenshots or Chromatic URLs for UI changes. Ensure Biome (`pnpm biome:check`) and relevant tests are green before requesting review.
 
-## Security & Configuration Tips
-- Do not commit secrets. Use `.env.local` under `apps/web` and reference via Next.js `process.env.*`.
-- Turbo caches consider `.env*`; rebuild when envs change.
-- Avoid adding new root scripts without discussing repo-wide impact.
-
-## Agent Notes
-- Respect monorepo boundaries and existing configs.
-- Prefer minimal diffs; update docs when changing commands or structure.
+## Tooling & CI Notes
+CI runs `biome ci .` on pushes and PRs targeting `master`; replicate locally with `pnpm biome:check`. Husky’s pre-commit hook executes `pnpm lint-staged`, so keep staged files small and staged in logical groups. Node 22 and `pnpm@10.17.1` are required—use `corepack enable` if needed. EOF
