@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack --port 3000",
-    "build": "next build --turbopack && pnpm storybook:build",
+    "build": "next build && pnpm storybook:build",
     "start": "next start",
     "check-types": "tsc --noEmit",
     "biome:check": "biome check .",
