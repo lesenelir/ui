@@ -2,61 +2,71 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Commands
+## Project Architecture
 
-### Development
-- `pnpm dev` - Start development server for all apps (runs on port 3000 for web app)
-- `pnpm build` - Build all packages and apps
-- `pnpm lint` - Run ESLint across all packages with zero warnings tolerance
-- `pnpm check-types` - Run TypeScript type checking across all packages
-- `pnpm format` - Format code using Prettier
+This is a Turborepo monorepo containing a UI component library built with React 19 and Tailwind CSS 4. The workspace structure is:
 
-### Package-specific commands
-- `cd apps/web && pnpm dev` - Start only the web app in development mode with Turbopack
-- `cd packages/ui && pnpm generate:component` - Generate a new React component in the UI package using Turbo generators
+- **`apps/web/`**: Next.js application that serves as documentation site and Storybook host
+- **`packages/ui/`**: Core UI component library with reusable primitives
+- **`packages/typescript-config/`**: Shared TypeScript configurations
 
-## Architecture
+Components are built on Radix Primitives with a custom OKLCH-based color system using CSS `color-mix()` functions.
 
-This is a monorepo using:
-- **pnpm** with workspaces for package management
-- **Turborepo** for build system and task orchestration
-- **TypeScript** throughout the codebase
-- **React 19** and **Next.js 15** for the web application
-- **ESLint 9** with flat config format
+## Development Commands
 
-### Workspace Structure
-
-```
-├── apps/
-│   └── web/                 # Next.js application (main app)
-└── packages/
-    ├── ui/                  # Shared React components library
-    ├── eslint-config/       # Shared ESLint configurations
-    └── typescript-config/   # Shared TypeScript configurations
+**Setup:**
+```bash
+pnpm install  # Install all workspace dependencies
 ```
 
-### Component Architecture
+**Development:**
+```bash
+pnpm dev                    # Start all packages in dev mode with Turbopack
+pnpm --filter web dev       # Start only the web app
+pnpm --filter web storybook # Start Storybook on port 6006
+```
 
-- **UI Package**: Components in `packages/ui/src/*.tsx` are exported using path mapping (`"./*": "./src/*.tsx"`)
-- **Component Pattern**: UI components follow a simple functional component pattern with TypeScript interfaces
-- **Import Pattern**: Web app imports UI components as `@lesenelir/ui/component-name`
+**Build & Production:**
+```bash
+pnpm build                       # Build all packages
+pnpm --filter web build          # Build web app and Storybook
+pnpm --filter web storybook:build # Build Storybook to public/storybook
+```
 
-### Configuration Packages
+**Code Quality:**
+```bash
+pnpm check-types         # TypeScript check across all packages
+pnpm biome:check         # Lint and format check
+pnpm biome:fix           # Auto-fix lint and format issues
+pnpm biome:web:check     # Check only web app
+pnpm biome:ui:check      # Check only UI package
+```
 
-- **ESLint Config**: Provides multiple configurations (`base`, `next-js`, `react-internal`) with Turbo plugin integration
-- **TypeScript Config**: Provides specialized configs (`base.json`, `nextjs.json`, `react-library.json`) for different package types
-- **Strict Linting**: All packages use `--max-warnings 0` ensuring zero linting warnings
+**Testing:**
+```bash
+pnpm --filter web vitest run --coverage  # Run tests with coverage
+pnpm --filter web vitest                 # Run tests in watch mode
+```
 
-### Key Technologies
+Tests are configured in `apps/web/vitest.config.ts` with Storybook integration using Playwright browser provider.
 
-- **Next.js 15** with Turbopack in development
-- **React 19** with new concurrent features
-- **Tailwind CSS**, **Radix UI**, and **shadcn/ui** for styling and components
-- **Storybook** for component development and documentation
+## Code Style & Conventions
 
-### Development Workflow
+- **Formatter**: Biome with 2-space indentation, 100-character lines, single quotes, minimal semicolons
+- **Components**: PascalCase for files (`ButtonGroup.tsx`), kebab-case for directories
+- **Utilities**: camelCase naming
+- **Import organization**: React first, then external packages, then internal imports with type imports grouped separately
+- **Pre-commit**: Husky runs lint-staged with Biome auto-fixes
 
-1. The monorepo uses Turborepo's dependency graph for efficient builds and caching
-2. All packages share common ESLint and TypeScript configurations
-3. Type checking and linting run across the entire workspace
-4. Components can be generated using `turbo gen react-component` in the UI package
+## UI Library Structure
+
+- **Components**: Located in `packages/ui/src/components/[component-name]/`
+- **Exports**: Each component has an `index.ts` barrel export
+- **Styling**: Global CSS in `packages/ui/styles/` with color tokens and Tailwind configuration
+- **Stories**: Co-located `.stories.tsx` files for Storybook documentation
+
+## Package Manager
+
+- **Required**: Node.js >= 22.0.0, pnpm 10.17.1
+- **Workspace**: Uses `pnpm-workspace.yaml` for monorepo management
+- **Lock**: Committed `pnpm-lock.yaml` for reproducible builds
