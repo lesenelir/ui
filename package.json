@@ -13,7 +13,8 @@
     "biome:web:fix": "pnpm --filter web biome:fix",
     "biome:ui:check": "pnpm --filter @lesenelir/ui biome:check",
     "biome:ui:fix": "pnpm --filter @lesenelir/ui biome:fix",
-    "prepare": "husky"
+    "prepare": "husky",
+    "storybook": "pnpm --filter web storybook"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
@@ -28,6 +29,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.1.6",
     "postcss": "^8.5.6",
+    "storybook": "^9.1.8",
     "tailwindcss": "^4.1.13",
     "turbo": "^2.5.8",
     "typescript": "5.9.2"

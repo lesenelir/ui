@@ -8,6 +8,7 @@
 @layer base {
   :root,
   [data-theme='light'] {
+    color-scheme: light;
     /* Refine tailwind color helpers  */
     --mix-factor: 100%;
     --mix-base: oklch(100% 0 0);
@@ -42,6 +43,7 @@
 
   :root.dark,
   [data-theme='dark'] {
+    color-scheme: dark;
     /* Refine tailwind color helpers */
     --mix-factor: 75%;
     --mix-base: oklch(100% 0 0);
