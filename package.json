@@ -13,7 +13,8 @@
     "biome:web:fix": "pnpm --filter web biome:fix",
     "biome:ui:check": "pnpm --filter @lesenelir/ui biome:check",
     "biome:ui:fix": "pnpm --filter @lesenelir/ui biome:fix",
-    "prepare": "husky"
+    "prepare": "husky",
+    "storybook": "pnpm --filter web storybook"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
