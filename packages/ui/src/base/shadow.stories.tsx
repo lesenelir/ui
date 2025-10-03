@@ -41,7 +41,7 @@ const ShadowTransitionSwatch = ({
       <button
         type={'button'}
         className={cn(
-          'bg-bg flex size-24 items-center justify-center rounded-lg transition-shadow duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2',
+          'bg-bg flex size-24 items-center justify-center rounded-lg transition-shadow duration-300',
           className
         )}
         aria-label={`Shadow transition demo: ${label}`}
