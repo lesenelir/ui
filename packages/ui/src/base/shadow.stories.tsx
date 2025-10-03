@@ -43,7 +43,7 @@ const ShadowTransitionSwatch = ({
       >
         <span className={'text-fg-rev/60 text-xs font-medium'}>Hover me</span>
       </div>
-      <span className={'text-sm font-medium'}>{label}</span>
+      <span className={'text-xs font-medium'}>{label}</span>
       <span className={'text-fg-rev/60 text-xs'}>{name}</span>
     </div>
   )
