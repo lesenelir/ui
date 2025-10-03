@@ -28,8 +28,8 @@ export const Colors: Story = {
   render: () => (
     <div className={'space-y-8 p-4'}>
       <div className={'space-y-4'}>
-        <h2 className={'text-2xl font-semibold'}>Base Colors</h2>
-        <div className={'grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5'}>
+        <h2 className={'mb-4 text-xl font-semibold'}>Base Colors</h2>
+        <div className={'grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5'}>
           <ColorSwatch className={'bg-bg'} name={'Background'} />
           <ColorSwatch className={'bg-bg-rev'} name={'Background Reverse'} />
           <ColorSwatch className={'bg-fg'} name={'Foreground'} />
@@ -39,10 +39,10 @@ export const Colors: Story = {
       </div>
 
       <div className={'space-y-4'}>
-        <h2 className={'text-2xl font-semibold'}>Accent Colors</h2>
+        <h2 className={'mb-4 text-2xl font-semibold'}>Accent Colors</h2>
         <div
           className={
-            'grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
+            'grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
           }
         >
           <ColorSwatch className={'bg-ac/5'} name={'Accent 5%'} />
@@ -60,10 +60,10 @@ export const Colors: Story = {
       </div>
 
       <div className={'space-y-4'}>
-        <h2 className={'text-2xl font-semibold'}>Red</h2>
+        <h2 className={'mb-4 text-2xl font-semibold'}>Red</h2>
         <div
           className={
-            'grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
+            'grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
           }
         >
           <ColorSwatch className={'bg-red-50'} name={'Red 50'} />
@@ -81,10 +81,10 @@ export const Colors: Story = {
       </div>
 
       <div className={'space-y-4'}>
-        <h2 className={'text-2xl font-semibold'}>Orange</h2>
+        <h2 className={'mb-4 text-2xl font-semibold'}>Orange</h2>
         <div
           className={
-            'grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
+            'grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
           }
         >
           <ColorSwatch className={'bg-orange-50'} name={'Orange 50'} />
@@ -102,10 +102,10 @@ export const Colors: Story = {
       </div>
 
       <div className={'space-y-4'}>
-        <h2 className={'text-2xl font-semibold'}>Amber</h2>
+        <h2 className={'mb-4 text-2xl font-semibold'}>Amber</h2>
         <div
           className={
-            'grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
+            'grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
           }
         >
           <ColorSwatch className={'bg-amber-50'} name={'Amber 50'} />
@@ -123,10 +123,10 @@ export const Colors: Story = {
       </div>
 
       <div className={'space-y-4'}>
-        <h2 className={'text-2xl font-semibold'}>Yellow</h2>
+        <h2 className={'mb-4 text-2xl font-semibold'}>Yellow</h2>
         <div
           className={
-            'grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
+            'grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
           }
         >
           <ColorSwatch className={'bg-yellow-50'} name={'Yellow 50'} />
@@ -144,10 +144,10 @@ export const Colors: Story = {
       </div>
 
       <div className={'space-y-4'}>
-        <h2 className={'text-2xl font-semibold'}>Lime</h2>
+        <h2 className={'mb-4 text-2xl font-semibold'}>Lime</h2>
         <div
           className={
-            'grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
+            'grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
           }
         >
           <ColorSwatch className={'bg-lime-50'} name={'Lime 50'} />
@@ -165,10 +165,10 @@ export const Colors: Story = {
       </div>
 
       <div className={'space-y-4'}>
-        <h2 className={'text-2xl font-semibold'}>Green</h2>
+        <h2 className={'mb-4 text-2xl font-semibold'}>Green</h2>
         <div
           className={
-            'grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
+            'grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
           }
         >
           <ColorSwatch className={'bg-green-50'} name={'Green 50'} />
@@ -186,10 +186,10 @@ export const Colors: Story = {
       </div>
 
       <div className={'space-y-4'}>
-        <h2 className={'text-2xl font-semibold'}>Emerald</h2>
+        <h2 className={'mb-4 text-2xl font-semibold'}>Emerald</h2>
         <div
           className={
-            'grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
+            'grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
           }
         >
           <ColorSwatch className={'bg-emerald-50'} name={'Emerald 50'} />
@@ -207,10 +207,10 @@ export const Colors: Story = {
       </div>
 
       <div className={'space-y-4'}>
-        <h2 className={'text-2xl font-semibold'}>Teal</h2>
+        <h2 className={'mb-4 text-2xl font-semibold'}>Teal</h2>
         <div
           className={
-            'grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
+            'grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
           }
         >
           <ColorSwatch className={'bg-teal-50'} name={'Teal 50'} />
@@ -228,10 +228,10 @@ export const Colors: Story = {
       </div>
 
       <div className={'space-y-4'}>
-        <h2 className={'text-2xl font-semibold'}>Cyan</h2>
+        <h2 className={'mb-4 text-2xl font-semibold'}>Cyan</h2>
         <div
           className={
-            'grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
+            'grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
           }
         >
           <ColorSwatch className={'bg-cyan-50'} name={'Cyan 50'} />
@@ -249,10 +249,10 @@ export const Colors: Story = {
       </div>
 
       <div className={'space-y-4'}>
-        <h2 className={'text-2xl font-semibold'}>Sky</h2>
+        <h2 className={'mb-4 text-2xl font-semibold'}>Sky</h2>
         <div
           className={
-            'grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
+            'grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
           }
         >
           <ColorSwatch className={'bg-sky-50'} name={'Sky 50'} />
@@ -270,10 +270,10 @@ export const Colors: Story = {
       </div>
 
       <div className={'space-y-4'}>
-        <h2 className={'text-2xl font-semibold'}>Blue</h2>
+        <h2 className={'mb-4 text-2xl font-semibold'}>Blue</h2>
         <div
           className={
-            'grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
+            'grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
           }
         >
           <ColorSwatch className={'bg-blue-50'} name={'Blue 50'} />
@@ -291,10 +291,10 @@ export const Colors: Story = {
       </div>
 
       <div className={'space-y-4'}>
-        <h2 className={'text-2xl font-semibold'}>Indigo</h2>
+        <h2 className={'mb-4 text-2xl font-semibold'}>Indigo</h2>
         <div
           className={
-            'grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
+            'grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
           }
         >
           <ColorSwatch className={'bg-indigo-50'} name={'Indigo 50'} />
@@ -312,10 +312,10 @@ export const Colors: Story = {
       </div>
 
       <div className={'space-y-4'}>
-        <h2 className={'text-2xl font-semibold'}>Violet</h2>
+        <h2 className={'mb-4 text-2xl font-semibold'}>Violet</h2>
         <div
           className={
-            'grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
+            'grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
           }
         >
           <ColorSwatch className={'bg-violet-50'} name={'Violet 50'} />
@@ -333,10 +333,10 @@ export const Colors: Story = {
       </div>
 
       <div className={'space-y-4'}>
-        <h2 className={'text-2xl font-semibold'}>Purple</h2>
+        <h2 className={'mb-4 text-2xl font-semibold'}>Purple</h2>
         <div
           className={
-            'grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
+            'grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
           }
         >
           <ColorSwatch className={'bg-purple-50'} name={'Purple 50'} />
@@ -354,10 +354,10 @@ export const Colors: Story = {
       </div>
 
       <div className={'space-y-4'}>
-        <h2 className={'text-2xl font-semibold'}>Fuchsia</h2>
+        <h2 className={'mb-4 text-2xl font-semibold'}>Fuchsia</h2>
         <div
           className={
-            'grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
+            'grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
           }
         >
           <ColorSwatch className={'bg-fuchsia-50'} name={'Fuchsia 50'} />
@@ -375,10 +375,10 @@ export const Colors: Story = {
       </div>
 
       <div className={'space-y-4'}>
-        <h2 className={'text-2xl font-semibold'}>Pink</h2>
+        <h2 className={'mb-4 text-2xl font-semibold'}>Pink</h2>
         <div
           className={
-            'grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
+            'grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
           }
         >
           <ColorSwatch className={'bg-pink-50'} name={'Pink 50'} />
@@ -396,10 +396,10 @@ export const Colors: Story = {
       </div>
 
       <div className={'space-y-4'}>
-        <h2 className={'text-2xl font-semibold'}>Rose</h2>
+        <h2 className={'mb-4 text-2xl font-semibold'}>Rose</h2>
         <div
           className={
-            'grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
+            'grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
           }
         >
           <ColorSwatch className={'bg-rose-50'} name={'Rose 50'} />
@@ -417,10 +417,10 @@ export const Colors: Story = {
       </div>
 
       <div className={'space-y-4'}>
-        <h2 className={'text-2xl font-semibold'}>Slate</h2>
+        <h2 className={'mb-4 text-2xl font-semibold'}>Slate</h2>
         <div
           className={
-            'grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
+            'grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
           }
         >
           <ColorSwatch className={'bg-slate-50'} name={'Slate 50'} />
@@ -438,10 +438,10 @@ export const Colors: Story = {
       </div>
 
       <div className={'space-y-4'}>
-        <h2 className={'text-2xl font-semibold'}>Gray</h2>
+        <h2 className={'mb-4 text-2xl font-semibold'}>Gray</h2>
         <div
           className={
-            'grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
+            'grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
           }
         >
           <ColorSwatch className={'bg-gray-50'} name={'Gray 50'} />
@@ -459,10 +459,10 @@ export const Colors: Story = {
       </div>
 
       <div className={'space-y-4'}>
-        <h2 className={'text-2xl font-semibold'}>Zinc</h2>
+        <h2 className={'mb-4 text-2xl font-semibold'}>Zinc</h2>
         <div
           className={
-            'grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
+            'grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
           }
         >
           <ColorSwatch className={'bg-zinc-50'} name={'Zinc 50'} />
@@ -480,10 +480,10 @@ export const Colors: Story = {
       </div>
 
       <div className={'space-y-4'}>
-        <h2 className={'text-2xl font-semibold'}>Neutral</h2>
+        <h2 className={'mb-4 text-2xl font-semibold'}>Neutral</h2>
         <div
           className={
-            'grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
+            'grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
           }
         >
           <ColorSwatch className={'bg-neutral-50'} name={'Neutral 50'} />
@@ -501,10 +501,10 @@ export const Colors: Story = {
       </div>
 
       <div className={'space-y-4'}>
-        <h2 className={'text-2xl font-semibold'}>Stone</h2>
+        <h2 className={'mb-4 text-2xl font-semibold'}>Stone</h2>
         <div
           className={
-            'grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
+            'grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11'
           }
         >
           <ColorSwatch className={'bg-stone-50'} name={'Stone 50'} />
