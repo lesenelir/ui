@@ -5,7 +5,7 @@ export default function Home() {
     <div className={'p-4 text-center mt-24'}>
       <div>
         <Link href='/storybook' className={'underline text-ac'}>
-          查看 Storybook 组件文档
+          View Storybook
         </Link>
       </div>
     </div>
