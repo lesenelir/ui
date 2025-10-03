@@ -78,17 +78,15 @@ export const BoxShadows: Story = {
 export const DropShadows: Story = {
   render: () => (
     <div className={'space-y-8 p-8'}>
-      <div>
-        <h2 className={'mb-4 text-xl font-semibold'}>Drop Shadows</h2>
-        <div className={'grid grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-3'}>
-          <ShadowSwatch name={'drop-shadow-xs'} className={'drop-shadow-xs'} />
-          <ShadowSwatch name={'drop-shadow-sm'} className={'drop-shadow-sm'} />
-          <ShadowSwatch name={'drop-shadow-md'} className={'drop-shadow-md'} />
-          <ShadowSwatch name={'drop-shadow-lg'} className={'drop-shadow-lg'} />
-          <ShadowSwatch name={'drop-shadow-xl'} className={'drop-shadow-xl'} />
-          <ShadowSwatch name={'drop-shadow-2xl'} className={'drop-shadow-2xl'} />
-          <ShadowSwatch name={'drop-shadow-none'} className={'drop-shadow-none'} />
-        </div>
+      <h2 className={'mb-4 text-xl font-semibold'}>Drop Shadows</h2>
+      <div className={'grid grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-3'}>
+        <ShadowSwatch name={'drop-shadow-xs'} className={'drop-shadow-xs'} />
+        <ShadowSwatch name={'drop-shadow-sm'} className={'drop-shadow-sm'} />
+        <ShadowSwatch name={'drop-shadow-md'} className={'drop-shadow-md'} />
+        <ShadowSwatch name={'drop-shadow-lg'} className={'drop-shadow-lg'} />
+        <ShadowSwatch name={'drop-shadow-xl'} className={'drop-shadow-xl'} />
+        <ShadowSwatch name={'drop-shadow-2xl'} className={'drop-shadow-2xl'} />
+        <ShadowSwatch name={'drop-shadow-none'} className={'drop-shadow-none'} />
       </div>
     </div>
   ),
@@ -98,37 +96,35 @@ export const DropShadows: Story = {
 export const ColoredBoxShadows: Story = {
   render: () => (
     <div className={'space-y-8 p-8'}>
-      <div>
-        <h2 className={'mb-4 text-xl font-semibold'}>Colored Box Shadows</h2>
-        <div className={'grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'}>
-          <ShadowSwatch name={'Blue'} className={'shadow-lg shadow-blue-500/50'} />
-          <ShadowSwatch name={'Red'} className={'shadow-lg shadow-red-500/50'} />
-          <ShadowSwatch name={'Green'} className={'shadow-lg shadow-green-500/50'} />
-          <ShadowSwatch name={'Yellow'} className={'shadow-lg shadow-yellow-500/50'} />
-          <ShadowSwatch name={'Purple'} className={'shadow-lg shadow-purple-500/50'} />
-          <ShadowSwatch name={'Pink'} className={'shadow-lg shadow-pink-500/50'} />
+      <h2 className={'mb-4 text-xl font-semibold'}>Colored Box Shadows</h2>
+      <div className={'grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'}>
+        <ShadowSwatch name={'Blue'} className={'shadow-lg shadow-blue-500/50'} />
+        <ShadowSwatch name={'Red'} className={'shadow-lg shadow-red-500/50'} />
+        <ShadowSwatch name={'Green'} className={'shadow-lg shadow-green-500/50'} />
+        <ShadowSwatch name={'Yellow'} className={'shadow-lg shadow-yellow-500/50'} />
+        <ShadowSwatch name={'Purple'} className={'shadow-lg shadow-purple-500/50'} />
+        <ShadowSwatch name={'Pink'} className={'shadow-lg shadow-pink-500/50'} />
 
-          <ShadowSwatch name={'Blue'} className={'inset-shadow-2xs inset-shadow-blue-500/50'} />
-          <ShadowSwatch name={'Red'} className={'inset-shadow-2xs inset-shadow-red-500/50'} />
-          <ShadowSwatch name={'Green'} className={'inset-shadow-2xs inset-shadow-green-500/50'} />
-          <ShadowSwatch name={'Yellow'} className={'inset-shadow-2xs inset-shadow-yellow-500/50'} />
-          <ShadowSwatch name={'Purple'} className={'inset-shadow-2xs inset-shadow-purple-500/50'} />
-          <ShadowSwatch name={'Pink'} className={'inset-shadow-2xs inset-shadow-pink-500/50'} />
+        <ShadowSwatch name={'Blue'} className={'inset-shadow-2xs inset-shadow-blue-500/50'} />
+        <ShadowSwatch name={'Red'} className={'inset-shadow-2xs inset-shadow-red-500/50'} />
+        <ShadowSwatch name={'Green'} className={'inset-shadow-2xs inset-shadow-green-500/50'} />
+        <ShadowSwatch name={'Yellow'} className={'inset-shadow-2xs inset-shadow-yellow-500/50'} />
+        <ShadowSwatch name={'Purple'} className={'inset-shadow-2xs inset-shadow-purple-500/50'} />
+        <ShadowSwatch name={'Pink'} className={'inset-shadow-2xs inset-shadow-pink-500/50'} />
 
-          <ShadowSwatch name={'Blue'} className={'inset-shadow-xs inset-shadow-blue-500/50'} />
-          <ShadowSwatch name={'Red'} className={'inset-shadow-xs inset-shadow-red-500/50'} />
-          <ShadowSwatch name={'Green'} className={'inset-shadow-xs inset-shadow-green-500/50'} />
-          <ShadowSwatch name={'Yellow'} className={'inset-shadow-xs inset-shadow-yellow-500/50'} />
-          <ShadowSwatch name={'Purple'} className={'inset-shadow-xs inset-shadow-purple-500/50'} />
-          <ShadowSwatch name={'Pink'} className={'inset-shadow-xs inset-shadow-pink-500/50'} />
+        <ShadowSwatch name={'Blue'} className={'inset-shadow-xs inset-shadow-blue-500/50'} />
+        <ShadowSwatch name={'Red'} className={'inset-shadow-xs inset-shadow-red-500/50'} />
+        <ShadowSwatch name={'Green'} className={'inset-shadow-xs inset-shadow-green-500/50'} />
+        <ShadowSwatch name={'Yellow'} className={'inset-shadow-xs inset-shadow-yellow-500/50'} />
+        <ShadowSwatch name={'Purple'} className={'inset-shadow-xs inset-shadow-purple-500/50'} />
+        <ShadowSwatch name={'Pink'} className={'inset-shadow-xs inset-shadow-pink-500/50'} />
 
-          <ShadowSwatch name={'Blue'} className={'inset-shadow-sm inset-shadow-blue-500/50'} />
-          <ShadowSwatch name={'Red'} className={'inset-shadow-sm inset-shadow-red-500/50'} />
-          <ShadowSwatch name={'Green'} className={'inset-shadow-sm inset-shadow-green-500/50'} />
-          <ShadowSwatch name={'Yellow'} className={'inset-shadow-sm inset-shadow-yellow-500/50'} />
-          <ShadowSwatch name={'Purple'} className={'inset-shadow-sm inset-shadow-purple-500/50'} />
-          <ShadowSwatch name={'Pink'} className={'inset-shadow-sm inset-shadow-pink-500/50'} />
-        </div>
+        <ShadowSwatch name={'Blue'} className={'inset-shadow-sm inset-shadow-blue-500/50'} />
+        <ShadowSwatch name={'Red'} className={'inset-shadow-sm inset-shadow-red-500/50'} />
+        <ShadowSwatch name={'Green'} className={'inset-shadow-sm inset-shadow-green-500/50'} />
+        <ShadowSwatch name={'Yellow'} className={'inset-shadow-sm inset-shadow-yellow-500/50'} />
+        <ShadowSwatch name={'Purple'} className={'inset-shadow-sm inset-shadow-purple-500/50'} />
+        <ShadowSwatch name={'Pink'} className={'inset-shadow-sm inset-shadow-pink-500/50'} />
       </div>
     </div>
   ),
