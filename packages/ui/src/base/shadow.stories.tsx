@@ -18,7 +18,10 @@ type Story = StoryObj<typeof meta>
 
 const ShadowSwatch = ({ name, className }: { name: string; className: string }) => (
   <div className={'flex flex-col items-center gap-1'}>
-    <div className={cn('bg-bg flex size-24 items-center justify-center rounded-lg', className)} />
+    <div
+      className={cn('bg-bg flex size-24 items-center justify-center rounded-lg', className)}
+      aria-hidden={'true'}
+    />
     <span className={'text-xs'}>{name}</span>
     <span className={'text-fg-rev/60 text-xs'}>{className}</span>
   </div>
@@ -35,14 +38,16 @@ const ShadowTransitionSwatch = ({
 }) => {
   return (
     <div className={'flex flex-col items-center gap-1'}>
-      <div
+      <button
+        type={'button'}
         className={cn(
-          'bg-bg flex size-24 items-center justify-center rounded-lg transition-shadow duration-300',
+          'bg-bg flex size-24 items-center justify-center rounded-lg transition-shadow duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2',
           className
         )}
+        aria-label={`Shadow transition demo: ${label}`}
       >
         <span className={'text-fg-rev/60 text-xs font-medium'}>Hover me</span>
-      </div>
+      </button>
       <span className={'text-xs font-medium'}>{label}</span>
       <span className={'text-fg-rev/60 text-xs'}>{name}</span>
     </div>
