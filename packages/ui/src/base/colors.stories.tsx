@@ -18,7 +18,10 @@ type Story = StoryObj<typeof meta>
 
 const ColorSwatch = ({ className, name }: { className: string; name: string }) => (
   <div className={'flex flex-col gap-1'}>
-    <div className={cn('size-20 rounded-md flex items-center justify-center', className)} />
+    <div
+      className={cn('size-20 rounded-md flex items-center justify-center', className)}
+      aria-hidden='true'
+    />
     <div className={'text-xs'}>{name}</div>
     <div className={'text-fg-rev/60 text-xs'}>{className}</div>
   </div>
