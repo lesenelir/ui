@@ -35,7 +35,7 @@ const accordionTriggerVariants = cva('', {
   variants: {
     variant: {
       default: 'py-4',
-      split: 'p-4 from-fg to-fg/0 bg-linear-to-b',
+      split: 'p-4 from-fg to-fg/0 bg-linear-to-b data-[state=open]:rounded-b-none',
       shadow:
         'p-4 rounded-none data-[state=open]:from-fg data-[state=open]:to-fg/0 data-[state=open]:bg-linear-to-b',
     },
