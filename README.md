@@ -36,6 +36,9 @@ Components inspiration by:
 - [Hero UI](https://www.heroui.com) 
 - [daisyUI](https://daisyui.com/components) 
 
+Icons from: 
+- [Tabler Icons](https://icones.js.org/collection/tabler)
+
 ## Documentation
 
 Comprehensive documentation and interactive examples are available at:
