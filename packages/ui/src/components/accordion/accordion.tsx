@@ -1,12 +1,15 @@
 'use client'
 
 import type React from 'react'
+import { createContext, useContext } from 'react'
 
 import { cn } from '@lesenelir/ui/lib/utils'
 import * as AccordionPrimitive from '@radix-ui/react-accordion'
 import { cva, type VariantProps } from 'class-variance-authority'
 
-// type AccordionVariant = 'default' | 'split' | 'shadow'
+export type AccordionVariant = 'default' | 'split' | 'shadow'
+
+const AccordionVariantContext = createContext<AccordionVariant>('default')
 
 const accordionVariants = cva('', {
   variants: {
@@ -15,9 +18,6 @@ const accordionVariants = cva('', {
       split: 'overflow-hidden bg-bg space-y-4',
       shadow: 'overflow-hidden bg-bg border rounded-md shadow-lg',
     },
-  },
-  defaultVariants: {
-    variant: 'default',
   },
 })
 
@@ -28,9 +28,6 @@ const accordionItemVariants = cva('', {
       split: 'data-[state=open]:shadow-xs',
       shadow: 'border-b last:border-b-0',
     },
-  },
-  defaultVariants: {
-    variant: 'default',
   },
 })
 
@@ -43,9 +40,6 @@ const accordionTriggerVariants = cva('', {
         'p-4 rounded-none data-[state=open]:from-fg data-[state=open]:to-fg/0 data-[state=open]:bg-linear-to-b',
     },
   },
-  defaultVariants: {
-    variant: 'default',
-  },
 })
 
 export type AccordionProps = React.ComponentProps<typeof AccordionPrimitive.Root> &
@@ -56,21 +50,28 @@ export type AccordionTriggerProps = React.ComponentProps<typeof AccordionPrimiti
   VariantProps<typeof accordionTriggerVariants>
 export type AccordionContentProps = React.ComponentProps<typeof AccordionPrimitive.Content>
 
-export function Accordion({ className, variant = 'default', ...props }: AccordionProps) {
+export function Accordion({ className, variant, ...props }: AccordionProps) {
+  const variantValue = variant ?? 'default'
+
   return (
-    <AccordionPrimitive.Root
-      data-slot={'accordion'}
-      className={cn(accordionVariants({ variant }), className)}
-      {...props}
-    />
+    <AccordionVariantContext.Provider value={variantValue}>
+      <AccordionPrimitive.Root
+        data-slot={'accordion'}
+        className={cn(accordionVariants({ variant: variantValue }), className)}
+        {...props}
+      />
+    </AccordionVariantContext.Provider>
   )
 }
 
-export function AccordionItem({ className, variant = 'default', ...props }: AccordionItemProps) {
+export function AccordionItem({ className, variant, ...props }: AccordionItemProps) {
+  const contextVariant = useContext(AccordionVariantContext)
+  const variantValue = variant ?? contextVariant
+
   return (
     <AccordionPrimitive.Item
       data-slot={'accordion-item'}
-      className={cn(accordionItemVariants({ variant }), className)}
+      className={cn(accordionItemVariants({ variant: variantValue }), className)}
       {...props}
     />
   )
@@ -78,10 +79,13 @@ export function AccordionItem({ className, variant = 'default', ...props }: Acco
 
 export function AccordionTrigger({
   className,
-  variant = 'default',
+  variant,
   children,
   ...props
 }: AccordionTriggerProps) {
+  const contextVariant = useContext(AccordionVariantContext)
+  const variantValue = variant ?? contextVariant
+
   return (
     <AccordionPrimitive.Header className={'flex'}>
       <AccordionPrimitive.Trigger
@@ -90,7 +94,7 @@ export function AccordionTrigger({
           'flex flex-1 items-start justify-between gap-4 rounded-md text-left text-sm font-medium transition-all outline-none',
           'disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>span]:rotate-180',
           'focus-ring',
-          accordionTriggerVariants({ variant }),
+          accordionTriggerVariants({ variant: variantValue }),
           className
         )}
         {...props}
