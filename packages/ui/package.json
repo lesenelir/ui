@@ -19,6 +19,10 @@
     "biome:check": "biome check .",
     "biome:fix": "biome check --write ."
   },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
   "devDependencies": {
     "@lesenelir/typescript-config": "workspace:*",
     "@storybook/react": "^9.1.8",
@@ -26,9 +30,5 @@
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",
     "typescript": "5.9.2"
-  },
-  "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
   }
 }
