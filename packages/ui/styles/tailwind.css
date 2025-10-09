@@ -6,6 +6,13 @@
 /* @layer base for default base styles */
 /* https://tailwindcss.com/docs/adding-custom-styles#adding-base-styles */
 @layer base {
+  * {
+    /* All border color styles can be omitted. */
+    border-color: var(--color-border);
+  }
+}
+
+@layer base {
   :root,
   [data-theme='light'] {
     color-scheme: light;
@@ -37,6 +44,11 @@
     --hl-l: 77.7%;
     --hl-c: 0;
     --hl-h: 257.2136;
+
+    --border-l: 92.2%;
+    --border-c: 0;
+    --border-h: 0;
+    --border-o: 100%;
 
     --lch-l-offset: 0%;
   }
@@ -72,6 +84,11 @@
     --hl-l: 33.66%;
     --hl-c: 0.01;
     --hl-h: 257.2136;
+
+    --border-l: 100%;
+    --border-c: 0;
+    --border-h: 0;
+    --border-o: 10%;
 
     --lch-l-offset: 20%;
   }
