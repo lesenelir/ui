@@ -1,5 +1,9 @@
 'use client'
 
 export function T() {
-  return <div>Test</div>
+  return (
+    <div>
+      <span className={'i-tabler-chevron-up'} />
+    </div>
+  )
 }
