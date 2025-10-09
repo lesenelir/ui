@@ -56,7 +56,7 @@ export type AccordionTriggerProps = React.ComponentProps<typeof AccordionPrimiti
   VariantProps<typeof accordionTriggerVariants>
 export type AccordionContentProps = React.ComponentProps<typeof AccordionPrimitive.Content>
 
-export function Accordion({ className, variant = 'split', ...props }: AccordionProps) {
+export function Accordion({ className, variant = 'default', ...props }: AccordionProps) {
   return (
     <AccordionPrimitive.Root
       data-slot={'accordion'}
@@ -66,7 +66,7 @@ export function Accordion({ className, variant = 'split', ...props }: AccordionP
   )
 }
 
-export function AccordionItem({ className, variant = 'split', ...props }: AccordionItemProps) {
+export function AccordionItem({ className, variant = 'default', ...props }: AccordionItemProps) {
   return (
     <AccordionPrimitive.Item
       data-slot={'accordion-item'}
@@ -78,7 +78,7 @@ export function AccordionItem({ className, variant = 'split', ...props }: Accord
 
 export function AccordionTrigger({
   className,
-  variant = 'split',
+  variant = 'default',
   children,
   ...props
 }: AccordionTriggerProps) {
