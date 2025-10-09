@@ -14,9 +14,9 @@ const AccordionVariantContext = createContext<AccordionVariant>('default')
 const accordionVariants = cva('', {
   variants: {
     variant: {
-      default: 'overflow-hidden bg-transport',
-      split: 'overflow-hidden bg-transport space-y-4',
-      shadow: 'overflow-hidden bg-transport border rounded-md shadow-lg',
+      default: 'overflow-hidden bg-transparent',
+      split: 'overflow-hidden bg-transparent space-y-4',
+      shadow: 'overflow-hidden bg-transparent border rounded-md shadow-lg',
     },
   },
 })
