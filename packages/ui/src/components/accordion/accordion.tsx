@@ -135,8 +135,7 @@ export function AccordionContent({
       data-slot={'accordion-content'}
       className={cn(
         'data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm',
-        accordionContentVariants({ variant: variantValue }),
-        className
+        accordionContentVariants({ variant: variantValue })
       )}
       {...props}
     >
