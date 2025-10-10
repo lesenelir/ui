@@ -14,7 +14,7 @@ const meta = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['default', 'outline', 'accentOutline', 'accentSolid', 'link'],
+      options: ['default', 'outline', 'link'],
       description: 'The visual style variant of the button',
     },
     size: {
@@ -97,7 +97,8 @@ export const Outline: Story = {
 
 export const AccentOutline: Story = {
   args: {
-    variant: 'accentOutline',
+    variant: 'outline',
+    tint: 'accent',
     size: 'default',
     children: 'Accent Outline',
   },
@@ -105,7 +106,8 @@ export const AccentOutline: Story = {
 
 export const AccentSolid: Story = {
   args: {
-    variant: 'accentSolid',
+    variant: 'default',
+    tint: 'accent',
     size: 'default',
     children: 'Accent Solid',
   },
@@ -155,7 +157,7 @@ export const IconSmall: Story = {
 
 export const IconLarge: Story = {
   args: {
-    variant: 'accentSolid',
+    tint: 'accent',
     size: 'icon-lg',
     children: <span className={'i-tabler-heart'} />,
   },
@@ -173,7 +175,7 @@ export const Loading: Story = {
 
 export const LoadingWithText: Story = {
   args: {
-    variant: 'accentSolid',
+    tint: 'accent',
     size: 'default',
     isLoading: true,
     children: 'Processing',
@@ -210,7 +212,8 @@ export const WithRightIcon: Story = {
 
 export const WithBothIcons: Story = {
   args: {
-    variant: 'accentOutline',
+    variant: 'outline',
+    tint: 'accent',
     size: 'default',
     leftSection: <span className={'i-tabler-send'} />,
     rightSection: <span className={'i-tabler-check'} />,
@@ -220,7 +223,7 @@ export const WithBothIcons: Story = {
 
 export const WithLeftIconLoading: Story = {
   args: {
-    variant: 'accentSolid',
+    tint: 'accent',
     size: 'default',
     leftSection: <span className={'i-tabler-cloud-upload'} />,
     isLoading: true,
@@ -249,8 +252,10 @@ export const AllVariants: Story = {
       <div className={'flex gap-2 items-center'}>
         <Button variant={'default'}>Default</Button>
         <Button variant={'outline'}>Outline</Button>
-        <Button variant={'accentOutline'}>Accent Outline</Button>
-        <Button variant={'accentSolid'}>Accent Solid</Button>
+        <Button variant={'outline'} tint={'accent'}>
+          Accent Outline
+        </Button>
+        <Button tint={'accent'}>Accent Solid</Button>
         <Button variant={'link'}>Link</Button>
       </div>
     </div>
@@ -298,11 +303,11 @@ export const AllStates: Story = {
         </Button>
       </div>
       <div className={'flex gap-2 items-center'}>
-        <Button variant={'accentSolid'}>Normal</Button>
-        <Button variant={'accentSolid'} isLoading>
+        <Button tint={'accent'}>Normal</Button>
+        <Button tint={'accent'} isLoading>
           Loading
         </Button>
-        <Button variant={'accentSolid'} disabled>
+        <Button tint={'accent'} disabled>
           Disabled
         </Button>
       </div>
@@ -318,12 +323,16 @@ export const WithIcons: Story = {
         <Button variant={'outline'} rightSection={<span className={'i-tabler-external-link'} />}>
           Open Link
         </Button>
-        <Button variant={'accentSolid'} leftSection={<span className={'i-tabler-plus'} />}>
+        <Button tint={'accent'} leftSection={<span className={'i-tabler-plus'} />}>
           Add New
         </Button>
       </div>
       <div className={'flex gap-2 items-center'}>
-        <Button variant={'accentOutline'} leftSection={<span className={'i-tabler-trash'} />}>
+        <Button
+          variant={'outline'}
+          tint={'accent'}
+          leftSection={<span className={'i-tabler-trash'} />}
+        >
           Delete
         </Button>
         <Button
@@ -333,11 +342,7 @@ export const WithIcons: Story = {
         >
           Edit & Save
         </Button>
-        <Button
-          variant={'accentSolid'}
-          leftSection={<span className={'i-tabler-upload'} />}
-          isLoading
-        >
+        <Button tint={'accent'} leftSection={<span className={'i-tabler-upload'} />} isLoading>
           Uploading
         </Button>
       </div>
@@ -353,8 +358,10 @@ export const FullShowcase: Story = {
         <div className={'flex flex-wrap gap-2'}>
           <Button variant={'default'}>Default</Button>
           <Button variant={'outline'}>Outline</Button>
-          <Button variant={'accentOutline'}>Accent Outline</Button>
-          <Button variant={'accentSolid'}>Accent Solid</Button>
+          <Button variant={'outline'} tint={'accent'}>
+            Accent Outline
+          </Button>
+          <Button tint={'accent'}>Accent Solid</Button>
           <Button variant={'link'}>Link</Button>
         </div>
       </div>
@@ -390,7 +397,7 @@ export const FullShowcase: Story = {
           <Button variant={'outline'} rightSection={<span className={'i-tabler-arrow-right'} />}>
             Next
           </Button>
-          <Button variant={'accentSolid'} leftSection={<span className={'i-tabler-plus'} />}>
+          <Button tint={'accent'} leftSection={<span className={'i-tabler-plus'} />}>
             Add New
           </Button>
         </div>

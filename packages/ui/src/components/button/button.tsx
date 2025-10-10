@@ -13,8 +13,6 @@ const buttonVariants = cva(
       variant: {
         default: 'bg-fg-rev text-fg hover:bg-fg-rev/85',
         outline: 'border hover:bg-fg',
-        accentOutline: 'border border-ac text-ac hover:bg-ac/10 active:bg-ac/15',
-        accentSolid: 'bg-ac text-fg hover:bg-ac/90 active:bg-ac/75',
         link: 'underline-offset-2 hover:underline',
       },
       size: {
@@ -57,7 +55,7 @@ const buttonVariants = cva(
       {
         variant: 'default',
         tint: 'accent',
-        className: 'bg-ac text-fg hover:bg-ac/90',
+        className: 'bg-ac text-fg hover:bg-ac/90 active:bg-ac/75',
       },
       {
         variant: 'default',
@@ -173,7 +171,7 @@ const buttonVariants = cva(
       {
         variant: 'outline',
         tint: 'accent',
-        className: 'border-ac text-ac hover:bg-ac/10',
+        className: 'border-ac text-ac hover:bg-ac/10 active:bg-ac/15',
       },
       {
         variant: 'outline',
