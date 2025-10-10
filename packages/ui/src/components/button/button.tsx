@@ -28,14 +28,28 @@ const buttonVariants = cva(
       tint: {
         default: '',
         accent: '',
-        gray: '',
         red: '',
         orange: '',
         amber: '',
+        yellow: '',
+        lime: '',
         green: '',
+        emerald: '',
+        teal: '',
+        cyan: '',
+        sky: '',
         blue: '',
+        indigo: '',
+        violet: '',
         purple: '',
+        fuchsia: '',
         pink: '',
+        rose: '',
+        slate: '',
+        gray: '',
+        zinc: '',
+        neutral: '',
+        stone: '',
       },
     },
     compoundVariants: [
@@ -44,11 +58,6 @@ const buttonVariants = cva(
         variant: 'default',
         tint: 'accent',
         className: 'bg-ac text-fg hover:bg-ac/90',
-      },
-      {
-        variant: 'default',
-        tint: 'gray',
-        className: 'bg-gray-600 text-white hover:bg-gray-700',
       },
       {
         variant: 'default',
@@ -67,8 +76,38 @@ const buttonVariants = cva(
       },
       {
         variant: 'default',
+        tint: 'yellow',
+        className: 'bg-yellow-500 text-white hover:bg-yellow-600',
+      },
+      {
+        variant: 'default',
+        tint: 'lime',
+        className: 'bg-lime-600 text-white hover:bg-lime-700',
+      },
+      {
+        variant: 'default',
         tint: 'green',
         className: 'bg-green-600 text-white hover:bg-green-700',
+      },
+      {
+        variant: 'default',
+        tint: 'emerald',
+        className: 'bg-emerald-600 text-white hover:bg-emerald-700',
+      },
+      {
+        variant: 'default',
+        tint: 'teal',
+        className: 'bg-teal-600 text-white hover:bg-teal-700',
+      },
+      {
+        variant: 'default',
+        tint: 'cyan',
+        className: 'bg-cyan-600 text-white hover:bg-cyan-700',
+      },
+      {
+        variant: 'default',
+        tint: 'sky',
+        className: 'bg-sky-600 text-white hover:bg-sky-700',
       },
       {
         variant: 'default',
@@ -77,24 +116,64 @@ const buttonVariants = cva(
       },
       {
         variant: 'default',
+        tint: 'indigo',
+        className: 'bg-indigo-600 text-white hover:bg-indigo-700',
+      },
+      {
+        variant: 'default',
+        tint: 'violet',
+        className: 'bg-violet-600 text-white hover:bg-violet-700',
+      },
+      {
+        variant: 'default',
         tint: 'purple',
         className: 'bg-purple-600 text-white hover:bg-purple-700',
+      },
+      {
+        variant: 'default',
+        tint: 'fuchsia',
+        className: 'bg-fuchsia-600 text-white hover:bg-fuchsia-700',
       },
       {
         variant: 'default',
         tint: 'pink',
         className: 'bg-pink-600 text-white hover:bg-pink-700',
       },
+      {
+        variant: 'default',
+        tint: 'rose',
+        className: 'bg-rose-600 text-white hover:bg-rose-700',
+      },
+      {
+        variant: 'default',
+        tint: 'slate',
+        className: 'bg-slate-600 text-white hover:bg-slate-700',
+      },
+      {
+        variant: 'default',
+        tint: 'gray',
+        className: 'bg-gray-600 text-white hover:bg-gray-700',
+      },
+      {
+        variant: 'default',
+        tint: 'zinc',
+        className: 'bg-zinc-600 text-white hover:bg-zinc-700',
+      },
+      {
+        variant: 'default',
+        tint: 'neutral',
+        className: 'bg-neutral-600 text-white hover:bg-neutral-700',
+      },
+      {
+        variant: 'default',
+        tint: 'stone',
+        className: 'bg-stone-600 text-white hover:bg-stone-700',
+      },
       // Outline variant + tint combinations
       {
         variant: 'outline',
         tint: 'accent',
         className: 'border-ac text-ac hover:bg-ac/10',
-      },
-      {
-        variant: 'outline',
-        tint: 'gray',
-        className: 'border-gray-300 text-gray-700 hover:bg-gray-50',
       },
       {
         variant: 'outline',
@@ -113,8 +192,38 @@ const buttonVariants = cva(
       },
       {
         variant: 'outline',
+        tint: 'yellow',
+        className: 'border-yellow-300 text-yellow-700 hover:bg-yellow-50',
+      },
+      {
+        variant: 'outline',
+        tint: 'lime',
+        className: 'border-lime-300 text-lime-700 hover:bg-lime-50',
+      },
+      {
+        variant: 'outline',
         tint: 'green',
         className: 'border-green-300 text-green-700 hover:bg-green-50',
+      },
+      {
+        variant: 'outline',
+        tint: 'emerald',
+        className: 'border-emerald-300 text-emerald-700 hover:bg-emerald-50',
+      },
+      {
+        variant: 'outline',
+        tint: 'teal',
+        className: 'border-teal-300 text-teal-700 hover:bg-teal-50',
+      },
+      {
+        variant: 'outline',
+        tint: 'cyan',
+        className: 'border-cyan-300 text-cyan-700 hover:bg-cyan-50',
+      },
+      {
+        variant: 'outline',
+        tint: 'sky',
+        className: 'border-sky-300 text-sky-700 hover:bg-sky-50',
       },
       {
         variant: 'outline',
@@ -123,13 +232,58 @@ const buttonVariants = cva(
       },
       {
         variant: 'outline',
+        tint: 'indigo',
+        className: 'border-indigo-300 text-indigo-700 hover:bg-indigo-50',
+      },
+      {
+        variant: 'outline',
+        tint: 'violet',
+        className: 'border-violet-300 text-violet-700 hover:bg-violet-50',
+      },
+      {
+        variant: 'outline',
         tint: 'purple',
         className: 'border-purple-300 text-purple-700 hover:bg-purple-50',
       },
       {
         variant: 'outline',
+        tint: 'fuchsia',
+        className: 'border-fuchsia-300 text-fuchsia-700 hover:bg-fuchsia-50',
+      },
+      {
+        variant: 'outline',
         tint: 'pink',
         className: 'border-pink-300 text-pink-700 hover:bg-pink-50',
+      },
+      {
+        variant: 'outline',
+        tint: 'rose',
+        className: 'border-rose-300 text-rose-700 hover:bg-rose-50',
+      },
+      {
+        variant: 'outline',
+        tint: 'slate',
+        className: 'border-slate-300 text-slate-700 hover:bg-slate-50',
+      },
+      {
+        variant: 'outline',
+        tint: 'gray',
+        className: 'border-gray-300 text-gray-700 hover:bg-gray-50',
+      },
+      {
+        variant: 'outline',
+        tint: 'zinc',
+        className: 'border-zinc-300 text-zinc-700 hover:bg-zinc-50',
+      },
+      {
+        variant: 'outline',
+        tint: 'neutral',
+        className: 'border-neutral-300 text-neutral-700 hover:bg-neutral-50',
+      },
+      {
+        variant: 'outline',
+        tint: 'stone',
+        className: 'border-stone-300 text-stone-700 hover:bg-stone-50',
       },
     ],
     defaultVariants: {
