@@ -18,6 +18,7 @@
   --color-hl: oklch(clamp(0%, calc(var(--hl-l) + var(--lch-l-offset)), 100%) var(--hl-c) var(--hl-h));
   --color-black: oklch(calc(0% + var(--lch-l-offset)) 0 0);
   --color-white: oklch(calc(100% + var(--lch-l-offset)) 0 0);
+  --color-border: oklch(var(--border-l) var(--border-c) var(--border-h) / var(--border-o));
 
   /* Refine tailwind colors */
   --color-red-50: color-mix(in oklch, oklch(0.971 0.013 17.38) var(--mix-factor), var(--mix-base));
