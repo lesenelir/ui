@@ -14,13 +14,43 @@ const meta = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['default', 'outline', 'accentOutline', 'accentSolid', 'link'],
+      options: ['default', 'outline', 'link'],
       description: 'The visual style variant of the button',
     },
     size: {
       control: 'select',
       options: ['default', 'sm', 'lg', 'icon', 'icon-sm', 'icon-lg'],
       description: 'The size of the button',
+    },
+    tint: {
+      control: 'select',
+      options: [
+        'default',
+        'accent',
+        'red',
+        'orange',
+        'amber',
+        'yellow',
+        'lime',
+        'green',
+        'emerald',
+        'teal',
+        'cyan',
+        'sky',
+        'blue',
+        'indigo',
+        'violet',
+        'purple',
+        'fuchsia',
+        'pink',
+        'rose',
+        'slate',
+        'gray',
+        'zinc',
+        'neutral',
+        'stone',
+      ],
+      description: 'The color tint of the button',
     },
     isLoading: {
       control: 'boolean',
@@ -67,7 +97,8 @@ export const Outline: Story = {
 
 export const AccentOutline: Story = {
   args: {
-    variant: 'accentOutline',
+    variant: 'outline',
+    tint: 'accent',
     size: 'default',
     children: 'Accent Outline',
   },
@@ -75,7 +106,8 @@ export const AccentOutline: Story = {
 
 export const AccentSolid: Story = {
   args: {
-    variant: 'accentSolid',
+    variant: 'default',
+    tint: 'accent',
     size: 'default',
     children: 'Accent Solid',
   },
@@ -125,7 +157,7 @@ export const IconSmall: Story = {
 
 export const IconLarge: Story = {
   args: {
-    variant: 'accentSolid',
+    tint: 'accent',
     size: 'icon-lg',
     children: <span className={'i-tabler-heart'} />,
   },
@@ -143,7 +175,7 @@ export const Loading: Story = {
 
 export const LoadingWithText: Story = {
   args: {
-    variant: 'accentSolid',
+    tint: 'accent',
     size: 'default',
     isLoading: true,
     children: 'Processing',
@@ -180,7 +212,8 @@ export const WithRightIcon: Story = {
 
 export const WithBothIcons: Story = {
   args: {
-    variant: 'accentOutline',
+    variant: 'outline',
+    tint: 'accent',
     size: 'default',
     leftSection: <span className={'i-tabler-send'} />,
     rightSection: <span className={'i-tabler-check'} />,
@@ -190,7 +223,7 @@ export const WithBothIcons: Story = {
 
 export const WithLeftIconLoading: Story = {
   args: {
-    variant: 'accentSolid',
+    tint: 'accent',
     size: 'default',
     leftSection: <span className={'i-tabler-cloud-upload'} />,
     isLoading: true,
@@ -219,8 +252,10 @@ export const AllVariants: Story = {
       <div className={'flex gap-2 items-center'}>
         <Button variant={'default'}>Default</Button>
         <Button variant={'outline'}>Outline</Button>
-        <Button variant={'accentOutline'}>Accent Outline</Button>
-        <Button variant={'accentSolid'}>Accent Solid</Button>
+        <Button variant={'outline'} tint={'accent'}>
+          Accent Outline
+        </Button>
+        <Button tint={'accent'}>Accent Solid</Button>
         <Button variant={'link'}>Link</Button>
       </div>
     </div>
@@ -268,11 +303,11 @@ export const AllStates: Story = {
         </Button>
       </div>
       <div className={'flex gap-2 items-center'}>
-        <Button variant={'accentSolid'}>Normal</Button>
-        <Button variant={'accentSolid'} isLoading>
+        <Button tint={'accent'}>Normal</Button>
+        <Button tint={'accent'} isLoading>
           Loading
         </Button>
-        <Button variant={'accentSolid'} disabled>
+        <Button tint={'accent'} disabled>
           Disabled
         </Button>
       </div>
@@ -288,12 +323,16 @@ export const WithIcons: Story = {
         <Button variant={'outline'} rightSection={<span className={'i-tabler-external-link'} />}>
           Open Link
         </Button>
-        <Button variant={'accentSolid'} leftSection={<span className={'i-tabler-plus'} />}>
+        <Button tint={'accent'} leftSection={<span className={'i-tabler-plus'} />}>
           Add New
         </Button>
       </div>
       <div className={'flex gap-2 items-center'}>
-        <Button variant={'accentOutline'} leftSection={<span className={'i-tabler-trash'} />}>
+        <Button
+          variant={'outline'}
+          tint={'accent'}
+          leftSection={<span className={'i-tabler-trash'} />}
+        >
           Delete
         </Button>
         <Button
@@ -303,11 +342,7 @@ export const WithIcons: Story = {
         >
           Edit & Save
         </Button>
-        <Button
-          variant={'accentSolid'}
-          leftSection={<span className={'i-tabler-upload'} />}
-          isLoading
-        >
+        <Button tint={'accent'} leftSection={<span className={'i-tabler-upload'} />} isLoading>
           Uploading
         </Button>
       </div>
@@ -323,8 +358,10 @@ export const FullShowcase: Story = {
         <div className={'flex flex-wrap gap-2'}>
           <Button variant={'default'}>Default</Button>
           <Button variant={'outline'}>Outline</Button>
-          <Button variant={'accentOutline'}>Accent Outline</Button>
-          <Button variant={'accentSolid'}>Accent Solid</Button>
+          <Button variant={'outline'} tint={'accent'}>
+            Accent Outline
+          </Button>
+          <Button tint={'accent'}>Accent Solid</Button>
           <Button variant={'link'}>Link</Button>
         </div>
       </div>
@@ -360,7 +397,7 @@ export const FullShowcase: Story = {
           <Button variant={'outline'} rightSection={<span className={'i-tabler-arrow-right'} />}>
             Next
           </Button>
-          <Button variant={'accentSolid'} leftSection={<span className={'i-tabler-plus'} />}>
+          <Button tint={'accent'} leftSection={<span className={'i-tabler-plus'} />}>
             Add New
           </Button>
         </div>
@@ -372,6 +409,239 @@ export const FullShowcase: Story = {
           <Button>Normal</Button>
           <Button isLoading>Loading</Button>
           <Button disabled>Disabled</Button>
+        </div>
+      </div>
+    </div>
+  ),
+}
+
+// Tint Variants
+export const SolidTints: Story = {
+  render: () => (
+    <div className={'flex flex-col gap-4'}>
+      <div className={'flex flex-wrap gap-2'}>
+        <Button tint={'default'}>Default</Button>
+        <Button tint={'accent'}>Accent</Button>
+        <Button tint={'red'}>Red</Button>
+        <Button tint={'orange'}>Orange</Button>
+        <Button tint={'amber'}>Amber</Button>
+        <Button tint={'yellow'}>Yellow</Button>
+        <Button tint={'lime'}>Lime</Button>
+        <Button tint={'green'}>Green</Button>
+        <Button tint={'emerald'}>Emerald</Button>
+        <Button tint={'teal'}>Teal</Button>
+        <Button tint={'cyan'}>Cyan</Button>
+        <Button tint={'sky'}>Sky</Button>
+        <Button tint={'blue'}>Blue</Button>
+        <Button tint={'indigo'}>Indigo</Button>
+        <Button tint={'violet'}>Violet</Button>
+        <Button tint={'purple'}>Purple</Button>
+        <Button tint={'fuchsia'}>Fuchsia</Button>
+        <Button tint={'pink'}>Pink</Button>
+        <Button tint={'rose'}>Rose</Button>
+        <Button tint={'slate'}>Slate</Button>
+        <Button tint={'gray'}>Gray</Button>
+        <Button tint={'zinc'}>Zinc</Button>
+        <Button tint={'neutral'}>Neutral</Button>
+        <Button tint={'stone'}>Stone</Button>
+      </div>
+    </div>
+  ),
+}
+
+export const OutlineTints: Story = {
+  render: () => (
+    <div className={'flex flex-col gap-4'}>
+      <div className={'flex flex-wrap gap-2'}>
+        <Button variant={'outline'} tint={'default'}>
+          Default
+        </Button>
+        <Button variant={'outline'} tint={'accent'}>
+          Accent
+        </Button>
+        <Button variant={'outline'} tint={'red'}>
+          Red
+        </Button>
+        <Button variant={'outline'} tint={'orange'}>
+          Orange
+        </Button>
+        <Button variant={'outline'} tint={'amber'}>
+          Amber
+        </Button>
+        <Button variant={'outline'} tint={'yellow'}>
+          Yellow
+        </Button>
+        <Button variant={'outline'} tint={'lime'}>
+          Lime
+        </Button>
+        <Button variant={'outline'} tint={'green'}>
+          Green
+        </Button>
+        <Button variant={'outline'} tint={'emerald'}>
+          Emerald
+        </Button>
+        <Button variant={'outline'} tint={'teal'}>
+          Teal
+        </Button>
+        <Button variant={'outline'} tint={'cyan'}>
+          Cyan
+        </Button>
+        <Button variant={'outline'} tint={'sky'}>
+          Sky
+        </Button>
+        <Button variant={'outline'} tint={'blue'}>
+          Blue
+        </Button>
+        <Button variant={'outline'} tint={'indigo'}>
+          Indigo
+        </Button>
+        <Button variant={'outline'} tint={'violet'}>
+          Violet
+        </Button>
+        <Button variant={'outline'} tint={'purple'}>
+          Purple
+        </Button>
+        <Button variant={'outline'} tint={'fuchsia'}>
+          Fuchsia
+        </Button>
+        <Button variant={'outline'} tint={'pink'}>
+          Pink
+        </Button>
+        <Button variant={'outline'} tint={'rose'}>
+          Rose
+        </Button>
+        <Button variant={'outline'} tint={'slate'}>
+          Slate
+        </Button>
+        <Button variant={'outline'} tint={'gray'}>
+          Gray
+        </Button>
+        <Button variant={'outline'} tint={'zinc'}>
+          Zinc
+        </Button>
+        <Button variant={'outline'} tint={'neutral'}>
+          Neutral
+        </Button>
+        <Button variant={'outline'} tint={'stone'}>
+          Stone
+        </Button>
+      </div>
+    </div>
+  ),
+}
+
+export const TintShowcase: Story = {
+  render: () => (
+    <div className={'flex flex-col gap-6 p-8'}>
+      <div>
+        <h3 className={'text-lg font-semibold mb-3'}>Solid Tints - Warm Colors</h3>
+        <div className={'flex flex-wrap gap-2'}>
+          <Button tint={'red'}>Red</Button>
+          <Button tint={'orange'}>Orange</Button>
+          <Button tint={'amber'}>Amber</Button>
+          <Button tint={'yellow'}>Yellow</Button>
+        </div>
+      </div>
+
+      <div>
+        <h3 className={'text-lg font-semibold mb-3'}>Solid Tints - Green Colors</h3>
+        <div className={'flex flex-wrap gap-2'}>
+          <Button tint={'lime'}>Lime</Button>
+          <Button tint={'green'}>Green</Button>
+          <Button tint={'emerald'}>Emerald</Button>
+          <Button tint={'teal'}>Teal</Button>
+        </div>
+      </div>
+
+      <div>
+        <h3 className={'text-lg font-semibold mb-3'}>Solid Tints - Blue Colors</h3>
+        <div className={'flex flex-wrap gap-2'}>
+          <Button tint={'cyan'}>Cyan</Button>
+          <Button tint={'sky'}>Sky</Button>
+          <Button tint={'blue'}>Blue</Button>
+          <Button tint={'indigo'}>Indigo</Button>
+        </div>
+      </div>
+
+      <div>
+        <h3 className={'text-lg font-semibold mb-3'}>Solid Tints - Purple & Pink Colors</h3>
+        <div className={'flex flex-wrap gap-2'}>
+          <Button tint={'violet'}>Violet</Button>
+          <Button tint={'purple'}>Purple</Button>
+          <Button tint={'fuchsia'}>Fuchsia</Button>
+          <Button tint={'pink'}>Pink</Button>
+          <Button tint={'rose'}>Rose</Button>
+        </div>
+      </div>
+
+      <div>
+        <h3 className={'text-lg font-semibold mb-3'}>Solid Tints - Neutral Colors</h3>
+        <div className={'flex flex-wrap gap-2'}>
+          <Button tint={'slate'}>Slate</Button>
+          <Button tint={'gray'}>Gray</Button>
+          <Button tint={'zinc'}>Zinc</Button>
+          <Button tint={'neutral'}>Neutral</Button>
+          <Button tint={'stone'}>Stone</Button>
+        </div>
+      </div>
+
+      <div>
+        <h3 className={'text-lg font-semibold mb-3'}>Outline Tints</h3>
+        <div className={'flex flex-wrap gap-2'}>
+          <Button variant={'outline'} tint={'red'}>
+            Red
+          </Button>
+          <Button variant={'outline'} tint={'blue'}>
+            Blue
+          </Button>
+          <Button variant={'outline'} tint={'green'}>
+            Green
+          </Button>
+          <Button variant={'outline'} tint={'purple'}>
+            Purple
+          </Button>
+          <Button variant={'outline'} tint={'amber'}>
+            Amber
+          </Button>
+          <Button variant={'outline'} tint={'gray'}>
+            Gray
+          </Button>
+        </div>
+      </div>
+
+      <div>
+        <h3 className={'text-lg font-semibold mb-3'}>Tints with Icons</h3>
+        <div className={'flex flex-wrap gap-2'}>
+          <Button tint={'red'} leftSection={<span className={'i-tabler-trash'} />}>
+            Delete
+          </Button>
+          <Button tint={'green'} leftSection={<span className={'i-tabler-check'} />}>
+            Confirm
+          </Button>
+          <Button tint={'blue'} leftSection={<span className={'i-tabler-info-circle'} />}>
+            Info
+          </Button>
+          <Button tint={'amber'} leftSection={<span className={'i-tabler-alert-triangle'} />}>
+            Warning
+          </Button>
+          <Button tint={'purple'} leftSection={<span className={'i-tabler-star'} />}>
+            Favorite
+          </Button>
+        </div>
+      </div>
+
+      <div>
+        <h3 className={'text-lg font-semibold mb-3'}>Tints with Different Sizes</h3>
+        <div className={'flex flex-wrap gap-2 items-center'}>
+          <Button tint={'red'} size={'sm'}>
+            Small
+          </Button>
+          <Button tint={'green'} size={'default'}>
+            Default
+          </Button>
+          <Button tint={'blue'} size={'lg'}>
+            Large
+          </Button>
         </div>
       </div>
     </div>
