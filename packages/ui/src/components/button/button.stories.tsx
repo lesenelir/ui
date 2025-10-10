@@ -22,6 +22,22 @@ const meta = {
       options: ['default', 'sm', 'lg', 'icon', 'icon-sm', 'icon-lg'],
       description: 'The size of the button',
     },
+    tint: {
+      control: 'select',
+      options: [
+        'default',
+        'accent',
+        'gray',
+        'red',
+        'orange',
+        'amber',
+        'green',
+        'blue',
+        'purple',
+        'pink',
+      ],
+      description: 'The color tint of the button',
+    },
     isLoading: {
       control: 'boolean',
       description: 'Shows a loading spinner and disables the button',
@@ -372,6 +388,156 @@ export const FullShowcase: Story = {
           <Button>Normal</Button>
           <Button isLoading>Loading</Button>
           <Button disabled>Disabled</Button>
+        </div>
+      </div>
+    </div>
+  ),
+}
+
+// Tint Variants
+export const SolidTints: Story = {
+  render: () => (
+    <div className={'flex flex-col gap-4'}>
+      <div className={'flex flex-wrap gap-2'}>
+        <Button tint={'default'}>Default</Button>
+        <Button tint={'accent'}>Accent</Button>
+        <Button tint={'gray'}>Gray</Button>
+        <Button tint={'red'}>Red</Button>
+        <Button tint={'orange'}>Orange</Button>
+        <Button tint={'amber'}>Amber</Button>
+        <Button tint={'green'}>Green</Button>
+        <Button tint={'blue'}>Blue</Button>
+        <Button tint={'purple'}>Purple</Button>
+        <Button tint={'pink'}>Pink</Button>
+      </div>
+    </div>
+  ),
+}
+
+export const OutlineTints: Story = {
+  render: () => (
+    <div className={'flex flex-col gap-4'}>
+      <div className={'flex flex-wrap gap-2'}>
+        <Button variant={'outline'} tint={'default'}>
+          Default
+        </Button>
+        <Button variant={'outline'} tint={'accent'}>
+          Accent
+        </Button>
+        <Button variant={'outline'} tint={'gray'}>
+          Gray
+        </Button>
+        <Button variant={'outline'} tint={'red'}>
+          Red
+        </Button>
+        <Button variant={'outline'} tint={'orange'}>
+          Orange
+        </Button>
+        <Button variant={'outline'} tint={'amber'}>
+          Amber
+        </Button>
+        <Button variant={'outline'} tint={'green'}>
+          Green
+        </Button>
+        <Button variant={'outline'} tint={'blue'}>
+          Blue
+        </Button>
+        <Button variant={'outline'} tint={'purple'}>
+          Purple
+        </Button>
+        <Button variant={'outline'} tint={'pink'}>
+          Pink
+        </Button>
+      </div>
+    </div>
+  ),
+}
+
+export const TintShowcase: Story = {
+  render: () => (
+    <div className={'flex flex-col gap-6 p-8'}>
+      <div>
+        <h3 className={'text-lg font-semibold mb-3'}>Solid Tints</h3>
+        <div className={'flex flex-wrap gap-2'}>
+          <Button tint={'default'}>Default</Button>
+          <Button tint={'accent'}>Accent</Button>
+          <Button tint={'gray'}>Gray</Button>
+          <Button tint={'red'}>Red</Button>
+          <Button tint={'orange'}>Orange</Button>
+          <Button tint={'amber'}>Amber</Button>
+          <Button tint={'green'}>Green</Button>
+          <Button tint={'blue'}>Blue</Button>
+          <Button tint={'purple'}>Purple</Button>
+          <Button tint={'pink'}>Pink</Button>
+        </div>
+      </div>
+
+      <div>
+        <h3 className={'text-lg font-semibold mb-3'}>Outline Tints</h3>
+        <div className={'flex flex-wrap gap-2'}>
+          <Button variant={'outline'} tint={'default'}>
+            Default
+          </Button>
+          <Button variant={'outline'} tint={'accent'}>
+            Accent
+          </Button>
+          <Button variant={'outline'} tint={'gray'}>
+            Gray
+          </Button>
+          <Button variant={'outline'} tint={'red'}>
+            Red
+          </Button>
+          <Button variant={'outline'} tint={'orange'}>
+            Orange
+          </Button>
+          <Button variant={'outline'} tint={'amber'}>
+            Amber
+          </Button>
+          <Button variant={'outline'} tint={'green'}>
+            Green
+          </Button>
+          <Button variant={'outline'} tint={'blue'}>
+            Blue
+          </Button>
+          <Button variant={'outline'} tint={'purple'}>
+            Purple
+          </Button>
+          <Button variant={'outline'} tint={'pink'}>
+            Pink
+          </Button>
+        </div>
+      </div>
+
+      <div>
+        <h3 className={'text-lg font-semibold mb-3'}>Tints with Icons</h3>
+        <div className={'flex flex-wrap gap-2'}>
+          <Button tint={'red'} leftSection={<span className={'i-tabler-trash'} />}>
+            Delete
+          </Button>
+          <Button tint={'green'} leftSection={<span className={'i-tabler-check'} />}>
+            Confirm
+          </Button>
+          <Button tint={'blue'} leftSection={<span className={'i-tabler-info-circle'} />}>
+            Info
+          </Button>
+          <Button tint={'amber'} leftSection={<span className={'i-tabler-alert-triangle'} />}>
+            Warning
+          </Button>
+        </div>
+      </div>
+
+      <div>
+        <h3 className={'text-lg font-semibold mb-3'}>Tints with Different Sizes</h3>
+        <div className={'flex flex-wrap gap-2 items-center'}>
+          <Button tint={'red'} size={'sm'}>
+            Small
+          </Button>
+          <Button tint={'green'} size={'default'}>
+            Default
+          </Button>
+          <Button tint={'blue'} size={'lg'}>
+            Large
+          </Button>
         </div>
       </div>
     </div>

@@ -25,10 +25,117 @@ const buttonVariants = cva(
         'icon-sm': 'size-8',
         'icon-lg': 'size-10',
       },
+      tint: {
+        default: '',
+        accent: '',
+        gray: '',
+        red: '',
+        orange: '',
+        amber: '',
+        green: '',
+        blue: '',
+        purple: '',
+        pink: '',
+      },
     },
+    compoundVariants: [
+      // Solid (default variant) + tint combinations
+      {
+        variant: 'default',
+        tint: 'accent',
+        className: 'bg-ac text-fg hover:bg-ac/90',
+      },
+      {
+        variant: 'default',
+        tint: 'gray',
+        className: 'bg-gray-600 text-white hover:bg-gray-700',
+      },
+      {
+        variant: 'default',
+        tint: 'red',
+        className: 'bg-red-600 text-white hover:bg-red-700',
+      },
+      {
+        variant: 'default',
+        tint: 'orange',
+        className: 'bg-orange-600 text-white hover:bg-orange-700',
+      },
+      {
+        variant: 'default',
+        tint: 'amber',
+        className: 'bg-amber-500 text-white hover:bg-amber-600',
+      },
+      {
+        variant: 'default',
+        tint: 'green',
+        className: 'bg-green-600 text-white hover:bg-green-700',
+      },
+      {
+        variant: 'default',
+        tint: 'blue',
+        className: 'bg-blue-600 text-white hover:bg-blue-700',
+      },
+      {
+        variant: 'default',
+        tint: 'purple',
+        className: 'bg-purple-600 text-white hover:bg-purple-700',
+      },
+      {
+        variant: 'default',
+        tint: 'pink',
+        className: 'bg-pink-600 text-white hover:bg-pink-700',
+      },
+      // Outline variant + tint combinations
+      {
+        variant: 'outline',
+        tint: 'accent',
+        className: 'border-ac text-ac hover:bg-ac/10',
+      },
+      {
+        variant: 'outline',
+        tint: 'gray',
+        className: 'border-gray-300 text-gray-700 hover:bg-gray-50',
+      },
+      {
+        variant: 'outline',
+        tint: 'red',
+        className: 'border-red-300 text-red-700 hover:bg-red-50',
+      },
+      {
+        variant: 'outline',
+        tint: 'orange',
+        className: 'border-orange-300 text-orange-700 hover:bg-orange-50',
+      },
+      {
+        variant: 'outline',
+        tint: 'amber',
+        className: 'border-amber-300 text-amber-700 hover:bg-amber-50',
+      },
+      {
+        variant: 'outline',
+        tint: 'green',
+        className: 'border-green-300 text-green-700 hover:bg-green-50',
+      },
+      {
+        variant: 'outline',
+        tint: 'blue',
+        className: 'border-blue-300 text-blue-700 hover:bg-blue-50',
+      },
+      {
+        variant: 'outline',
+        tint: 'purple',
+        className: 'border-purple-300 text-purple-700 hover:bg-purple-50',
+      },
+      {
+        variant: 'outline',
+        tint: 'pink',
+        className: 'border-pink-300 text-pink-700 hover:bg-pink-50',
+      },
+    ],
     defaultVariants: {
       variant: 'default',
       size: 'default',
+      tint: 'default',
     },
   }
 )
@@ -49,6 +156,7 @@ export function Button({
   className,
   variant = 'default',
   size = 'default',
+  tint = 'default',
   asChild = false,
   isLoading = false,
   disabled = false,
@@ -64,7 +172,7 @@ export function Button({
   return (
     <Comp
       data-slot={'button'}
-      className={cn(buttonVariants({ variant, size }), className)}
+      className={cn(buttonVariants({ variant, size, tint }), className)}
       disabled={disabled || isLoading}
       aria-busy={isLoading}
       aria-disabled={disabled || isLoading}
