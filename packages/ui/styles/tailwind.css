@@ -125,6 +125,10 @@
   @apply focus-visible:border-ac focus-visible:outline-none;
 }
 
+@utility focus-outline {
+  @apply focus-visible:border-none focus-visible:outline-2 focus-visible:outline-solid focus-visible:outline-offset-0 focus-visible:outline-ac;
+}
+
 /* Custom Theme Variables */
 /* https://tailwindcss.com/docs/theme */
 @theme {
