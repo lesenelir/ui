@@ -118,11 +118,11 @@
 }
 
 @utility focus-ring {
-  @apply focus-visible:border-ac focus-visible:ring-ac/30 focus-visible:outline-none focus-visible:ring-2;
+  @apply focus-visible:outline-none focus-visible:border-ac focus-visible:ring-ac/30 focus-visible:ring-2;
 }
 
 @utility focus-border {
-  @apply focus-visible:border-ac focus-visible:outline-none;
+  @apply focus-visible:outline-none focus-visible:border-ac;
 }
 
 @utility focus-outline {
