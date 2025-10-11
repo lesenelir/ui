@@ -7,7 +7,7 @@ import { Slot, Slottable } from '@radix-ui/react-slot'
 import { cva, type VariantProps } from 'class-variance-authority'
 
 const buttonVariants = cva(
-  'appearance-none whitespace-nowrap inline-flex items-center justify-center gap-2 cursor-pointer rounded-md font-medium text-sm transition-all focus-ring disabled:pointer-events-none disabled:opacity-50 outline-none shrink-0 [&_span]:shrink-0 active:scale-95',
+  'appearance-none whitespace-nowrap inline-flex items-center justify-center gap-2 cursor-pointer rounded-md font-medium text-sm transition-all focus-visible-ring disabled:pointer-events-none disabled:opacity-50 outline-none shrink-0 [&_span]:shrink-0 active:scale-95',
   {
     variants: {
       variant: {

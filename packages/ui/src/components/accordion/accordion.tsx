@@ -104,7 +104,7 @@ export function AccordionTrigger({
         className={cn(
           'flex flex-1 items-start justify-between gap-4 rounded-md text-left text-sm font-medium transition-all outline-none',
           'disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>span]:rotate-180',
-          'focus-ring',
+          // 'focus-visible-ring',
           accordionTriggerVariants({ variant: variantValue }),
           className
         )}

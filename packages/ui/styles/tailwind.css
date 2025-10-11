@@ -117,16 +117,22 @@
   }
 }
 
-@utility focus-ring {
+/* focus-visible: applies to an element when it is focused */
+@utility focus-visible-ring {
   @apply focus-visible:outline-none focus-visible:border-ac focus-visible:ring-ac/30 focus-visible:ring-2;
 }
 
-@utility focus-border {
-  @apply focus-visible:outline-none focus-visible:border-ac;
+@utility focus-visible-outline {
+  @apply focus-visible:border-none focus-visible:outline-2 focus-visible:outline-solid focus-visible:outline-offset-0 focus-visible:outline-ac;
 }
 
-@utility focus-outline {
-  @apply focus-visible:border-none focus-visible:outline-2 focus-visible:outline-solid focus-visible:outline-offset-0 focus-visible:outline-ac;
+/* focus-within: applies to a container when any child element is focused */
+@utility focus-within-ring {
+  @apply focus-within:outline-none focus-within:border-ac focus-within:ring-ac/30 focus-within:ring-2;
+}
+
+@utility focus-within-outline {
+  @apply focus-within:border-none focus-within:outline-2 focus-within:outline-solid focus-within:outline-offset-0 focus-within:outline-ac;
 }
 
 /* Custom Theme Variables */
