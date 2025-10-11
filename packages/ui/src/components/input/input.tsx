@@ -13,7 +13,7 @@ const containerVariants = cva([
 
 // Input styles - handles text, placeholder, file input
 const inputVariants = cva([
-  'flex-1 px-2 py-1 min-w-0 appearance-none outline-hidden bg-transparent md:text-sm',
+  'flex-1 px-2 py-1 min-w-0 appearance-none outline-none bg-transparent md:text-sm',
   'file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-fg-rev file:mr-2',
   'placeholder:text-fg-rev/50',
   'disabled:pointer-events-none disabled:cursor-not-allowed',
