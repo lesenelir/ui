@@ -146,8 +146,7 @@ export const Password: Story = {
   },
 }
 
-// biome-ignore lint/suspicious/noShadowRestrictedNames: <explanation>
-export const Number: Story = {
+export const NumberInput: Story = {
   args: {
     type: 'number',
     placeholder: '0',
@@ -186,8 +185,7 @@ export const File: Story = {
   },
 }
 
-// biome-ignore lint/suspicious/noShadowRestrictedNames: <explanation>
-export const Date: Story = {
+export const DateInput: Story = {
   args: {
     type: 'date',
     leftSection: <span className={'i-tabler-calendar'} />,
