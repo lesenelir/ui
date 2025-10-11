@@ -118,7 +118,11 @@
 }
 
 @utility focus-ring {
-  @apply focus-visible:border-ac focus-visible:ring-ac/30 focus:outline-none focus-visible:ring-2;
+  @apply focus-visible:border-ac focus-visible:ring-ac/30 focus-visible:outline-none focus-visible:ring-2;
+}
+
+@utility focus-border {
+  @apply focus-visible:border-ac focus-visible:outline-none;
 }
 
 /* Custom Theme Variables */
