@@ -1,3 +1,6 @@
+import { useState } from 'react'
+
+import { Button } from '@lesenelir/ui/button'
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { Input } from './input'
@@ -76,10 +79,27 @@ export const WithLeftIcon: Story = {
 }
 
 export const WithRightIcon: Story = {
-  args: {
-    type: 'password',
-    placeholder: 'Enter password',
-    rightSection: <span className={'i-tabler-eye'} />,
+  render: () => {
+    const [showPassword, setShowPassword] = useState<boolean>(false)
+
+    return (
+      <Input
+        type={showPassword ? 'text' : 'password'}
+        placeholder={'Enter password'}
+        rightSection={
+          <Button
+            type={'button'}
+            variant={'outline'}
+            size={'icon-sm'}
+            onClick={() => setShowPassword(!showPassword)}
+            className={'size-auto min-w-0 min-h-0 border-none hover:bg-transparent'}
+            aria-label={showPassword ? 'Hide password' : 'Show password'}
+          >
+            <span className={showPassword ? 'i-tabler-eye-off' : 'i-tabler-eye'} />
+          </Button>
+        }
+      />
+    )
   },
 }
 
