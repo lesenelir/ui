@@ -34,6 +34,7 @@ export function Input({
   leftSection,
   rightSectionClassName,
   rightSection,
+  ref,
   ...props
 }: InputProps) {
   return (
@@ -44,7 +45,7 @@ export function Input({
         </div>
       )}
 
-      <input data-slot={'input'} type={type} className={inputVariants()} {...props} />
+      <input ref={ref} data-slot={'input'} type={type} className={inputVariants()} {...props} />
 
       {rightSection && (
         <div className={cn('flex items-center justify-center pr-2', rightSectionClassName)}>
