@@ -121,6 +121,10 @@
   @apply focus-visible:border-ac focus-visible:ring-ac/30 focus:outline-none focus-visible:ring-2;
 }
 
+@utility focus-border {
+  @apply focus-visible:border-ac focus:outline-none;
+}
+
 /* Custom Theme Variables */
 /* https://tailwindcss.com/docs/theme */
 @theme {
