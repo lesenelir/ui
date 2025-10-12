@@ -547,7 +547,7 @@ export const PaymentForm: Story = {
           leftSection={<span className={'i-tabler-credit-card'} />}
         />
       </div>
-      <div className={'grid grid-cols-2 gap-4'}>
+      <div className={'grid grid-cols-1 sm:grid-cols-2 gap-4'}>
         <div className={'flex flex-col gap-2'}>
           <label htmlFor={'expiry'} className={'text-sm font-medium'}>
             Expiry
