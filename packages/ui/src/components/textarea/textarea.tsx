@@ -4,7 +4,7 @@ import { cn } from '@lesenelir/ui/lib/utils'
 import { cva, type VariantProps } from 'class-variance-authority'
 
 const textareaVariants = cva([
-  'border min-h-16 w-full rounded-md bg-transparent px-3 py-2 text-base shadow-xs transition-[color,box-shadow] outline-none',
+  'border min-h-16 w-full rounded-md bg-transparent px-3 py-2 text-base shadow-xs transition-[color,box-shadow]',
   'flex field-sizing-content',
   'outline-none focus-visible-ring',
   'placeholder:text-fg-rev/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50',
