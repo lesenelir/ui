@@ -62,6 +62,14 @@ export const Default: Story = {
   },
 }
 
+export const WithOutlineStyle: Story = {
+  args: {
+    type: 'text',
+    placeholder: 'Enter text...',
+    className: 'focus-within-outline focus-within:ring-0',
+  },
+}
+
 export const WithDefaultValue: Story = {
   args: {
     type: 'text',
