@@ -19,7 +19,9 @@ export function Alert({ className, ...props }: AlertProps) {
 }
 
 export function AlertIcon({ className, ...props }: AlertIconProps) {
-  return <div data-slot={'alert-icon'} className={cn('shrink-0', className)} {...props} />
+  return (
+    <div data-slot={'alert-icon'} className={cn('shrink-0 self-start', className)} {...props} />
+  )
 }
 
 export function AlertContent({ className, ...props }: AlertContentProps) {
@@ -46,7 +48,7 @@ export function AlertDescription({ className, ...props }: AlertDescriptionProps)
   return (
     <div
       data-slot={'alert-description'}
-      className={cn('[&_p]:leading-relaxed mt-1 text-fg-rev/60', className)}
+      className={cn('[&_p]:leading-relaxed text-fg-rev/60', className)}
       {...props}
     />
   )
