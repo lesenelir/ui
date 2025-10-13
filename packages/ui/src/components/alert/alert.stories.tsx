@@ -148,7 +148,7 @@ export const CustomStyling: Story = {
         <span className={'i-tabler-star size-5'} />
       </AlertIcon>
       <AlertContent>
-        <AlertTitle className='text-purple-900 text-lg'>Custom Styled Alert</AlertTitle>
+        <AlertTitle className='text-purple-900 text-lg -mt-1'>Custom Styled Alert</AlertTitle>
         <AlertDescription className='text-purple-700'>
           This alert demonstrates custom styling with gradient background and custom colors.
         </AlertDescription>
