@@ -5,9 +5,9 @@ import type React from 'react'
 import { cn } from '@lesenelir/ui/lib/utils'
 import * as AvatarPrimitive from '@radix-ui/react-avatar'
 
-export type AvatarProps = React.ComponentProps<typeof AvatarPrimitive.Root>
-export type AvatarImageProps = React.ComponentProps<typeof AvatarPrimitive.Image>
-export type AvatarFallbackProps = React.ComponentProps<typeof AvatarPrimitive.Fallback>
+export type AvatarProps = React.ComponentPropsWithRef<typeof AvatarPrimitive.Root>
+export type AvatarImageProps = React.ComponentPropsWithRef<typeof AvatarPrimitive.Image>
+export type AvatarFallbackProps = React.ComponentPropsWithRef<typeof AvatarPrimitive.Fallback>
 
 export function Avatar({ className, ref, ...props }: AvatarProps) {
   return (
