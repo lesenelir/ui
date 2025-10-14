@@ -44,103 +44,95 @@ const switchVariants = cva(
     compoundVariants: [
       {
         tint: 'accent',
-        className: 'data-[state=checked]:bg-ac dark:data-[state=unchecked]:bg-ac/20',
+        className: 'data-[state=checked]:bg-ac',
       },
       {
         tint: 'red',
-        className: 'data-[state=checked]:bg-red-600 dark:data-[state=unchecked]:bg-red-600/20',
+        className: 'data-[state=checked]:bg-red-600',
       },
       {
         tint: 'orange',
-        className:
-          'data-[state=checked]:bg-orange-600 dark:data-[state=unchecked]:bg-orange-600/20',
+        className: 'data-[state=checked]:bg-orange-600',
       },
       {
         tint: 'amber',
-        className: 'data-[state=checked]:bg-amber-600 dark:data-[state=unchecked]:bg-amber-600/20',
+        className: 'data-[state=checked]:bg-amber-600',
       },
       {
         tint: 'yellow',
-        className:
-          'data-[state=checked]:bg-yellow-600 dark:data-[state=unchecked]:bg-yellow-600/20',
+        className: 'data-[state=checked]:bg-yellow-600',
       },
       {
         tint: 'lime',
-        className: 'data-[state=checked]:bg-lime-600 dark:data-[state=unchecked]:bg-lime-600/20',
+        className: 'data-[state=checked]:bg-lime-600',
       },
       {
         tint: 'green',
-        className: 'data-[state=checked]:bg-green-600 dark:data-[state=unchecked]:bg-green-600/20',
+        className: 'data-[state=checked]:bg-green-600',
       },
       {
         tint: 'emerald',
-        className:
-          'data-[state=checked]:bg-emerald-600 dark:data-[state=unchecked]:bg-emerald-600/20',
+        className: 'data-[state=checked]:bg-emerald-600',
       },
       {
         tint: 'teal',
-        className: 'data-[state=checked]:bg-teal-600 dark:data-[state=unchecked]:bg-teal-600/20',
+        className: 'data-[state=checked]:bg-teal-600',
       },
       {
         tint: 'cyan',
-        className: 'data-[state=checked]:bg-cyan-600 dark:data-[state=unchecked]:bg-cyan-600/20',
+        className: 'data-[state=checked]:bg-cyan-600',
       },
       {
         tint: 'sky',
-        className: 'data-[state=checked]:bg-sky-600 dark:data-[state=unchecked]:bg-sky-600/20',
+        className: 'data-[state=checked]:bg-sky-600',
       },
       {
         tint: 'blue',
-        className: 'data-[state=checked]:bg-blue-600 dark:data-[state=unchecked]:bg-blue-600/20',
+        className: 'data-[state=checked]:bg-blue-600',
       },
       {
         tint: 'indigo',
-        className:
-          'data-[state=checked]:bg-indigo-600 dark:data-[state=unchecked]:bg-indigo-600/20',
+        className: 'data-[state=checked]:bg-indigo-600',
       },
       {
         tint: 'violet',
-        className:
-          'data-[state=checked]:bg-violet-600 dark:data-[state=unchecked]:bg-violet-600/20',
+        className: 'data-[state=checked]:bg-violet-600',
       },
       {
         tint: 'purple',
-        className:
-          'data-[state=checked]:bg-purple-600 dark:data-[state=unchecked]:bg-purple-600/40',
+        className: 'data-[state=checked]:bg-purple-600',
       },
       {
         tint: 'fuchsia',
-        className:
-          'data-[state=checked]:bg-fuchsia-600 dark:data-[state=unchecked]:bg-fuchsia-600/20',
+        className: 'data-[state=checked]:bg-fuchsia-600',
       },
       {
         tint: 'pink',
-        className: 'data-[state=checked]:bg-pink-600 dark:data-[state=unchecked]:bg-pink-600/20',
+        className: 'data-[state=checked]:bg-pink-600',
       },
       {
         tint: 'rose',
-        className: 'data-[state=checked]:bg-rose-600 dark:data-[state=unchecked]:bg-rose-600/20',
+        className: 'data-[state=checked]:bg-rose-600',
       },
       {
         tint: 'slate',
-        className: 'data-[state=checked]:bg-slate-600 dark:data-[state=unchecked]:bg-slate-600/20',
+        className: 'data-[state=checked]:bg-slate-600',
       },
       {
         tint: 'gray',
-        className: 'data-[state=checked]:bg-gray-600 dark:data-[state=unchecked]:bg-gray-600/20',
+        className: 'data-[state=checked]:bg-gray-600',
       },
       {
         tint: 'zinc',
-        className: 'data-[state=checked]:bg-zinc-600 dark:data-[state=unchecked]:bg-zinc-600/20',
+        className: 'data-[state=checked]:bg-zinc-600',
       },
       {
         tint: 'neutral',
-        className:
-          'data-[state=checked]:bg-neutral-600 dark:data-[state=unchecked]:bg-neutral-600/20',
+        className: 'data-[state=checked]:bg-neutral-600',
       },
       {
         tint: 'stone',
-        className: 'data-[state=checked]:bg-stone-600 dark:data-[state=unchecked]:bg-stone-600/20',
+        className: 'data-[state=checked]:bg-stone-600',
       },
     ],
     defaultVariants: {
