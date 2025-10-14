@@ -15,7 +15,6 @@ const switchVariants = cva(
   {
     variants: {
       tint: {
-        default: '',
         accent: '',
         red: '',
         orange: '',
