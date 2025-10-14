@@ -156,7 +156,7 @@ export function Switch({ className, tint = 'accent', ref, ...props }: SwitchProp
         data-slot={'switch-thumb'}
         className={cn(
           'bg-bg block size-4 rounded-full pointer-events-none ring-0 transition-transform',
-          'transition-transform data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0'
+          'data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0'
         )}
       />
     </SwitchPrimitive.Root>
