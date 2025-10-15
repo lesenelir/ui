@@ -51,6 +51,14 @@
     --border-o: 100%;
 
     --lch-l-offset: 0%;
+
+    /* loader color */
+    --lz-loader-50: 97.02% 0 0;
+    --lz-loader-100: 97.31% 0 0;
+    --lz-loader-200: 97.34% 0.0013 286.38;
+    --lz-loader-300: 97.91% 0 0;
+    --lz-loader-400: 98.51% 0 0;
+    --lz-loader-500: 99.11% 0 0;
   }
 
   :root.dark,
@@ -91,6 +99,14 @@
     --border-o: 10%;
 
     --lch-l-offset: 20%;
+
+    /* loader color */
+    --lz-loader-50: 28.99% 0.0036 286.17;
+    --lz-loader-100: 31.79% 0.0035 286.2;
+    --lz-loader-200: 34.14% 0.0034 286.22;
+    --lz-loader-300: 36.84% 0.0034 286.23;
+    --lz-loader-400: 39.49% 0.0033 286.25;
+    --lz-loader-500: 42.09% 0.0033 286.26;
   }
 }
 

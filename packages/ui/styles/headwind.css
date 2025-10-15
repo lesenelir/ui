@@ -19,6 +19,12 @@
   --color-black: oklch(calc(0% + var(--lch-l-offset)) 0 0);
   --color-white: oklch(calc(100% + var(--lch-l-offset)) 0 0);
   --color-border: oklch(var(--border-l) var(--border-c) var(--border-h) / var(--border-o));
+  --color-loading-50: oklch(var(--lz-loader-50));
+  --color-loading-100: oklch(var(--lz-loader-100));
+  --color-loading-200: oklch(var(--lz-loader-200));
+  --color-loading-300: oklch(var(--lz-loader-300));
+  --color-loading-400: oklch(var(--lz-loader-400));
+  --color-loading-500: oklch(var(--lz-loader-500));
 
   /* Refine tailwind colors */
   --color-red-50: color-mix(in oklch, oklch(0.971 0.013 17.38) var(--mix-factor), var(--mix-base));
