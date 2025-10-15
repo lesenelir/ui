@@ -139,6 +139,7 @@
 /* https://tailwindcss.com/docs/theme */
 @theme {
   --animate-bounce-dot: bounceDot 1.4s ease-in-out infinite;
+  --animate-progress-indeterminate: progressIndeterminate 1.5s ease-in-out infinite;
 
   @keyframes bounceDot {
     0%,
@@ -150,6 +151,18 @@
     40% {
       transform: scale(1.1);
       opacity: 1;
+    }
+  }
+
+  @keyframes progressIndeterminate {
+    0% {
+      transform: translateX(-100%);
+    }
+    50% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(100%);
     }
   }
 }
