@@ -27,6 +27,11 @@ Our color system is built on the OKLCH color space, providing:
 - [MDN: OKLCH Color Values](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch)
 - [MDN: Color Mix](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix)
 
+## Key Differences from shadcn/ui
+
+- **Distinct variant and tint properties:** We separate structural changes (variant) from color styling (tint) for better clarity, improving upon shadcn/ui's combined approach.
+
+
 ## References & Inspiration
 
 Components inspiration by:
