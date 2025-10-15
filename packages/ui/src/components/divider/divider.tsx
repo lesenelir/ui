@@ -5,11 +5,11 @@ import type React from 'react'
 import { cn } from '@lesenelir/ui/lib/utils'
 import { cva, type VariantProps } from 'class-variance-authority'
 
-const dividerVariants = cva('', {
+const dividerVariants = cva('border-0 bg-border shrink-0', {
   variants: {
     orientation: {
-      horizontal: '',
-      vertical: '',
+      horizontal: 'w-full h-px',
+      vertical: 'h-full w-px inline-block',
     },
   },
   defaultVariants: {
@@ -17,8 +17,14 @@ const dividerVariants = cva('', {
   },
 })
 
-export type DividerProps = React.ComponentPropsWithRef<'hr'> & VariantProps<typeof dividerVariants>
+export type DividerProps = React.ComponentPropsWithRef<'div'> & VariantProps<typeof dividerVariants>
 
-export function Divider({ className, orientation, ...props }: DividerProps) {
-  return <hr className={cn(dividerVariants({ orientation }), className)} {...props} />
+export function Divider({ className, orientation = 'horizontal', ...props }: DividerProps) {
+  return (
+    <div
+      data-slot={'divider'}
+      className={cn(dividerVariants({ orientation }), className)}
+      {...props}
+    />
+  )
 }
