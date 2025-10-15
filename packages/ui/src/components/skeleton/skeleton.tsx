@@ -11,7 +11,7 @@ export function Skeleton({ className, ...props }: SkeletonProps) {
     <div
       data-slot={'skeleton'}
       className={cn(
-        'bg-fg-rev/5 relative h-4 w-full animate-pulse rounded-md leading-[inherit]',
+        'bg-loading-200 relative h-4 w-full animate-pulse rounded-md leading-[inherit]',
         className
       )}
       {...props}
