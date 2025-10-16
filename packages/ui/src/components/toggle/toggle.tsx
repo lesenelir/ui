@@ -6,7 +6,7 @@ import { cn } from '@lesenelir/ui/lib/utils'
 import * as TogglePrimitive from '@radix-ui/react-toggle'
 import { cva, type VariantProps } from 'class-variance-authority'
 
-const toggleVariants = cva(
+export const toggleVariants = cva(
   [
     'inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium outline-none transition-[color,box-shadow] whitespace-nowrap',
     'focus-visible-ring',
