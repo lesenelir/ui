@@ -208,73 +208,73 @@ export const WithText: Story = {
 export const DefaultTints: Story = {
   render: () => (
     <div className={'flex flex-wrap gap-2'}>
-      <Toggle variant={'default'} tint={'accent'}>
+      <Toggle variant={'default'} tint={'accent'} defaultPressed={true}>
         <span className={'i-tabler-star'} />
       </Toggle>
-      <Toggle variant={'default'} tint={'red'}>
+      <Toggle variant={'default'} tint={'red'} defaultPressed={true}>
         <span className={'i-tabler-star'} />
       </Toggle>
-      <Toggle variant={'default'} tint={'orange'}>
+      <Toggle variant={'default'} tint={'orange'} defaultPressed={true}>
         <span className={'i-tabler-star'} />
       </Toggle>
-      <Toggle variant={'default'} tint={'amber'}>
+      <Toggle variant={'default'} tint={'amber'} defaultPressed={true}>
         <span className={'i-tabler-star'} />
       </Toggle>
-      <Toggle variant={'default'} tint={'yellow'}>
+      <Toggle variant={'default'} tint={'yellow'} defaultPressed={true}>
         <span className={'i-tabler-star'} />
       </Toggle>
-      <Toggle variant={'default'} tint={'lime'}>
+      <Toggle variant={'default'} tint={'lime'} defaultPressed={true}>
         <span className={'i-tabler-star'} />
       </Toggle>
-      <Toggle variant={'default'} tint={'green'}>
+      <Toggle variant={'default'} tint={'green'} defaultPressed={true}>
         <span className={'i-tabler-star'} />
       </Toggle>
-      <Toggle variant={'default'} tint={'emerald'}>
+      <Toggle variant={'default'} tint={'emerald'} defaultPressed={true}>
         <span className={'i-tabler-star'} />
       </Toggle>
-      <Toggle variant={'default'} tint={'teal'}>
+      <Toggle variant={'default'} tint={'teal'} defaultPressed={true}>
         <span className={'i-tabler-star'} />
       </Toggle>
-      <Toggle variant={'default'} tint={'cyan'}>
+      <Toggle variant={'default'} tint={'cyan'} defaultPressed={true}>
         <span className={'i-tabler-star'} />
       </Toggle>
-      <Toggle variant={'default'} tint={'sky'}>
+      <Toggle variant={'default'} tint={'sky'} defaultPressed={true}>
         <span className={'i-tabler-star'} />
       </Toggle>
-      <Toggle variant={'default'} tint={'blue'}>
+      <Toggle variant={'default'} tint={'blue'} defaultPressed={true}>
         <span className={'i-tabler-star'} />
       </Toggle>
-      <Toggle variant={'default'} tint={'indigo'}>
+      <Toggle variant={'default'} tint={'indigo'} defaultPressed={true}>
         <span className={'i-tabler-star'} />
       </Toggle>
-      <Toggle variant={'default'} tint={'violet'}>
+      <Toggle variant={'default'} tint={'violet'} defaultPressed={true}>
         <span className={'i-tabler-star'} />
       </Toggle>
-      <Toggle variant={'default'} tint={'purple'}>
+      <Toggle variant={'default'} tint={'purple'} defaultPressed={true}>
         <span className={'i-tabler-star'} />
       </Toggle>
-      <Toggle variant={'default'} tint={'fuchsia'}>
+      <Toggle variant={'default'} tint={'fuchsia'} defaultPressed={true}>
         <span className={'i-tabler-star'} />
       </Toggle>
-      <Toggle variant={'default'} tint={'pink'}>
+      <Toggle variant={'default'} tint={'pink'} defaultPressed={true}>
         <span className={'i-tabler-star'} />
       </Toggle>
-      <Toggle variant={'default'} tint={'rose'}>
+      <Toggle variant={'default'} tint={'rose'} defaultPressed={true}>
         <span className={'i-tabler-star'} />
       </Toggle>
-      <Toggle variant={'default'} tint={'slate'}>
+      <Toggle variant={'default'} tint={'slate'} defaultPressed={true}>
         <span className={'i-tabler-star'} />
       </Toggle>
-      <Toggle variant={'default'} tint={'gray'}>
+      <Toggle variant={'default'} tint={'gray'} defaultPressed={true}>
         <span className={'i-tabler-star'} />
       </Toggle>
-      <Toggle variant={'default'} tint={'zinc'}>
+      <Toggle variant={'default'} tint={'zinc'} defaultPressed={true}>
         <span className={'i-tabler-star'} />
       </Toggle>
-      <Toggle variant={'default'} tint={'neutral'}>
+      <Toggle variant={'default'} tint={'neutral'} defaultPressed={true}>
         <span className={'i-tabler-star'} />
       </Toggle>
-      <Toggle variant={'default'} tint={'stone'}>
+      <Toggle variant={'default'} tint={'stone'} defaultPressed={true}>
         <span className={'i-tabler-star'} />
       </Toggle>
     </div>
@@ -285,73 +285,73 @@ export const DefaultTints: Story = {
 export const OutlineTints: Story = {
   render: () => (
     <div className={'flex flex-wrap gap-2'}>
-      <Toggle variant={'outline'} tint={'accent'}>
+      <Toggle variant={'outline'} tint={'accent'} defaultPressed={true}>
         <span className={'i-tabler-heart'} />
       </Toggle>
-      <Toggle variant={'outline'} tint={'red'}>
+      <Toggle variant={'outline'} tint={'red'} defaultPressed={true}>
         <span className={'i-tabler-heart'} />
       </Toggle>
-      <Toggle variant={'outline'} tint={'orange'}>
+      <Toggle variant={'outline'} tint={'orange'} defaultPressed={true}>
         <span className={'i-tabler-heart'} />
       </Toggle>
-      <Toggle variant={'outline'} tint={'amber'}>
+      <Toggle variant={'outline'} tint={'amber'} defaultPressed={true}>
         <span className={'i-tabler-heart'} />
       </Toggle>
-      <Toggle variant={'outline'} tint={'yellow'}>
+      <Toggle variant={'outline'} tint={'yellow'} defaultPressed={true}>
         <span className={'i-tabler-heart'} />
       </Toggle>
-      <Toggle variant={'outline'} tint={'lime'}>
+      <Toggle variant={'outline'} tint={'lime'} defaultPressed={true}>
         <span className={'i-tabler-heart'} />
       </Toggle>
-      <Toggle variant={'outline'} tint={'green'}>
+      <Toggle variant={'outline'} tint={'green'} defaultPressed={true}>
         <span className={'i-tabler-heart'} />
       </Toggle>
-      <Toggle variant={'outline'} tint={'emerald'}>
+      <Toggle variant={'outline'} tint={'emerald'} defaultPressed={true}>
         <span className={'i-tabler-heart'} />
       </Toggle>
-      <Toggle variant={'outline'} tint={'teal'}>
+      <Toggle variant={'outline'} tint={'teal'} defaultPressed={true}>
         <span className={'i-tabler-heart'} />
       </Toggle>
-      <Toggle variant={'outline'} tint={'cyan'}>
+      <Toggle variant={'outline'} tint={'cyan'} defaultPressed={true}>
         <span className={'i-tabler-heart'} />
       </Toggle>
-      <Toggle variant={'outline'} tint={'sky'}>
+      <Toggle variant={'outline'} tint={'sky'} defaultPressed={true}>
         <span className={'i-tabler-heart'} />
       </Toggle>
-      <Toggle variant={'outline'} tint={'blue'}>
+      <Toggle variant={'outline'} tint={'blue'} defaultPressed={true}>
         <span className={'i-tabler-heart'} />
       </Toggle>
-      <Toggle variant={'outline'} tint={'indigo'}>
+      <Toggle variant={'outline'} tint={'indigo'} defaultPressed={true}>
         <span className={'i-tabler-heart'} />
       </Toggle>
-      <Toggle variant={'outline'} tint={'violet'}>
+      <Toggle variant={'outline'} tint={'violet'} defaultPressed={true}>
         <span className={'i-tabler-heart'} />
       </Toggle>
-      <Toggle variant={'outline'} tint={'purple'}>
+      <Toggle variant={'outline'} tint={'purple'} defaultPressed={true}>
         <span className={'i-tabler-heart'} />
       </Toggle>
-      <Toggle variant={'outline'} tint={'fuchsia'}>
+      <Toggle variant={'outline'} tint={'fuchsia'} defaultPressed={true}>
         <span className={'i-tabler-heart'} />
       </Toggle>
-      <Toggle variant={'outline'} tint={'pink'}>
+      <Toggle variant={'outline'} tint={'pink'} defaultPressed={true}>
         <span className={'i-tabler-heart'} />
       </Toggle>
-      <Toggle variant={'outline'} tint={'rose'}>
+      <Toggle variant={'outline'} tint={'rose'} defaultPressed={true}>
         <span className={'i-tabler-heart'} />
       </Toggle>
-      <Toggle variant={'outline'} tint={'slate'}>
+      <Toggle variant={'outline'} tint={'slate'} defaultPressed={true}>
         <span className={'i-tabler-heart'} />
       </Toggle>
-      <Toggle variant={'outline'} tint={'gray'}>
+      <Toggle variant={'outline'} tint={'gray'} defaultPressed={true}>
         <span className={'i-tabler-heart'} />
       </Toggle>
-      <Toggle variant={'outline'} tint={'zinc'}>
+      <Toggle variant={'outline'} tint={'zinc'} defaultPressed={true}>
         <span className={'i-tabler-heart'} />
       </Toggle>
-      <Toggle variant={'outline'} tint={'neutral'}>
+      <Toggle variant={'outline'} tint={'neutral'} defaultPressed={true}>
         <span className={'i-tabler-heart'} />
       </Toggle>
-      <Toggle variant={'outline'} tint={'stone'}>
+      <Toggle variant={'outline'} tint={'stone'} defaultPressed={true}>
         <span className={'i-tabler-heart'} />
       </Toggle>
     </div>
@@ -365,16 +365,16 @@ export const TintShowcase: Story = {
       <div>
         <h3 className={'text-lg font-semibold mb-3'}>Default - Warm Colors</h3>
         <div className={'flex flex-wrap gap-2'}>
-          <Toggle variant={'default'} tint={'red'}>
+          <Toggle variant={'default'} tint={'red'} defaultPressed={true}>
             <span className={'i-tabler-flame'} />
           </Toggle>
-          <Toggle variant={'default'} tint={'orange'}>
+          <Toggle variant={'default'} tint={'orange'} defaultPressed={true}>
             <span className={'i-tabler-flame'} />
           </Toggle>
-          <Toggle variant={'default'} tint={'amber'}>
+          <Toggle variant={'default'} tint={'amber'} defaultPressed={true}>
             <span className={'i-tabler-flame'} />
           </Toggle>
-          <Toggle variant={'default'} tint={'yellow'}>
+          <Toggle variant={'default'} tint={'yellow'} defaultPressed={true}>
             <span className={'i-tabler-flame'} />
           </Toggle>
         </div>
@@ -383,16 +383,16 @@ export const TintShowcase: Story = {
       <div>
         <h3 className={'text-lg font-semibold mb-3'}>Default - Green Colors</h3>
         <div className={'flex flex-wrap gap-2'}>
-          <Toggle variant={'default'} tint={'lime'}>
+          <Toggle variant={'default'} tint={'lime'} defaultPressed={true}>
             <span className={'i-tabler-leaf'} />
           </Toggle>
-          <Toggle variant={'default'} tint={'green'}>
+          <Toggle variant={'default'} tint={'green'} defaultPressed={true}>
             <span className={'i-tabler-leaf'} />
           </Toggle>
-          <Toggle variant={'default'} tint={'emerald'}>
+          <Toggle variant={'default'} tint={'emerald'} defaultPressed={true}>
             <span className={'i-tabler-leaf'} />
           </Toggle>
-          <Toggle variant={'default'} tint={'teal'}>
+          <Toggle variant={'default'} tint={'teal'} defaultPressed={true}>
             <span className={'i-tabler-leaf'} />
           </Toggle>
         </div>
@@ -401,16 +401,16 @@ export const TintShowcase: Story = {
       <div>
         <h3 className={'text-lg font-semibold mb-3'}>Default - Blue Colors</h3>
         <div className={'flex flex-wrap gap-2'}>
-          <Toggle variant={'default'} tint={'cyan'}>
+          <Toggle variant={'default'} tint={'cyan'} defaultPressed={true}>
             <span className={'i-tabler-droplet'} />
           </Toggle>
-          <Toggle variant={'default'} tint={'sky'}>
+          <Toggle variant={'default'} tint={'sky'} defaultPressed={true}>
             <span className={'i-tabler-droplet'} />
           </Toggle>
-          <Toggle variant={'default'} tint={'blue'}>
+          <Toggle variant={'default'} tint={'blue'} defaultPressed={true}>
             <span className={'i-tabler-droplet'} />
           </Toggle>
-          <Toggle variant={'default'} tint={'indigo'}>
+          <Toggle variant={'default'} tint={'indigo'} defaultPressed={true}>
             <span className={'i-tabler-droplet'} />
           </Toggle>
         </div>
@@ -419,19 +419,19 @@ export const TintShowcase: Story = {
       <div>
         <h3 className={'text-lg font-semibold mb-3'}>Default - Purple & Pink Colors</h3>
         <div className={'flex flex-wrap gap-2'}>
-          <Toggle variant={'default'} tint={'violet'}>
+          <Toggle variant={'default'} tint={'violet'} defaultPressed={true}>
             <span className={'i-tabler-sparkles'} />
           </Toggle>
-          <Toggle variant={'default'} tint={'purple'}>
+          <Toggle variant={'default'} tint={'purple'} defaultPressed={true}>
             <span className={'i-tabler-sparkles'} />
           </Toggle>
-          <Toggle variant={'default'} tint={'fuchsia'}>
+          <Toggle variant={'default'} tint={'fuchsia'} defaultPressed={true}>
             <span className={'i-tabler-sparkles'} />
           </Toggle>
-          <Toggle variant={'default'} tint={'pink'}>
+          <Toggle variant={'default'} tint={'pink'} defaultPressed={true}>
             <span className={'i-tabler-sparkles'} />
           </Toggle>
-          <Toggle variant={'default'} tint={'rose'}>
+          <Toggle variant={'default'} tint={'rose'} defaultPressed={true}>
             <span className={'i-tabler-sparkles'} />
           </Toggle>
         </div>
@@ -440,19 +440,19 @@ export const TintShowcase: Story = {
       <div>
         <h3 className={'text-lg font-semibold mb-3'}>Default - Neutral Colors</h3>
         <div className={'flex flex-wrap gap-2'}>
-          <Toggle variant={'default'} tint={'slate'}>
+          <Toggle variant={'default'} tint={'slate'} defaultPressed={true}>
             <span className={'i-tabler-circle'} />
           </Toggle>
-          <Toggle variant={'default'} tint={'gray'}>
+          <Toggle variant={'default'} tint={'gray'} defaultPressed={true}>
             <span className={'i-tabler-circle'} />
           </Toggle>
-          <Toggle variant={'default'} tint={'zinc'}>
+          <Toggle variant={'default'} tint={'zinc'} defaultPressed={true}>
             <span className={'i-tabler-circle'} />
           </Toggle>
-          <Toggle variant={'default'} tint={'neutral'}>
+          <Toggle variant={'default'} tint={'neutral'} defaultPressed={true}>
             <span className={'i-tabler-circle'} />
           </Toggle>
-          <Toggle variant={'default'} tint={'stone'}>
+          <Toggle variant={'default'} tint={'stone'} defaultPressed={true}>
             <span className={'i-tabler-circle'} />
           </Toggle>
         </div>
@@ -461,22 +461,22 @@ export const TintShowcase: Story = {
       <div>
         <h3 className={'text-lg font-semibold mb-3'}>Outline Variants</h3>
         <div className={'flex flex-wrap gap-2'}>
-          <Toggle variant={'outline'} tint={'red'}>
+          <Toggle variant={'outline'} tint={'red'} defaultPressed={true}>
             <span className={'i-tabler-heart'} />
           </Toggle>
-          <Toggle variant={'outline'} tint={'blue'}>
+          <Toggle variant={'outline'} tint={'blue'} defaultPressed={true}>
             <span className={'i-tabler-heart'} />
           </Toggle>
-          <Toggle variant={'outline'} tint={'green'}>
+          <Toggle variant={'outline'} tint={'green'} defaultPressed={true}>
             <span className={'i-tabler-heart'} />
           </Toggle>
-          <Toggle variant={'outline'} tint={'purple'}>
+          <Toggle variant={'outline'} tint={'purple'} defaultPressed={true}>
             <span className={'i-tabler-heart'} />
           </Toggle>
-          <Toggle variant={'outline'} tint={'amber'}>
+          <Toggle variant={'outline'} tint={'amber'} defaultPressed={true}>
             <span className={'i-tabler-heart'} />
           </Toggle>
-          <Toggle variant={'outline'} tint={'gray'}>
+          <Toggle variant={'outline'} tint={'gray'} defaultPressed={true}>
             <span className={'i-tabler-heart'} />
           </Toggle>
         </div>
@@ -485,13 +485,13 @@ export const TintShowcase: Story = {
       <div>
         <h3 className={'text-lg font-semibold mb-3'}>Different Sizes</h3>
         <div className={'flex flex-wrap gap-2 items-center'}>
-          <Toggle variant={'default'} tint={'blue'} size={'sm'}>
+          <Toggle variant={'default'} tint={'blue'} size={'sm'} defaultPressed={true}>
             <span className={'i-tabler-star'} />
           </Toggle>
-          <Toggle variant={'default'} tint={'blue'} size={'default'}>
+          <Toggle variant={'default'} tint={'blue'} size={'default'} defaultPressed={true}>
             <span className={'i-tabler-star'} />
           </Toggle>
-          <Toggle variant={'default'} tint={'blue'} size={'lg'}>
+          <Toggle variant={'default'} tint={'blue'} size={'lg'} defaultPressed={true}>
             <span className={'i-tabler-star'} />
           </Toggle>
         </div>
