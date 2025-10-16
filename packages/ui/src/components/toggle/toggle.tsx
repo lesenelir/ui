@@ -185,139 +185,139 @@ const toggleVariants = cva(
         variant: 'outline',
         tint: 'accent',
         className:
-          'hover:bg-ac/10 data-[state=on]:bg-ac/10 data-[state=on]:text-ac data-[state=on]:border-ac',
+          'hover:bg-ac/10 hover:border-ac data-[state=on]:bg-ac/10 data-[state=on]:text-ac data-[state=on]:border-ac',
       },
       {
         variant: 'outline',
         tint: 'red',
         className:
-          'hover:bg-red-100 data-[state=on]:bg-red-600/10 data-[state=on]:text-red-700 data-[state=on]:border-red-600',
+          'hover:bg-red-100 hover:border-red-600 data-[state=on]:bg-red-600/10 data-[state=on]:text-red-700 data-[state=on]:border-red-600',
       },
       {
         variant: 'outline',
         tint: 'orange',
         className:
-          'hover:bg-orange-100 data-[state=on]:bg-orange-600/10 data-[state=on]:text-orange-700 data-[state=on]:border-orange-600',
+          'hover:bg-orange-100 hover:border-orange-600 data-[state=on]:bg-orange-600/10 data-[state=on]:text-orange-700 data-[state=on]:border-orange-600',
       },
       {
         variant: 'outline',
         tint: 'amber',
         className:
-          'hover:bg-amber-100 data-[state=on]:bg-amber-600/10 data-[state=on]:text-amber-700 data-[state=on]:border-amber-600',
+          'hover:bg-amber-100 hover:border-amber-600 data-[state=on]:bg-amber-600/10 data-[state=on]:text-amber-700 data-[state=on]:border-amber-600',
       },
       {
         variant: 'outline',
         tint: 'yellow',
         className:
-          'hover:bg-yellow-100 data-[state=on]:bg-yellow-600/10 data-[state=on]:text-yellow-700 data-[state=on]:border-yellow-600',
+          'hover:bg-yellow-100 hover:border-yellow-600 data-[state=on]:bg-yellow-600/10 data-[state=on]:text-yellow-700 data-[state=on]:border-yellow-600',
       },
       {
         variant: 'outline',
         tint: 'lime',
         className:
-          'hover:bg-lime-100 data-[state=on]:bg-lime-600/10 data-[state=on]:text-lime-700 data-[state=on]:border-lime-600',
+          'hover:bg-lime-100 hover:border-lime-600 data-[state=on]:bg-lime-600/10 data-[state=on]:text-lime-700 data-[state=on]:border-lime-600',
       },
       {
         variant: 'outline',
         tint: 'green',
         className:
-          'hover:bg-green-100 data-[state=on]:bg-green-600/10 data-[state=on]:text-green-700 data-[state=on]:border-green-600',
+          'hover:bg-green-100 hover:border-green-600 data-[state=on]:bg-green-600/10 data-[state=on]:text-green-700 data-[state=on]:border-green-600',
       },
       {
         variant: 'outline',
         tint: 'emerald',
         className:
-          'hover:bg-emerald-100 data-[state=on]:bg-emerald-600/10 data-[state=on]:text-emerald-700 data-[state=on]:border-emerald-600',
+          'hover:bg-emerald-100 hover:border-emerald-600 data-[state=on]:bg-emerald-600/10 data-[state=on]:text-emerald-700 data-[state=on]:border-emerald-600',
       },
       {
         variant: 'outline',
         tint: 'teal',
         className:
-          'hover:bg-teal-100 data-[state=on]:bg-teal-600/10 data-[state=on]:text-teal-700 data-[state=on]:border-teal-600',
+          'hover:bg-teal-100 hover:border-teal-600 data-[state=on]:bg-teal-600/10 data-[state=on]:text-teal-700 data-[state=on]:border-teal-600',
       },
       {
         variant: 'outline',
         tint: 'cyan',
         className:
-          'hover:bg-cyan-100 data-[state=on]:bg-cyan-600/10 data-[state=on]:text-cyan-700 data-[state=on]:border-cyan-600',
+          'hover:bg-cyan-100 hover:border-cyan-600 data-[state=on]:bg-cyan-600/10 data-[state=on]:text-cyan-700 data-[state=on]:border-cyan-600',
       },
       {
         variant: 'outline',
         tint: 'sky',
         className:
-          'hover:bg-sky-100 data-[state=on]:bg-sky-600/10 data-[state=on]:text-sky-700 data-[state=on]:border-sky-600',
+          'hover:bg-sky-100 hover:border-sky-600 data-[state=on]:bg-sky-600/10 data-[state=on]:text-sky-700 data-[state=on]:border-sky-600',
       },
       {
         variant: 'outline',
         tint: 'blue',
         className:
-          'hover:bg-blue-100 data-[state=on]:bg-blue-600/10 data-[state=on]:text-blue-700 data-[state=on]:border-blue-600',
+          'hover:bg-blue-100 hover:border-blue-600 data-[state=on]:bg-blue-600/10 data-[state=on]:text-blue-700 data-[state=on]:border-blue-600',
       },
       {
         variant: 'outline',
         tint: 'indigo',
         className:
-          'hover:bg-indigo-100 data-[state=on]:bg-indigo-600/10 data-[state=on]:text-indigo-700 data-[state=on]:border-indigo-600',
+          'hover:bg-indigo-100 hover:border-indigo-600 data-[state=on]:bg-indigo-600/10 data-[state=on]:text-indigo-700 data-[state=on]:border-indigo-600',
       },
       {
         variant: 'outline',
         tint: 'violet',
         className:
-          'hover:bg-violet-100 data-[state=on]:bg-violet-600/10 data-[state=on]:text-violet-700 data-[state=on]:border-violet-600',
+          'hover:bg-violet-100 hover:border-violet-600 data-[state=on]:bg-violet-600/10 data-[state=on]:text-violet-700 data-[state=on]:border-violet-600',
       },
       {
         variant: 'outline',
         tint: 'purple',
         className:
-          'hover:bg-purple-100 data-[state=on]:bg-purple-600/10 data-[state=on]:text-purple-700 data-[state=on]:border-purple-600',
+          'hover:bg-purple-100 hover:border-purple-600 data-[state=on]:bg-purple-600/10 data-[state=on]:text-purple-700 data-[state=on]:border-purple-600',
       },
       {
         variant: 'outline',
         tint: 'fuchsia',
         className:
-          'hover:bg-fuchsia-100 data-[state=on]:bg-fuchsia-600/10 data-[state=on]:text-fuchsia-700 data-[state=on]:border-fuchsia-600',
+          'hover:bg-fuchsia-100 hover:border-fuchsia-600 data-[state=on]:bg-fuchsia-600/10 data-[state=on]:text-fuchsia-700 data-[state=on]:border-fuchsia-600',
       },
       {
         variant: 'outline',
         tint: 'pink',
         className:
-          'hover:bg-pink-100 data-[state=on]:bg-pink-600/10 data-[state=on]:text-pink-700 data-[state=on]:border-pink-600',
+          'hover:bg-pink-100 hover:border-pink-600 data-[state=on]:bg-pink-600/10 data-[state=on]:text-pink-700 data-[state=on]:border-pink-600',
       },
       {
         variant: 'outline',
         tint: 'rose',
         className:
-          'hover:bg-rose-100 data-[state=on]:bg-rose-600/10 data-[state=on]:text-rose-700 data-[state=on]:border-rose-600',
+          'hover:bg-rose-100 hover:border-rose-600 data-[state=on]:bg-rose-600/10 data-[state=on]:text-rose-700 data-[state=on]:border-rose-600',
       },
       {
         variant: 'outline',
         tint: 'slate',
         className:
-          'hover:bg-slate-100 data-[state=on]:bg-slate-600/10 data-[state=on]:text-slate-700 data-[state=on]:border-slate-600',
+          'hover:bg-slate-100 hover:border-slate-600 data-[state=on]:bg-slate-600/10 data-[state=on]:text-slate-700 data-[state=on]:border-slate-600',
       },
       {
         variant: 'outline',
         tint: 'gray',
         className:
-          'hover:bg-gray-100 data-[state=on]:bg-gray-600/10 data-[state=on]:text-gray-700 data-[state=on]:border-gray-600',
+          'hover:bg-gray-100 hover:border-gray-600 data-[state=on]:bg-gray-600/10 data-[state=on]:text-gray-700 data-[state=on]:border-gray-600',
       },
       {
         variant: 'outline',
         tint: 'zinc',
         className:
-          'hover:bg-zinc-100 data-[state=on]:bg-zinc-600/10 data-[state=on]:text-zinc-700 data-[state=on]:border-zinc-600',
+          'hover:bg-zinc-100 hover:border-zinc-600 data-[state=on]:bg-zinc-600/10 data-[state=on]:text-zinc-700 data-[state=on]:border-zinc-600',
       },
       {
         variant: 'outline',
         tint: 'neutral',
         className:
-          'hover:bg-neutral-100 data-[state=on]:bg-neutral-600/10 data-[state=on]:text-neutral-700 data-[state=on]:border-neutral-600',
+          'hover:bg-neutral-100 hover:border-neutral-600 data-[state=on]:bg-neutral-600/10 data-[state=on]:text-neutral-700 data-[state=on]:border-neutral-600',
       },
       {
         variant: 'outline',
         tint: 'stone',
         className:
-          'hover:bg-stone-100 data-[state=on]:bg-stone-600/10 data-[state=on]:text-stone-700 data-[state=on]:border-stone-600',
+          'hover:bg-stone-100 hover:border-stone-600 data-[state=on]:bg-stone-600/10 data-[state=on]:text-stone-700 data-[state=on]:border-stone-600',
       },
     ],
     defaultVariants: {
