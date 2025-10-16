@@ -72,6 +72,9 @@ export function ToggleGroupItem({
           tint: context.tint || tint,
         }),
         'min-w-0 flex-1 shrink-0 rounded-none shadow-none',
+        'group-data-[variant=outline]/toggle-group:relative group-data-[variant=outline]/toggle-group:-ml-px group-data-[variant=outline]/toggle-group:first:ml-0',
+        'group-data-[variant=outline]/toggle-group:first:rounded-l-md group-data-[variant=outline]/toggle-group:last:rounded-r-md',
+        'group-data-[variant=outline]/toggle-group:hover:z-10 group-data-[variant=outline]/toggle-group:focus-visible:z-10 group-data-[variant=outline]/toggle-group:data-[state=on]:z-10',
         className
       )}
       {...props}
