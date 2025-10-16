@@ -40,11 +40,13 @@ export function ToggleGroup({
       )}
       {...props}
     >
-      <ToggleGroupContext.Provider value={{
-        variant: variant ?? 'default',
-        size: size ?? 'default',
-        tint: tint ?? 'accent'
-      }}>
+      <ToggleGroupContext.Provider
+        value={{
+          variant: variant ?? 'default',
+          size: size ?? 'default',
+          tint: tint ?? 'accent',
+        }}
+      >
         {children}
       </ToggleGroupContext.Provider>
     </ToggleGroupPrimitive.Root>
