@@ -3,6 +3,7 @@ import { Input } from '@lesenelir/ui/input'
 import { Progress } from '@lesenelir/ui/progress'
 import type { Meta, StoryObj } from '@storybook/react'
 
+import { Avatar, AvatarFallback, AvatarImage } from '../avatar'
 import {
   Card,
   CardAction,
@@ -167,6 +168,238 @@ export const WithForm: Story = {
           Cancel
         </Button>
       </CardFooter>
+    </Card>
+  ),
+}
+
+export const WithTopImage: Story = {
+  render: () => (
+    <Card className={'w-[400px] overflow-hidden pt-0'}>
+      <img
+        src={'https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=800&q=80'}
+        alt={'Mountain landscape'}
+        className={'h-48 w-full object-cover'}
+      />
+      <CardHeader>
+        <CardTitle>Mountain Adventure</CardTitle>
+        <CardDescription>Explore the beautiful peaks and valleys</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <p>
+          Discover breathtaking views and unforgettable experiences in the heart of nature. Perfect
+          for hiking enthusiasts and adventure seekers.
+        </p>
+      </CardContent>
+      <CardFooter>
+        <Button type={'button'} variant={'default'} tint={'default'}>
+          Learn More
+        </Button>
+      </CardFooter>
+    </Card>
+  ),
+}
+
+export const WithAvatar: Story = {
+  render: () => (
+    <Card className={'w-[400px]'}>
+      <CardHeader>
+        <div className={'flex items-start gap-4'}>
+          <Avatar className={'size-12'}>
+            <AvatarImage
+              src={'https://avatars.githubusercontent.com/u/47740312?v=4'}
+              alt={'Lesenelir Zhou'}
+            />
+            <AvatarFallback className={'text-lg'}>LZ</AvatarFallback>
+          </Avatar>
+          <div className={'flex-1'}>
+            <CardTitle>Lesenelir Zhou</CardTitle>
+            <CardDescription>Software Engineer at Home</CardDescription>
+          </div>
+        </div>
+        <CardAction>
+          <Button type={'button'} variant={'outline'} tint={'default'}>
+            Follow
+          </Button>
+        </CardAction>
+      </CardHeader>
+      <CardContent>
+        <p>
+          Passionate about building scalable web applications and exploring new technologies.
+          Builder and Trader.
+        </p>
+      </CardContent>
+    </Card>
+  ),
+}
+
+export const UserProfileCard: Story = {
+  render: () => (
+    <Card className={'w-[400px] overflow-hidden pt-0'}>
+      <div className={'relative'}>
+        <img
+          src={'https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=800&q=80'}
+          alt={'Cover'}
+          className={'h-32 w-full object-cover'}
+        />
+        <Avatar className={'absolute -bottom-12 left-6 size-24 rounded-full border-4 border-bg'}>
+          <AvatarImage
+            src={'https://avatars.githubusercontent.com/u/47740312?v=4'}
+            alt={'Lesenelir Zhou'}
+          />
+          <AvatarFallback className={'text-lg'}>LZ</AvatarFallback>
+        </Avatar>
+      </div>
+      <CardHeader className={'mt-14'}>
+        <CardTitle>Lesenelir Zhou</CardTitle>
+        <CardDescription>Software Engineer | Trader | Overwatch Gamer</CardDescription>
+        <CardAction>
+          <Button type={'button'} variant={'default'} tint={'default'}>
+            Message
+          </Button>
+        </CardAction>
+      </CardHeader>
+      <CardContent>
+        <div className={'space-y-4'}>
+          <p>
+            Creating beautiful and intuitive user experiences. Based in Mars, working remotely the
+            whole universe.
+          </p>
+          <div className={'flex gap-4 text-sm'}>
+            <div>
+              <span className={'font-semibold'}>1.2K</span> Followers
+            </div>
+            <div>
+              <span className={'font-semibold'}>456</span> Following
+            </div>
+            <div>
+              <span className={'font-semibold'}>89</span> Posts
+            </div>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  ),
+}
+
+export const WithThumbnail: Story = {
+  render: () => (
+    <Card className={'w-[400px]'}>
+      <CardHeader>
+        <CardTitle>Latest Article</CardTitle>
+        <CardDescription>Published 2 days ago</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <div className={'flex gap-4'}>
+          <img
+            src={'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&q=80'}
+            alt={'Article thumbnail'}
+            className={'h-24 w-24 flex-shrink-0 rounded-lg object-cover'}
+          />
+          <div className={'flex-1'}>
+            <h3 className={'mb-2 font-semibold'}>Building Modern Web Applications</h3>
+            <p className={'text-sm opacity-60'}>
+              Learn the best practices for creating fast, responsive, and maintainable web
+              applications in 2024.
+            </p>
+          </div>
+        </div>
+      </CardContent>
+      <CardFooter>
+        <Button type={'button'} variant={'link'} tint={'default'}>
+          Read Article →
+        </Button>
+      </CardFooter>
+    </Card>
+  ),
+}
+
+export const ProductCard: Story = {
+  render: () => (
+    <Card className={'w-[350px] overflow-hidden pt-0'}>
+      <div className={'relative'}>
+        <img
+          src={'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80'}
+          alt={'Product'}
+          className={'h-56 w-full object-cover'}
+        />
+        <div
+          className={'absolute right-2 top-2 rounded-full bg-red-500 px-3 py-1 text-sm text-white'}
+        >
+          -20%
+        </div>
+      </div>
+      <CardHeader>
+        <CardTitle>Premium Headphones</CardTitle>
+        <CardDescription>High-quality wireless audio</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <div className={'flex items-baseline gap-2'}>
+          <span className={'text-2xl font-bold'}>$159.99</span>
+          <span className={'text-sm text-gray-500 line-through'}>$199.99</span>
+        </div>
+        <div className={'mt-2 flex items-center gap-1'}>
+          <span className={'text-yellow-500'}>★★★★★</span>
+          <span className={'text-sm opacity-60'}>(124 reviews)</span>
+        </div>
+      </CardContent>
+      <CardFooter className={'gap-2'}>
+        <Button type={'button'} variant={'outline'} tint={'default'} className={'flex-1'}>
+          Add to Cart
+        </Button>
+        <Button type={'button'} variant={'default'} tint={'default'} className={'flex-1'}>
+          Buy Now
+        </Button>
+      </CardFooter>
+    </Card>
+  ),
+}
+
+export const ImageGallery: Story = {
+  render: () => (
+    <Card className={'w-[400px]'}>
+      <CardHeader>
+        <CardTitle>Photo Gallery</CardTitle>
+        <CardDescription>Recent uploads from your collection</CardDescription>
+        <CardAction>
+          <Button type={'button'} variant={'link'} tint={'default'}>
+            View All
+          </Button>
+        </CardAction>
+      </CardHeader>
+      <CardContent>
+        <div className={'grid grid-cols-3 gap-2'}>
+          <img
+            src={'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80'}
+            alt={'Gallery 1'}
+            className={'aspect-square rounded-lg object-cover'}
+          />
+          <img
+            src={'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&q=80'}
+            alt={'Gallery 2'}
+            className={'aspect-square rounded-lg object-cover'}
+          />
+          <img
+            src={'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=400&q=80'}
+            alt={'Gallery 3'}
+            className={'aspect-square rounded-lg object-cover'}
+          />
+          <img
+            src={'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&q=80'}
+            alt={'Gallery 4'}
+            className={'aspect-square rounded-lg object-cover'}
+          />
+          <img
+            src={'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&q=80'}
+            alt={'Gallery 5'}
+            className={'aspect-square rounded-lg object-cover'}
+          />
+          <img
+            src={'https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=400&q=80'}
+            alt={'Gallery 6'}
+            className={'aspect-square rounded-lg object-cover'}
+          />
+        </div>
+      </CardContent>
     </Card>
   ),
 }
