@@ -403,3 +403,186 @@ export const ImageGallery: Story = {
     </Card>
   ),
 }
+
+export const PricingCard: Story = {
+  render: () => (
+    <Card className={'w-[350px]'}>
+      <CardHeader>
+        <CardTitle>Professional</CardTitle>
+        <CardDescription>Perfect for growing teams and businesses</CardDescription>
+      </CardHeader>
+      <CardContent className={'space-y-6'}>
+        <div>
+          <div className={'flex items-baseline gap-1'}>
+            <span className={'text-4xl font-bold'}>$29</span>
+            <span className={'text-sm opacity-60'}>/month</span>
+          </div>
+          <p className={'mt-1 text-sm opacity-60'}>Billed annually or $35 month-to-month</p>
+        </div>
+        <div className={'space-y-3'}>
+          <div className={'flex items-start gap-3'}>
+            <span className={'text-green-500'}>✓</span>
+            <span className={'text-sm'}>Unlimited projects</span>
+          </div>
+          <div className={'flex items-start gap-3'}>
+            <span className={'text-green-500'}>✓</span>
+            <span className={'text-sm'}>Advanced analytics</span>
+          </div>
+          <div className={'flex items-start gap-3'}>
+            <span className={'text-green-500'}>✓</span>
+            <span className={'text-sm'}>24/7 priority support</span>
+          </div>
+          <div className={'flex items-start gap-3'}>
+            <span className={'text-green-500'}>✓</span>
+            <span className={'text-sm'}>Custom integrations</span>
+          </div>
+          <div className={'flex items-start gap-3'}>
+            <span className={'text-green-500'}>✓</span>
+            <span className={'text-sm'}>Team collaboration tools</span>
+          </div>
+        </div>
+      </CardContent>
+      <CardFooter>
+        <Button type={'button'} variant={'default'} tint={'default'} className={'w-full'}>
+          Get Started
+        </Button>
+      </CardFooter>
+    </Card>
+  ),
+}
+
+export const PricingTiers: Story = {
+  render: () => (
+    <div className={'flex gap-6'} style={{ alignItems: 'stretch' }}>
+      <Card className={'w-[320px]'}>
+        <CardHeader>
+          <CardTitle>Basic</CardTitle>
+          <CardDescription>Essential features for individuals</CardDescription>
+        </CardHeader>
+        <CardContent className={'space-y-6'}>
+          <div>
+            <div className={'flex items-baseline gap-1'}>
+              <span className={'text-4xl font-bold'}>$9</span>
+              <span className={'text-sm opacity-60'}>/month</span>
+            </div>
+            <p className={'mt-1 text-sm opacity-60'}>Billed annually</p>
+          </div>
+          <div className={'space-y-3'}>
+            <div className={'flex items-start gap-3'}>
+              <span className={'text-green-500'}>✓</span>
+              <span className={'text-sm'}>Up to 5 projects</span>
+            </div>
+            <div className={'flex items-start gap-3'}>
+              <span className={'text-green-500'}>✓</span>
+              <span className={'text-sm'}>Basic analytics</span>
+            </div>
+            <div className={'flex items-start gap-3'}>
+              <span className={'text-green-500'}>✓</span>
+              <span className={'text-sm'}>Email support</span>
+            </div>
+            <div className={'flex items-start gap-3'}>
+              <span className={'text-green-500'}>✓</span>
+              <span className={'text-sm'}>1 GB storage</span>
+            </div>
+          </div>
+        </CardContent>
+        <CardFooter>
+          <Button type={'button'} variant={'outline'} tint={'default'} className={'w-full'}>
+            Get Started
+          </Button>
+        </CardFooter>
+      </Card>
+
+      <Card className={'w-[320px] relative border-2 border-blue-500'}>
+        <div className={'absolute -top-3 left-1/2 -translate-x-1/2'}>
+          <span className={'rounded-full bg-blue-500 px-3 py-1 text-xs text-white'}>
+            Most Popular
+          </span>
+        </div>
+        <CardHeader>
+          <CardTitle>Professional</CardTitle>
+          <CardDescription>Perfect for growing teams</CardDescription>
+        </CardHeader>
+        <CardContent className={'space-y-6'}>
+          <div>
+            <div className={'flex items-baseline gap-1'}>
+              <span className={'text-4xl font-bold'}>$29</span>
+              <span className={'text-sm opacity-60'}>/month</span>
+            </div>
+            <p className={'mt-1 text-sm opacity-60'}>Billed annually</p>
+          </div>
+          <div className={'space-y-3'}>
+            <div className={'flex items-start gap-3'}>
+              <span className={'text-green-500'}>✓</span>
+              <span className={'text-sm'}>Unlimited projects</span>
+            </div>
+            <div className={'flex items-start gap-3'}>
+              <span className={'text-green-500'}>✓</span>
+              <span className={'text-sm'}>Advanced analytics</span>
+            </div>
+            <div className={'flex items-start gap-3'}>
+              <span className={'text-green-500'}>✓</span>
+              <span className={'text-sm'}>Priority support</span>
+            </div>
+            <div className={'flex items-start gap-3'}>
+              <span className={'text-green-500'}>✓</span>
+              <span className={'text-sm'}>50 GB storage</span>
+            </div>
+            <div className={'flex items-start gap-3'}>
+              <span className={'text-green-500'}>✓</span>
+              <span className={'text-sm'}>Team collaboration</span>
+            </div>
+          </div>
+        </CardContent>
+        <CardFooter>
+          <Button type={'button'} variant={'default'} tint={'default'} className={'w-full'}>
+            Get Started
+          </Button>
+        </CardFooter>
+      </Card>
+
+      <Card className={'w-[320px]'}>
+        <CardHeader>
+          <CardTitle>Enterprise</CardTitle>
+          <CardDescription>Advanced features for large teams</CardDescription>
+        </CardHeader>
+        <CardContent className={'space-y-6'}>
+          <div>
+            <div className={'flex items-baseline gap-1'}>
+              <span className={'text-4xl font-bold'}>$99</span>
+              <span className={'text-sm opacity-60'}>/month</span>
+            </div>
+            <p className={'mt-1 text-sm opacity-60'}>Billed annually</p>
+          </div>
+          <div className={'space-y-3'}>
+            <div className={'flex items-start gap-3'}>
+              <span className={'text-green-500'}>✓</span>
+              <span className={'text-sm'}>Everything in Pro</span>
+            </div>
+            <div className={'flex items-start gap-3'}>
+              <span className={'text-green-500'}>✓</span>
+              <span className={'text-sm'}>Dedicated support</span>
+            </div>
+            <div className={'flex items-start gap-3'}>
+              <span className={'text-green-500'}>✓</span>
+              <span className={'text-sm'}>Custom integrations</span>
+            </div>
+            <div className={'flex items-start gap-3'}>
+              <span className={'text-green-500'}>✓</span>
+              <span className={'text-sm'}>Unlimited storage</span>
+            </div>
+            <div className={'flex items-start gap-3'}>
+              <span className={'text-green-500'}>✓</span>
+              <span className={'text-sm'}>SLA guarantee</span>
+            </div>
+          </div>
+        </CardContent>
+        <CardFooter>
+          <Button type={'button'} variant={'outline'} tint={'default'} className={'w-full'}>
+            Contact Sales
+          </Button>
+        </CardFooter>
+      </Card>
+    </div>
+  ),
+}
