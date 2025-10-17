@@ -7,7 +7,7 @@ import { cva, type VariantProps } from 'class-variance-authority'
 
 // Container styles - handles border, focus ring, background, shadow
 const containerVariants = cva([
-  'inline-flex items-center h-9 w-fit rounded-md border bg-transparent shadow-xs transition-[color,box-shadow]',
+  'inline-flex items-center h-9 w-full rounded-md border bg-transparent shadow-xs transition-[color,box-shadow]',
   // 'focus-within:outline-none focus-within:border-ac focus-within:ring-2 focus-within:ring-ac/30', // ring and border on focus within
   // 'focus-within:border-none focus-within:outline-2 focus-within:outline-solid focus-within:outline-offset-0 focus-within:outline-ac', // outline on focus within
   'focus-within-ring',
