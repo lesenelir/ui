@@ -139,7 +139,7 @@ export const WithForm: Story = {
     <Card className={'w-[400px]'}>
       <CardHeader>
         <CardTitle>Login to your account</CardTitle>
-        <CardDescription>Enter your email below to login to your accountt</CardDescription>
+        <CardDescription>Enter your email below to login to your account</CardDescription>
         <CardAction>
           <Button variant={'link'}>Sign Up</Button>
         </CardAction>
