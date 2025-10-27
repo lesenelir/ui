@@ -7,7 +7,7 @@ import { cn } from '@lesenelir/ui/lib/utils'
 import * as TabsPrimitive from '@radix-ui/react-tabs'
 import { cva, type VariantProps } from 'class-variance-authority'
 
-export type TabsVariant = 'solid' | 'underline' | 'light'
+export type TabsVariant = 'solid' | 'underline' | 'light' | 'bordered'
 
 export const TabsVariantContext = createContext<TabsVariant>('solid')
 
@@ -16,6 +16,7 @@ const tabsListVariants = cva('', {
     variant: {
       solid: 'bg-fg text-fg-rev/75',
       underline: '',
+      bordered: 'border-2 border-border',
       light: 'bg-transparent',
     },
   },
@@ -29,6 +30,7 @@ const tabsTriggerVariants = cva('', {
     variant: {
       solid: '',
       underline: '',
+      bordered: '',
       light: 'data-[state=active]:border-border',
     },
   },
