@@ -14,9 +14,9 @@ export const TabsVariantContext = createContext<TabsVariant>('solid')
 const tabsListVariants = cva('', {
   variants: {
     variant: {
-      solid: '',
+      solid: 'bg-fg text-fg-rev/75',
       underline: '',
-      light: '',
+      light: 'bg-transparent',
     },
   },
   defaultVariants: {
@@ -29,7 +29,7 @@ const tabsTriggerVariants = cva('', {
     variant: {
       solid: '',
       underline: '',
-      light: '',
+      light: 'data-[state=active]:border-border',
     },
   },
   defaultVariants: {
@@ -69,7 +69,7 @@ export function TabsList({ className, ref, variant, ...props }: TabsListProps) {
       ref={ref}
       data-slot={'tabs-list'}
       className={cn(
-        'bg-fg text-fg-rev/75 inline-flex h-9 w-fit items-center justify-center rounded-lg p-[3px]',
+        'inline-flex gap-1 h-9 w-fit items-center justify-center rounded-lg p-[3px]',
         tabsListVariants({ variant: variantValue }),
         className
       )}
@@ -87,8 +87,7 @@ export function TabsTrigger({ className, ref, variant, ...props }: TabsTriggerPr
       ref={ref}
       data-slot={'tabs-trigger'}
       className={cn(
-        // dark:data-[state=active]:border
-        'inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-[color,box-shadow]',
+        'cursor-pointer inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-[color,box-shadow]',
         'data-[state=active]:bg-bg data-[state=active]:text-fg-rev data-[state=active]:shadow-sm',
         'focus-visible-ring',
         'disabled:pointer-events-none disabled:opacity-50',
