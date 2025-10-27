@@ -271,56 +271,6 @@ export const ProfileForm: Story = {
   ),
 }
 
-export const SettingsForm: Story = {
-  render: () => (
-    <div className={'w-[400px] flex flex-col gap-4 p-6 border rounded-lg'}>
-      <div>
-        <h2 className={'text-xl font-semibold mb-4'}>Notification Settings</h2>
-      </div>
-
-      <div className={'flex items-center justify-between'}>
-        <Label htmlFor={'setting-notifications'}>
-          <span className={'i-tabler-bell'} />
-          Email Notifications
-        </Label>
-        <Switch id={'setting-notifications'} tint={'blue'} defaultChecked />
-      </div>
-
-      <div className={'flex items-center justify-between'}>
-        <Label htmlFor={'setting-marketing'}>
-          <span className={'i-tabler-mail'} />
-          Marketing Emails
-        </Label>
-        <Switch id={'setting-marketing'} tint={'green'} />
-      </div>
-
-      <div className={'flex items-center justify-between'}>
-        <Label htmlFor={'setting-updates'}>
-          <span className={'i-tabler-refresh'} />
-          Product Updates
-        </Label>
-        <Switch id={'setting-updates'} tint={'purple'} defaultChecked />
-      </div>
-
-      <div className={'flex items-center justify-between'}>
-        <Label htmlFor={'setting-security'}>
-          <span className={'i-tabler-shield-lock'} />
-          Security Alerts
-        </Label>
-        <Switch id={'setting-security'} tint={'red'} defaultChecked />
-      </div>
-
-      <div className={'flex items-center justify-between'}>
-        <Label htmlFor={'setting-analytics'}>
-          <span className={'i-tabler-chart-bar'} />
-          Analytics Tracking
-        </Label>
-        <Switch id={'setting-analytics'} tint={'amber'} />
-      </div>
-    </div>
-  ),
-}
-
 // Showcase
 export const FullShowcase: Story = {
   render: () => (
