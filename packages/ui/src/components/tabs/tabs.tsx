@@ -15,7 +15,7 @@ const tabsListVariants = cva('', {
   variants: {
     variant: {
       solid: 'bg-fg text-fg-rev/75',
-      underline: '',
+      underline: 'p-0 gap-3 rounded-none text-fg-rev/75',
       bordered: 'border-2 border-border',
       light: 'bg-transparent',
     },
@@ -28,10 +28,14 @@ const tabsListVariants = cva('', {
 const tabsTriggerVariants = cva('', {
   variants: {
     variant: {
-      solid: '',
-      underline: '',
-      bordered: 'data-[state=active]:border-border',
-      light: 'data-[state=active]:border-border',
+      solid:
+        'data-[state=active]:bg-bg data-[state=active]:text-fg-rev data-[state=active]:shadow-sm',
+      underline:
+        'bg-transparent px-0 transition-[color,border-color] rounded-none border-b-2 border-transparent shadow-none data-[state=active]:shadow-none data-[state=active]:text-fg-rev data-[state=active]:border-fg-rev',
+      bordered:
+        'data-[state=active]:border data-[state=active]:border-border data-[state=active]:shadow-sm',
+      light:
+        'data-[state=active]:bg-bg data-[state=active]:text-fg-rev data-[state=active]:border data-[state=active]:border-border data-[state=active]:shadow-sm',
     },
   },
   defaultVariants: {
@@ -89,8 +93,7 @@ export function TabsTrigger({ className, ref, variant, ...props }: TabsTriggerPr
       ref={ref}
       data-slot={'tabs-trigger'}
       className={cn(
-        'cursor-pointer inline-flex flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-[color,box-shadow]',
-        'data-[state=active]:bg-bg data-[state=active]:text-fg-rev data-[state=active]:shadow-sm',
+        'cursor-pointer inline-flex flex-1 items-center justify-center gap-1.5 rounded-md px-2 py-1 text-sm font-medium whitespace-nowrap transition-[color,box-shadow]',
         'focus-visible-ring',
         'disabled:pointer-events-none disabled:opacity-50',
         "[&_span]:pointer-events-none [&_span]:shrink-0 [&_span:not([class*='size-'])]:size-4",
