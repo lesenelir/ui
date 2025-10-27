@@ -15,8 +15,8 @@ const tabsListVariants = cva('', {
   variants: {
     variant: {
       solid: 'bg-fg text-fg-rev/75',
-      underline: 'p-0 gap-3 rounded-none text-fg-rev/75',
-      bordered: 'border-2 border-border',
+      underline: 'bg-transparent p-0 gap-3 rounded-none text-fg-rev/75',
+      bordered: 'bg-transparent border-2 border-border',
       light: 'bg-transparent',
     },
   },
@@ -31,7 +31,7 @@ const tabsTriggerVariants = cva('', {
       solid:
         'data-[state=active]:bg-bg data-[state=active]:text-fg-rev data-[state=active]:shadow-sm',
       underline:
-        'bg-transparent px-0 transition-[color,border-color] rounded-none border-b-2 border-transparent shadow-none data-[state=active]:shadow-none data-[state=active]:text-fg-rev data-[state=active]:border-fg-rev',
+        'px-0 transition-[color,border-color] rounded-none border-b-2 border-transparent data-[state=active]:text-fg-rev data-[state=active]:border-fg-rev',
       bordered:
         'data-[state=active]:border data-[state=active]:border-border data-[state=active]:shadow-sm',
       light:
