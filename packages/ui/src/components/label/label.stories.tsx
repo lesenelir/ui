@@ -1,3 +1,4 @@
+import { Card, CardContent, CardHeader, CardTitle } from '@lesenelir/ui/card'
 import { Input } from '@lesenelir/ui/input'
 import { Switch } from '@lesenelir/ui/switch'
 import { Textarea } from '@lesenelir/ui/textarea'
@@ -190,79 +191,83 @@ export const IconVariations: Story = {
 // Form Examples
 export const LoginForm: Story = {
   render: () => (
-    <div className={'w-[350px] flex flex-col gap-4 p-6 border rounded-lg'}>
-      <div>
-        <h2 className={'text-xl font-semibold mb-4'}>Login</h2>
-      </div>
+    <Card className={'w-[350px]'}>
+      <CardHeader>
+        <CardTitle>Login</CardTitle>
+      </CardHeader>
 
-      <div className={'flex flex-col gap-2'}>
-        <Label htmlFor={'login-email'}>
-          <span className={'i-tabler-mail'} />
-          Email
-          <span className={'text-rose-500'}>*</span>
-        </Label>
-        <Input id={'login-email'} type={'email'} placeholder={'email@example.com'} required />
-      </div>
+      <CardContent className={'flex flex-col gap-4'}>
+        <div className={'flex flex-col gap-2'}>
+          <Label htmlFor={'login-email'}>
+            <span className={'i-tabler-mail'} />
+            Email
+            <span className={'text-rose-500'}>*</span>
+          </Label>
+          <Input id={'login-email'} type={'email'} placeholder={'email@example.com'} required />
+        </div>
 
-      <div className={'flex flex-col gap-2'}>
-        <Label htmlFor={'login-password'}>
-          <span className={'i-tabler-lock'} />
-          Password
-          <span className={'text-rose-500'}>*</span>
-        </Label>
-        <Input id={'login-password'} type={'password'} placeholder={'Enter password'} required />
-      </div>
+        <div className={'flex flex-col gap-2'}>
+          <Label htmlFor={'login-password'}>
+            <span className={'i-tabler-lock'} />
+            Password
+            <span className={'text-rose-500'}>*</span>
+          </Label>
+          <Input id={'login-password'} type={'password'} placeholder={'Enter password'} required />
+        </div>
 
-      <div className={'flex items-center justify-between'}>
-        <Label htmlFor={'remember'} className={'cursor-pointer'}>
-          <Switch id={'remember'} tint={'accent'} />
-          Remember me
-        </Label>
-      </div>
-    </div>
+        <div className={'flex items-center justify-between'}>
+          <Label htmlFor={'remember'} className={'cursor-pointer'}>
+            <Switch id={'remember'} tint={'accent'} />
+            Remember me
+          </Label>
+        </div>
+      </CardContent>
+    </Card>
   ),
 }
 
 export const ProfileForm: Story = {
   render: () => (
-    <div className={'w-[400px] flex flex-col gap-4 p-6 border rounded-lg'}>
-      <div>
-        <h2 className={'text-xl font-semibold mb-4'}>Profile Settings</h2>
-      </div>
+    <Card className={'w-[400px]'}>
+      <CardHeader>
+        <CardTitle>Profile Settings</CardTitle>
+      </CardHeader>
 
-      <div className={'flex flex-col gap-2'}>
-        <Label htmlFor={'profile-name'}>
-          <span className={'i-tabler-user'} />
-          Full Name
-          <span className={'text-rose-500'}>*</span>
-        </Label>
-        <Input id={'profile-name'} type={'text'} placeholder={'John Doe'} required />
-      </div>
+      <CardContent className={'flex flex-col gap-4'}>
+        <div className={'flex flex-col gap-2'}>
+          <Label htmlFor={'profile-name'}>
+            <span className={'i-tabler-user'} />
+            Full Name
+            <span className={'text-rose-500'}>*</span>
+          </Label>
+          <Input id={'profile-name'} type={'text'} placeholder={'John Doe'} required />
+        </div>
 
-      <div className={'flex flex-col gap-2'}>
-        <Label htmlFor={'profile-email'}>
-          <span className={'i-tabler-mail'} />
-          Email Address
-        </Label>
-        <Input id={'profile-email'} type={'email'} placeholder={'john@example.com'} />
-      </div>
+        <div className={'flex flex-col gap-2'}>
+          <Label htmlFor={'profile-email'}>
+            <span className={'i-tabler-mail'} />
+            Email Address
+          </Label>
+          <Input id={'profile-email'} type={'email'} placeholder={'john@example.com'} />
+        </div>
 
-      <div className={'flex flex-col gap-2'}>
-        <Label htmlFor={'profile-phone'}>
-          <span className={'i-tabler-phone'} />
-          Phone Number
-        </Label>
-        <Input id={'profile-phone'} type={'tel'} placeholder={'+1 (555) 000-0000'} />
-      </div>
+        <div className={'flex flex-col gap-2'}>
+          <Label htmlFor={'profile-phone'}>
+            <span className={'i-tabler-phone'} />
+            Phone Number
+          </Label>
+          <Input id={'profile-phone'} type={'tel'} placeholder={'+1 (555) 000-0000'} />
+        </div>
 
-      <div className={'flex flex-col gap-2'}>
-        <Label htmlFor={'profile-bio'}>
-          <span className={'i-tabler-file-text'} />
-          Biography
-        </Label>
-        <Textarea id={'profile-bio'} placeholder={'Tell us about yourself...'} rows={4} />
-      </div>
-    </div>
+        <div className={'flex flex-col gap-2'}>
+          <Label htmlFor={'profile-bio'}>
+            <span className={'i-tabler-file-text'} />
+            Biography
+          </Label>
+          <Textarea id={'profile-bio'} placeholder={'Tell us about yourself...'} rows={4} />
+        </div>
+      </CardContent>
+    </Card>
   ),
 }
 
