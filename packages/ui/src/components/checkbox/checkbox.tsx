@@ -24,7 +24,9 @@ export function Checkbox({ className, ref, ...props }: CheckboxProps) {
     >
       <CheckboxPrimitive.Indicator
         data-slot={'checkbox-indicator'}
-        className={'grid place-content-center text-current transition-none'}
+        className={
+          'grid place-content-center text-current data-[state=checked]:animate-in data-[state=checked]:zoom-in-95 data-[state=checked]:fade-in data-[state=unchecked]:animate-out data-[state=unchecked]:zoom-out-95 data-[state=unchecked]:fade-out duration-200'
+        }
       >
         <span className={'i-tabler-check size-3.5'} />
       </CheckboxPrimitive.Indicator>
