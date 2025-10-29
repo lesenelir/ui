@@ -2,6 +2,7 @@ import React from 'react'
 
 import { Avatar, AvatarFallback } from '@lesenelir/ui/avatar'
 import { Badge } from '@lesenelir/ui/badge'
+import { Checkbox } from '@lesenelir/ui/checkbox'
 import type { Meta, StoryObj } from '@storybook/react'
 
 import {
@@ -341,15 +342,10 @@ export const Interactive: Story = {
               className={'cursor-pointer'}
             >
               <TableCell>
-                {/*<Checkbox*/}
-                {/*  checked={selectedRows.includes(invoice.invoice)}*/}
-                {/*  onChange={e => {*/}
-                {/*    e.stopPropagation()*/}
-                {/*    toggleRow(invoice.invoice)*/}
-                {/*  }}*/}
-                {/*/>*/}
-                {/* todo: replace input with checkbox element */}
-                <input type={'checkbox'} />
+                <Checkbox
+                  checked={selectedRows.includes(invoice.invoice)}
+                  onChange={() => toggleRow(invoice.invoice)}
+                />
               </TableCell>
               <TableCell className={'font-medium'}>{invoice.invoice}</TableCell>
               <TableCell>{invoice.paymentStatus}</TableCell>
