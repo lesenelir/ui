@@ -57,7 +57,6 @@ export function TableFooter({ className, ref, ...props }: TableFooterProps) {
     <tfoot
       ref={ref}
       data-slot={'table-footer'}
-      //
       className={cn('bg-fg/50 border-t font-medium [&>tr]:last:border-b-0', className)}
       {...props}
     />
@@ -84,7 +83,7 @@ export function TableHead({ className, ref, ...props }: TableHeadProps) {
       ref={ref}
       data-slot={'table-head'}
       className={cn(
-        'text-fg-rev/60 py-1.5 px-2 align-middle font-medium whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]',
+        'text-fg-rev/60 py-1.5 px-2 text-left align-middle font-medium whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]',
         className
       )}
       {...props}
