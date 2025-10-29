@@ -89,7 +89,7 @@ export function TabsTrigger({ className, ref, variant, ...props }: TabsTriggerPr
   const variantValue = variant ?? contextVariant
 
   return (
-    <TabsPrimitive.TabsTrigger
+    <TabsPrimitive.Trigger
       ref={ref}
       data-slot={'tabs-trigger'}
       className={cn(
