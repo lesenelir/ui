@@ -73,7 +73,7 @@ export const CustomColor: Story = {
   render: () => (
     <div className={'w-96 space-y-6'}>
       <div>
-        <p className={'text-xs text-fg-rev/60 mb-2'}>Default (bg-fg-rev/20)</p>
+        <p className={'text-xs text-fg-rev/60 mb-2'}>Default (bg-border)</p>
         <Separator />
       </div>
       <div>
