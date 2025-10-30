@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import type React from 'react'
 
 import { cn } from '@lesenelir/ui/lib/utils'
 import * as SliderPrimitive from '@radix-ui/react-slider'
@@ -198,10 +198,9 @@ export function Slider({
   ...props
 }: SliderProps) {
   // Determine the slider values
-  const _values = React.useMemo(
-    () => (Array.isArray(value) ? value : Array.isArray(defaultValue) ? defaultValue : [min, max]),
-    [value, defaultValue, min, max]
-  )
+  // Use the actual value/defaultValue arrays to determine thumb count.
+  // Radix Slider internally manages thumb positions based on these arrays.
+  const thumbCount = (value ?? defaultValue ?? [min])?.length
 
   return (
     <SliderPrimitive.Root
@@ -234,7 +233,7 @@ export function Slider({
           )}
         />
       </SliderPrimitive.Track>
-      {Array.from({ length: _values.length }).map((_, index) => (
+      {Array.from({ length: thumbCount }).map((_, index) => (
         <SliderPrimitive.Thumb
           data-slot={'slider-thumb'}
           key={index}
