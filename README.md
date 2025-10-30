@@ -29,8 +29,11 @@ Our color system is built on the OKLCH color space, providing:
 
 ## Key Differences from shadcn/ui
 
+- **Enhanced color system:** Our color system is based on OKLCH and uses `color-mix()`, providing more natural color.
+
 - **Distinct variant and tint properties:** We separate structural changes (variant) from color styling (tint) for better clarity, improving upon shadcn/ui's combined approach.
 
+- **Extended variant options:** We offer a wider range of variants, providing more flexibility for different use cases and design requirements.
 
 ## References & Inspiration
 
