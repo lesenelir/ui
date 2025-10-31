@@ -1,4 +1,5 @@
 import { Button } from '@lesenelir/ui/button'
+import { Kbd, KbdGroup } from '@lesenelir/ui/kbd'
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './tooltip'
@@ -339,22 +340,148 @@ export const RichContent: Story = {
   ),
 }
 
-export const WithKeyboardShortcut: Story = {
+export const WithKbdComponent: Story = {
   render: () => (
-    <Tooltip>
-      <TooltipTrigger asChild>
-        <Button variant={'outline'}>
-          <span className={'i-tabler-search'} />
-          Search
-        </Button>
-      </TooltipTrigger>
-      <TooltipContent>
-        <div className={'flex items-center gap-2'}>
-          <span>Quick search</span>
-          <kbd className={'px-1.5 py-0.5 text-[10px] rounded bg-bg-muted border'}>K</kbd>
-        </div>
-      </TooltipContent>
-    </Tooltip>
+    <div className={'flex flex-wrap gap-4'}>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button variant={'outline'}>
+            <span className={'i-tabler-search'} />
+            Search
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>
+          <div className={'flex items-center gap-2'}>
+            <span>Quick search</span>
+            <KbdGroup>
+              <Kbd>⌘</Kbd>
+              <Kbd>K</Kbd>
+            </KbdGroup>
+          </div>
+        </TooltipContent>
+      </Tooltip>
+
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button variant={'outline'}>
+            <span className={'i-tabler-copy'} />
+            Copy
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>
+          <div className={'flex items-center gap-2'}>
+            <span>Copy</span>
+            <KbdGroup>
+              <Kbd>⌘</Kbd>
+              <Kbd>C</Kbd>
+            </KbdGroup>
+          </div>
+        </TooltipContent>
+      </Tooltip>
+
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button variant={'outline'}>
+            <span className={'i-tabler-clipboard'} />
+            Paste
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>
+          <div className={'flex items-center gap-2'}>
+            <span>Paste</span>
+            <KbdGroup>
+              <Kbd>⌘</Kbd>
+              <Kbd>V</Kbd>
+            </KbdGroup>
+          </div>
+        </TooltipContent>
+      </Tooltip>
+
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button size={'icon'} variant={'outline'}>
+            <span className={'i-tabler-arrow-back'} />
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>
+          <div className={'flex items-center gap-2'}>
+            <span>Undo</span>
+            <KbdGroup>
+              <Kbd>⌘</Kbd>
+              <Kbd>Z</Kbd>
+            </KbdGroup>
+          </div>
+        </TooltipContent>
+      </Tooltip>
+
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button size={'icon'} variant={'outline'}>
+            <span className={'i-tabler-arrow-forward'} />
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>
+          <div className={'flex items-center gap-2'}>
+            <span>Redo</span>
+            <KbdGroup>
+              <Kbd>⌘</Kbd>
+              <Kbd>⇧</Kbd>
+              <Kbd>Z</Kbd>
+            </KbdGroup>
+          </div>
+        </TooltipContent>
+      </Tooltip>
+
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button size={'icon'} variant={'outline'}>
+            <span className={'i-tabler-device-floppy'} />
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>
+          <div className={'flex items-center gap-2'}>
+            <span>Save</span>
+            <Kbd>⌘S</Kbd>
+          </div>
+        </TooltipContent>
+      </Tooltip>
+
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button variant={'outline'}>
+            <span className={'i-tabler-terminal'} />
+            Terminal
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>
+          <div className={'flex items-center gap-2'}>
+            <span>Toggle terminal</span>
+            <KbdGroup>
+              <Kbd>Ctrl</Kbd>
+              <Kbd>`</Kbd>
+            </KbdGroup>
+          </div>
+        </TooltipContent>
+      </Tooltip>
+
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button size={'icon'} variant={'outline'}>
+            <span className={'i-tabler-command'} />
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>
+          <div className={'flex items-center gap-2'}>
+            <span>Command palette</span>
+            <KbdGroup>
+              <Kbd>⌘</Kbd>
+              <Kbd>Shift</Kbd>
+              <Kbd>P</Kbd>
+            </KbdGroup>
+          </div>
+        </TooltipContent>
+      </Tooltip>
+    </div>
   ),
 }
 
