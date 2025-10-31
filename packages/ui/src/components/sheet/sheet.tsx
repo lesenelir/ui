@@ -71,6 +71,7 @@ export function SheetContent({ className, children, side = 'right', ...props }: 
       >
         {children}
         <SheetPrimitive.Close
+          aria-label={'Close'}
           className={cn(
             'absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 data-[state=open]:bg-fg-rev/50',
             'focus-visible-ring',
