@@ -400,7 +400,7 @@ export const AllShortcuts: Story = {
             <KbdGroup>
               <Kbd>Ctrl</Kbd>
               <span>+</span>
-              <Kbd>Shift</Kbd>
+              <Kbd>⇧</Kbd>
               <span>+</span>
               <Kbd>`</Kbd>
             </KbdGroup>
