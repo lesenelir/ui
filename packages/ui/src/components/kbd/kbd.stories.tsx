@@ -219,7 +219,7 @@ export const InTooltip: Story = {
             <span>Redo</span>
             <KbdGroup>
               <Kbd>⌘</Kbd>
-              <Kbd>⇧</Kbd>
+              <Kbd>Shift</Kbd>
               <Kbd>Z</Kbd>
             </KbdGroup>
           </div>
