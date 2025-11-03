@@ -1,8 +1,21 @@
+import { useState } from 'react'
+
 import { Button } from '@lesenelir/ui/button'
 import { Input } from '@lesenelir/ui/input'
 import { Label } from '@lesenelir/ui/label'
 import type { Meta, StoryObj } from '@storybook/react'
 
+import { useMediaQuery } from '../../hooks'
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '../dialog/dialog'
 import {
   Drawer,
   DrawerClose,
@@ -367,4 +380,80 @@ export const MobileNavigation: Story = {
       </DrawerContent>
     </Drawer>
   ),
+}
+
+export const Responsive: Story = {
+  render: () => {
+    const [open, setOpen] = useState(false)
+    const isDesktop = useMediaQuery('(min-width: 640px)')
+
+    function ProfileForm({ className }: { className?: string }) {
+      return (
+        <form className={className}>
+          <div className={'grid items-start gap-4 p-4'}>
+            <div className={'grid gap-2'}>
+              <Label htmlFor={'email'}>Email</Label>
+              <Input type={'email'} id={'email'} defaultValue={'user@example.com'} />
+            </div>
+            <div className={'grid gap-2'}>
+              <Label htmlFor={'username'}>Username</Label>
+              <Input id={'username'} defaultValue={'@username'} />
+            </div>
+            <div className={'grid gap-2'}>
+              <Label htmlFor={'name'}>Name</Label>
+              <Input id={'name'} defaultValue={'Your Name'} />
+            </div>
+          </div>
+        </form>
+      )
+    }
+
+    if (isDesktop) {
+      return (
+        <Dialog open={open} onOpenChange={setOpen}>
+          <DialogTrigger asChild>
+            <Button variant={'outline'}>Edit Profile</Button>
+          </DialogTrigger>
+          <DialogContent className={'sm:max-w-[425px]'}>
+            <DialogHeader>
+              <DialogTitle>Edit Profile</DialogTitle>
+              <DialogDescription>
+                Make changes to your profile here. Click save when you&apos;re done.
+              </DialogDescription>
+            </DialogHeader>
+            <ProfileForm />
+            <DialogFooter>
+              <DialogClose asChild>
+                <Button variant={'outline'}>Cancel</Button>
+              </DialogClose>
+              <Button>Save Changes</Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
+      )
+    }
+
+    return (
+      <Drawer open={open} onOpenChange={setOpen}>
+        <DrawerTrigger asChild>
+          <Button variant={'outline'}>Edit Profile</Button>
+        </DrawerTrigger>
+        <DrawerContent>
+          <DrawerHeader className={'text-left'}>
+            <DrawerTitle>Edit Profile</DrawerTitle>
+            <DrawerDescription>
+              Make changes to your profile here. Click save when you&apos;re done.
+            </DrawerDescription>
+          </DrawerHeader>
+          <ProfileForm className={'px-4'} />
+          <DrawerFooter className={'pt-2'}>
+            <Button>Save Changes</Button>
+            <DrawerClose asChild>
+              <Button variant={'outline'}>Cancel</Button>
+            </DrawerClose>
+          </DrawerFooter>
+        </DrawerContent>
+      </Drawer>
+    )
+  },
 }
