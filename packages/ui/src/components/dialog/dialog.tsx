@@ -122,7 +122,7 @@ export function DialogDescription({ className, ...props }: DialogDescriptionProp
   return (
     <DialogPrimitive.Description
       data-slot={'dialog-description'}
-      className={cn('text-sm text-fg-muted', className)}
+      className={cn('text-sm text-fg-rev/50', className)}
       {...props}
     />
   )
