@@ -19,5 +19,11 @@
 }
 ```
 
+### Dialog & Drawer & Sheet
 
+- Dialog is centered on the screen and used for important information or actions that require user attention.
+
+- Drawer slides up from the bottom of the screen and is typically used for mobile screens.
+
+- Sheet slides in from the side of the screen and is often used for desktop screens.
 
