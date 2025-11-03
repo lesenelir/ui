@@ -23,13 +23,15 @@ export function useMediaQuery(
   }
 
   const [matches, setMatches] = useState<boolean>(() => {
-    if (initializeWithValue) {
+    if (initializeWithValue && !IS_SERVER) {
       return getMatches(query)
     }
     return defaultValue
   })
 
   useEffect(() => {
+    if (IS_SERVER) return
+
     const mediaQueryList = window.matchMedia(query)
 
     // Update state to the current value
@@ -41,21 +43,11 @@ export function useMediaQuery(
     }
 
     // Modern browsers use addEventListener
-    if (mediaQueryList.addEventListener) {
-      mediaQueryList.addEventListener('change', handleChange)
-    } else {
-      // Safari < 14 fallback (deprecated but needed for older versions)
-      mediaQueryList.addListener(handleChange)
-    }
+    mediaQueryList.addEventListener('change', handleChange)
 
     // Cleanup function
     return () => {
-      if (mediaQueryList.removeEventListener) {
-        mediaQueryList.removeEventListener('change', handleChange)
-      } else {
-        // Safari < 14 fallback
-        mediaQueryList.removeListener(handleChange)
-      }
+      mediaQueryList.removeEventListener('change', handleChange)
     }
   }, [query])
 
