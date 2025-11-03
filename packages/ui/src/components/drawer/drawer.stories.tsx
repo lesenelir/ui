@@ -1,11 +1,6 @@
 import { useState } from 'react'
 
 import { Button } from '@lesenelir/ui/button'
-import { Input } from '@lesenelir/ui/input'
-import { Label } from '@lesenelir/ui/label'
-import type { Meta, StoryObj } from '@storybook/react'
-
-import { useMediaQuery } from '../../hooks'
 import {
   Dialog,
   DialogClose,
@@ -15,7 +10,12 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '../dialog/dialog'
+} from '@lesenelir/ui/dialog'
+import { useMediaQuery } from '@lesenelir/ui/hooks'
+import { Input } from '@lesenelir/ui/input'
+import { Label } from '@lesenelir/ui/label'
+import type { Meta, StoryObj } from '@storybook/react'
+
 import {
   Drawer,
   DrawerClose,
