@@ -39,7 +39,7 @@ export function SheetOverlay({ className, ...props }: SheetOverlayProps) {
     <SheetPrimitive.Overlay
       data-slot={'sheet-overlay'}
       className={cn(
-        'fixed inset-0 z-50 bg-fg-rev/10',
+        'fixed inset-0 z-50 bg-fg-rev/10 dark:bg-fg/50',
         'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
         className
       )}
@@ -73,8 +73,10 @@ export function SheetContent({ className, children, side = 'right', ...props }: 
         <SheetPrimitive.Close
           aria-label={'Close'}
           className={cn(
-            'absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 data-[state=open]:bg-fg-rev/50',
+            'cursor-pointer absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 data-[state=open]:bg-fg-rev/50',
             'focus-visible-ring',
+            "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+            "[&_span]:pointer-events-none [&_span]:shrink-0 [&_span:not([class*='size-'])]:size-4",
             'disabled:pointer-events-none'
           )}
         >
