@@ -64,7 +64,7 @@ export function DrawerContent({ className, children, ...props }: DrawerContentPr
       >
         <div
           className={
-            'bg-bg-rev mx-auto mt-4 hidden h-2 w-[100px] shrink-0 rounded-full group-data-[vaul-drawer-direction=bottom]/drawer-content:block'
+            'bg-bg-rev/10 mx-auto mt-4 hidden h-2 w-[100px] shrink-0 rounded-full group-data-[vaul-drawer-direction=bottom]/drawer-content:block'
           }
         />
         {children}
