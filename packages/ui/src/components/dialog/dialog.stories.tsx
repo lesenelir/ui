@@ -178,8 +178,8 @@ export const Confirmation: Story = {
             data from our servers.
           </DialogDescription>
         </DialogHeader>
-        <div className={'p-4'}>
-          <div className={'rounded-md bg-destructive/10 text-sm text-destructive'}>
+        <div className={'p-4 text-red-500 bg-red-500/10'}>
+          <div className={'rounded-md text-sm'}>
             <p className={'font-medium mb-1'}>Warning</p>
             <p>All of your data will be permanently removed. This action is irreversible.</p>
           </div>
