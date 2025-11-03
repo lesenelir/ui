@@ -73,7 +73,7 @@ export function DialogContent({
           <DialogPrimitive.Close
             aria-label={'Close'}
             className={cn(
-              'absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 data-[state=open]:bg-fg-rev/50',
+              'cursor-pointer absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 data-[state=open]:bg-fg-rev/50',
               "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
               "[&_span]:pointer-events-none [&_span]:shrink-0 [&_span:not([class*='size-'])]:size-4",
               'focus-visible-ring',
