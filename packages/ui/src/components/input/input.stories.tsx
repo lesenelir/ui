@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import { Button } from '@lesenelir/ui/button'
+import { Label } from '@lesenelir/ui/label'
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { Input } from './input'
@@ -486,9 +487,9 @@ export const LoginForm: Story = {
         <h2 className={'text-xl font-semibold mb-4'}>Login</h2>
       </div>
       <div className={'flex flex-col gap-2'}>
-        <label htmlFor={'email'} className={'text-sm font-medium'}>
+        <Label htmlFor={'email'} className={'text-sm font-medium'}>
           Email
-        </label>
+        </Label>
         <Input
           id={'email'}
           type={'email'}
@@ -497,9 +498,9 @@ export const LoginForm: Story = {
         />
       </div>
       <div className={'flex flex-col gap-2'}>
-        <label htmlFor={'password'} className={'text-sm font-medium'}>
+        <Label htmlFor={'password'} className={'text-sm font-medium'}>
           Password
-        </label>
+        </Label>
         <Input
           id={'password'}
           type={'password'}
@@ -533,9 +534,9 @@ export const PaymentForm: Story = {
         <h2 className={'text-xl font-semibold mb-4'}>Payment Details</h2>
       </div>
       <div className={'flex flex-col gap-2'}>
-        <label htmlFor={'amount'} className={'text-sm font-medium'}>
+        <Label htmlFor={'amount'} className={'text-sm font-medium'}>
           Amount
-        </label>
+        </Label>
         <Input
           id={'amount'}
           type={'number'}
@@ -545,9 +546,9 @@ export const PaymentForm: Story = {
         />
       </div>
       <div className={'flex flex-col gap-2'}>
-        <label htmlFor={'card'} className={'text-sm font-medium'}>
+        <Label htmlFor={'card'} className={'text-sm font-medium'}>
           Card Number
-        </label>
+        </Label>
         <Input
           id={'card'}
           type={'text'}
@@ -557,15 +558,15 @@ export const PaymentForm: Story = {
       </div>
       <div className={'grid grid-cols-1 sm:grid-cols-2 gap-4'}>
         <div className={'flex flex-col gap-2'}>
-          <label htmlFor={'expiry'} className={'text-sm font-medium'}>
+          <Label htmlFor={'expiry'} className={'text-sm font-medium'}>
             Expiry
-          </label>
+          </Label>
           <Input id={'expiry'} type={'text'} placeholder={'MM/YY'} />
         </div>
         <div className={'flex flex-col gap-2'}>
-          <label htmlFor={'cvv'} className={'text-sm font-medium'}>
+          <Label htmlFor={'cvv'} className={'text-sm font-medium'}>
             CVV
-          </label>
+          </Label>
           <Input id={'cvv'} type={'text'} placeholder={'123'} />
         </div>
       </div>
