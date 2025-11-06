@@ -1,7 +1,7 @@
 import { Button } from '@lesenelir/ui/button'
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { Popover, PopoverAnchor, PopoverContent, PopoverTrigger } from './popover'
+import { Popover, PopoverContent, PopoverTrigger } from './popover'
 
 const meta = {
   title: 'UI/Popover',
