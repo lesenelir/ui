@@ -710,7 +710,7 @@ export const SearchWithAutocomplete: Story = {
       <div className={'size-[320px]'}>
         <div
           className={cn(
-            'rounded-lg border',
+            'rounded-lg border overflow-hidden',
             'has-[[data-slot=input-group-control]:focus-visible]:border-ac',
             'has-[[data-slot=input-group-control]:focus-visible]:ring-ac/30',
             'has-[[data-slot=input-group-control]:focus-visible]:ring-2'
