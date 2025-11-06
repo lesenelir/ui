@@ -1,8 +1,10 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import { Label } from '@lesenelir/ui/label'
 import type { Meta, StoryObj } from '@storybook/react'
+import { useHotkeys } from 'react-hotkeys-hook'
 
+import { cn } from '../../lib/utils'
 import {
   InputGroup,
   InputGroupAddon,
@@ -615,4 +617,118 @@ export const EmailSubscription: Story = {
       </p>
     </div>
   ),
+}
+
+const autoCompletionSuggestions = [
+  '123 apple',
+  '123 banana',
+  '123 orange',
+  '123 grape',
+  '123 watermelon',
+  '123 pineapple',
+  '123 mango',
+]
+
+export const SearchWithAutocomplete: Story = {
+  render: () => {
+    const [inputValue, setInputValue] = useState<string>('')
+    const [showSuggestions, setShowSuggestions] = useState<boolean>(false)
+    const [selectedIndex, setSelectedIndex] = useState<number>(-1)
+    const containerRef = useRef<HTMLDivElement>(null)
+    const inputRef = useRef<HTMLInputElement>(null)
+
+    const filteredSuggestions = autoCompletionSuggestions.filter(suggestion =>
+      suggestion.toLowerCase().includes(inputValue.toLowerCase())
+    )
+
+    const shouldShowSuggestions = showSuggestions && inputValue && filteredSuggestions.length > 0
+
+    useHotkeys(
+      'ArrowDown',
+      (e: KeyboardEvent) => {
+        e.preventDefault()
+        if (shouldShowSuggestions) {
+          setSelectedIndex(prev => (prev < filteredSuggestions.length - 1 ? prev + 1 : prev))
+        }
+      },
+      { enabled: shouldShowSuggestions, enableOnFormTags: ['INPUT'] }
+    )
+
+    useHotkeys(
+      'ArrowUp',
+      (e: KeyboardEvent) => {
+        e.preventDefault()
+        if (shouldShowSuggestions) {
+          setSelectedIndex(prev => (prev > 0 ? prev - 1 : -1))
+        }
+      },
+      { enabled: shouldShowSuggestions, enableOnFormTags: ['INPUT'] }
+    )
+
+    useHotkeys(
+      'escape',
+      () => {
+        setShowSuggestions(false)
+        setSelectedIndex(-1)
+      },
+      { enabled: shouldShowSuggestions, enableOnFormTags: ['INPUT'] }
+    )
+
+    useEffect(() => {
+      const handleClickOutside = (event: MouseEvent) => {
+        if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+          setShowSuggestions(false)
+          setSelectedIndex(-1)
+        }
+      }
+
+      document.addEventListener('mousedown', handleClickOutside)
+      return () => document.removeEventListener('mousedown', handleClickOutside)
+    }, [])
+
+    return (
+      <div className={'size-[240px]'} ref={containerRef}>
+        <div className={'relative'}>
+          <InputGroup>
+            <InputGroupAddon align={'inline-start'}>
+              <InputGroupText>
+                <span className={'i-tabler-search'} />
+              </InputGroupText>
+            </InputGroupAddon>
+            <InputGroupInput
+              ref={inputRef}
+              placeholder={'Search fruits...'}
+              value={inputValue}
+              onChange={e => {
+                setInputValue(e.target.value)
+                setShowSuggestions(true)
+                setSelectedIndex(-1)
+              }}
+              onFocus={() => setShowSuggestions(true)}
+            />
+          </InputGroup>
+
+          {shouldShowSuggestions && (
+            <div
+              className={
+                'absolute z-10 w-full mt-1 bg-bg border border-fg-rev/10 rounded-lg shadow-lg max-h-[200px] overflow-y-auto'
+              }
+            >
+              {filteredSuggestions.map((suggestion, index) => (
+                <div
+                  key={suggestion}
+                  className={cn(
+                    'px-4 py-2 cursor-pointer transition-colors hover:bg-ac/10',
+                    index === selectedIndex && 'bg-ac/10'
+                  )}
+                >
+                  {suggestion}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    )
+  },
 }
