@@ -399,20 +399,39 @@ export const AllAlignments: Story = {
         </InputGroup>
       </div>
 
-      <div>
+      <div className={'overflow-hidden p-4'}>
         <h3 className={'text-lg font-semibold mb-3'}>Combined</h3>
-        <InputGroup>
-          <InputGroupAddon align={'block-start'}>
-            <InputGroupText>Amount</InputGroupText>
-          </InputGroupAddon>
-          <InputGroupAddon align={'inline-start'}>
-            <InputGroupText>$</InputGroupText>
-          </InputGroupAddon>
-          <InputGroupInput placeholder={'0.00'} type={'number'} />
-          <InputGroupAddon align={'inline-end'}>
-            <InputGroupText>USD</InputGroupText>
-          </InputGroupAddon>
-        </InputGroup>
+
+        <div
+          className={cn(
+            'rounded-lg border',
+            'has-[[data-slot=input-group-control]:focus-visible]:border-ac has-[[data-slot=input-group-control]:focus-visible]:ring-ac/30 has-[[data-slot=input-group-control]:focus-visible]:ring-2'
+          )}
+        >
+          <InputGroup
+            className={
+              'border-0 rounded-none shadow-none has-[[data-slot=input-group-control]:focus-visible]:ring-0'
+            }
+          >
+            <InputGroupAddon align={'inline-start'}>
+              <InputGroupText>
+                <span className={'i-tabler-search'} />
+              </InputGroupText>
+            </InputGroupAddon>
+
+            <InputGroupInput placeholder={'search'} type={'text'} />
+
+            <InputGroupAddon align={'inline-end'}>
+              <InputGroupText>
+                <span className={'i-tabler-send'} />
+              </InputGroupText>
+            </InputGroupAddon>
+          </InputGroup>
+
+          <div className={'px-3 py-2 border-t text-sm'}>
+            <span>suggestions</span>
+          </div>
+        </div>
       </div>
     </div>
   ),
@@ -687,38 +706,40 @@ export const SearchWithAutocomplete: Story = {
     }, [])
 
     return (
-      <div className={'size-[240px]'} ref={containerRef}>
-        <div className={'relative'}>
-          <InputGroup>
-            <InputGroupAddon align={'inline-start'}>
-              <InputGroupText>
-                <span className={'i-tabler-search'} />
-              </InputGroupText>
-            </InputGroupAddon>
-            <InputGroupInput
-              ref={inputRef}
-              placeholder={'Search fruits...'}
-              value={inputValue}
-              onChange={e => {
-                setInputValue(e.target.value)
-                setShowSuggestions(true)
-                setSelectedIndex(-1)
-              }}
-              onFocus={() => setShowSuggestions(true)}
-            />
-          </InputGroup>
+      <div className={'size-[320px]'} ref={containerRef}>
+        <InputGroup>
+          <InputGroupAddon align={'inline-start'}>
+            <InputGroupText>
+              <span className={'i-tabler-search'} />
+            </InputGroupText>
+          </InputGroupAddon>
 
-          {shouldShowSuggestions && (
-            <div
-              className={
-                'absolute z-10 w-full mt-1 bg-bg border border-fg-rev/10 rounded-lg shadow-lg max-h-[200px] overflow-y-auto'
-              }
-            >
+          <InputGroupInput
+            ref={inputRef}
+            placeholder={'Search fruits...'}
+            value={inputValue}
+            onChange={e => {
+              setInputValue(e.target.value)
+              setShowSuggestions(true)
+              setSelectedIndex(-1)
+            }}
+            onFocus={() => setShowSuggestions(true)}
+          />
+
+          <InputGroupAddon align={'inline-end'}>
+            <InputGroupText>
+              <span className={'i-tabler-send'} />
+            </InputGroupText>
+          </InputGroupAddon>
+
+          {/*{shouldShowSuggestions && (*/}
+          <InputGroupAddon align={'block-end'}>
+            <div className={'w-full flex flex-col max-h-[200px] overflow-y-auto -mx-3 -mb-3'}>
               {filteredSuggestions.map((suggestion, index) => (
                 <div
                   key={suggestion}
                   className={cn(
-                    'px-4 py-2 cursor-pointer transition-colors hover:bg-ac/10',
+                    'px-4 py-2 cursor-pointer transition-colors hover:bg-ac/10 first:border-t border-fg-rev/10',
                     index === selectedIndex && 'bg-ac/10'
                   )}
                 >
@@ -726,8 +747,9 @@ export const SearchWithAutocomplete: Story = {
                 </div>
               ))}
             </div>
-          )}
-        </div>
+          </InputGroupAddon>
+          {/*)}*/}
+        </InputGroup>
       </div>
     )
   },
