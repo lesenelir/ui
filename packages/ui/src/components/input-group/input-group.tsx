@@ -113,7 +113,7 @@ export function InputGroupAddon({
 export function InputGroupButton({
   className,
   type = 'button',
-  variant = 'outline',
+  variant = 'ghost',
   size = 'xs',
   ref,
   ...props
