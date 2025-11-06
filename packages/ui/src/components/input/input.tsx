@@ -3,59 +3,29 @@
 import type React from 'react'
 
 import { cn } from '@lesenelir/ui/lib/utils'
-import { cva, type VariantProps } from 'class-variance-authority'
-
-// Container styles - handles border, focus ring, background, shadow
-const containerVariants = cva([
-  'inline-flex items-center h-9 w-full rounded-md border bg-transparent shadow-xs transition-[color,box-shadow]',
-  // 'focus-within:outline-none focus-within:border-ac focus-within:ring-2 focus-within:ring-ac/30', // ring and border on focus within
-  // 'focus-within:border-none focus-within:outline-2 focus-within:outline-solid focus-within:outline-offset-0 focus-within:outline-ac', // outline on focus within
-  'focus-within-ring',
-  'has-[:disabled]:pointer-events-none has-[:disabled]:cursor-not-allowed has-[:disabled]:opacity-50',
-  'has-[:invalid]:ring-rose-500/20 dark:has-[:invalid]:ring-rose-500/40 has-[:invalid]:border-rose-500',
-])
+import { cva } from 'class-variance-authority'
 
 // Input styles - handles text, placeholder, file input
 const inputVariants = cva([
-  'flex-1 px-2 py-1 min-w-0 appearance-none outline-none bg-transparent md:text-sm',
+  // selection:bg-ac/20 selection:text-fg-rev
+  'h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none md:text-sm appearance-none',
   'file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-fg-rev file:mr-2',
+  'focus-visible-ring',
   'placeholder:text-fg-rev/50',
-  'disabled:pointer-events-none disabled:cursor-not-allowed',
+  'disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50',
+  'aria-invalid:ring-rose-500/20 dark:aria-invalid:ring-rose-500/40 aria-invalid:border-rose-500',
 ])
 
-export type InputProps = React.ComponentProps<'input'> &
-  VariantProps<typeof containerVariants> & {
-    leftSection?: React.ReactNode
-    leftSectionClassName?: string
-    rightSection?: React.ReactNode
-    rightSectionClassName?: string
-  }
+export type InputProps = React.ComponentProps<'input'>
 
-export function Input({
-  className,
-  type,
-  leftSectionClassName,
-  leftSection,
-  rightSectionClassName,
-  rightSection,
-  ref,
-  ...props
-}: InputProps) {
+export function Input({ className, type, ref, ...props }: InputProps) {
   return (
-    <div data-slot={'input-container'} className={cn(containerVariants(), className)}>
-      {leftSection && (
-        <div className={cn('flex items-center justify-center pl-2', leftSectionClassName)}>
-          {leftSection}
-        </div>
-      )}
-
-      <input ref={ref} data-slot={'input'} type={type} className={inputVariants()} {...props} />
-
-      {rightSection && (
-        <div className={cn('flex items-center justify-center pr-2', rightSectionClassName)}>
-          {rightSection}
-        </div>
-      )}
-    </div>
+    <input
+      ref={ref}
+      data-slot={'input'}
+      type={type}
+      className={cn(inputVariants(), className)}
+      {...props}
+    />
   )
 }
