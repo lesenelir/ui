@@ -14,6 +14,7 @@ const buttonVariants = cva(
         default: 'bg-fg-rev text-fg hover:bg-fg-rev/85',
         outline: 'border hover:bg-fg',
         link: 'underline-offset-2 hover:underline',
+        ghost: 'text-fg-rev bg-transparent',
       },
       size: {
         default: 'h-9 px-4 py-2 has-[>span]:px-3',
@@ -282,6 +283,122 @@ const buttonVariants = cva(
         variant: 'outline',
         tint: 'stone',
         className: 'border-stone-300 text-stone-700 hover:bg-stone-50',
+      },
+      // Ghost variant + tint combinations
+      {
+        variant: 'ghost',
+        tint: 'accent',
+        className: 'text-ac hover:bg-ac/10 active:bg-ac/15',
+      },
+      {
+        variant: 'ghost',
+        tint: 'red',
+        className: 'text-red-600 hover:bg-red-50 active:bg-red-100',
+      },
+      {
+        variant: 'ghost',
+        tint: 'orange',
+        className: 'text-orange-600 hover:bg-orange-50 active:bg-orange-100',
+      },
+      {
+        variant: 'ghost',
+        tint: 'amber',
+        className: 'text-amber-600 hover:bg-amber-50 active:bg-amber-100',
+      },
+      {
+        variant: 'ghost',
+        tint: 'yellow',
+        className: 'text-yellow-600 hover:bg-yellow-50 active:bg-yellow-100',
+      },
+      {
+        variant: 'ghost',
+        tint: 'lime',
+        className: 'text-lime-600 hover:bg-lime-50 active:bg-lime-100',
+      },
+      {
+        variant: 'ghost',
+        tint: 'green',
+        className: 'text-green-600 hover:bg-green-50 active:bg-green-100',
+      },
+      {
+        variant: 'ghost',
+        tint: 'emerald',
+        className: 'text-emerald-600 hover:bg-emerald-50 active:bg-emerald-100',
+      },
+      {
+        variant: 'ghost',
+        tint: 'teal',
+        className: 'text-teal-600 hover:bg-teal-50 active:bg-teal-100',
+      },
+      {
+        variant: 'ghost',
+        tint: 'cyan',
+        className: 'text-cyan-600 hover:bg-cyan-50 active:bg-cyan-100',
+      },
+      {
+        variant: 'ghost',
+        tint: 'sky',
+        className: 'text-sky-600 hover:bg-sky-50 active:bg-sky-100',
+      },
+      {
+        variant: 'ghost',
+        tint: 'blue',
+        className: 'text-blue-600 hover:bg-blue-50 active:bg-blue-100',
+      },
+      {
+        variant: 'ghost',
+        tint: 'indigo',
+        className: 'text-indigo-600 hover:bg-indigo-50 active:bg-indigo-100',
+      },
+      {
+        variant: 'ghost',
+        tint: 'violet',
+        className: 'text-violet-600 hover:bg-violet-50 active:bg-violet-100',
+      },
+      {
+        variant: 'ghost',
+        tint: 'purple',
+        className: 'text-purple-600 hover:bg-purple-50 active:bg-purple-100',
+      },
+      {
+        variant: 'ghost',
+        tint: 'fuchsia',
+        className: 'text-fuchsia-600 hover:bg-fuchsia-50 active:bg-fuchsia-100',
+      },
+      {
+        variant: 'ghost',
+        tint: 'pink',
+        className: 'text-pink-600 hover:bg-pink-50 active:bg-pink-100',
+      },
+      {
+        variant: 'ghost',
+        tint: 'rose',
+        className: 'text-rose-600 hover:bg-rose-50 active:bg-rose-100',
+      },
+      {
+        variant: 'ghost',
+        tint: 'slate',
+        className: 'text-slate-600 hover:bg-slate-50 active:bg-slate-100',
+      },
+      {
+        variant: 'ghost',
+        tint: 'gray',
+        className: 'text-gray-600 hover:bg-gray-50 active:bg-gray-100',
+      },
+      {
+        variant: 'ghost',
+        tint: 'zinc',
+        className: 'text-zinc-600 hover:bg-zinc-50 active:bg-zinc-100',
+      },
+      {
+        variant: 'ghost',
+        tint: 'neutral',
+        className: 'text-neutral-600 hover:bg-neutral-50 active:bg-neutral-100',
+      },
+      {
+        variant: 'ghost',
+        tint: 'stone',
+        className: 'text-stone-600 hover:bg-stone-50 active:bg-stone-100',
       },
     ],
     defaultVariants: {

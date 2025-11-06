@@ -14,7 +14,7 @@ const meta = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['default', 'outline', 'link'],
+      options: ['default', 'outline', 'link', 'ghost'],
       description: 'The visual style variant of the button',
     },
     size: {
@@ -118,6 +118,14 @@ export const Link: Story = {
     variant: 'link',
     size: 'default',
     children: 'Link Button',
+  },
+}
+
+export const Ghost: Story = {
+  args: {
+    variant: 'ghost',
+    size: 'default',
+    children: 'Ghost Button',
   },
 }
 
@@ -257,6 +265,7 @@ export const AllVariants: Story = {
         </Button>
         <Button tint={'accent'}>Accent Solid</Button>
         <Button variant={'link'}>Link</Button>
+        <Button variant={'ghost'}>Ghost</Button>
       </div>
     </div>
   ),
@@ -363,6 +372,7 @@ export const FullShowcase: Story = {
           </Button>
           <Button tint={'accent'}>Accent Solid</Button>
           <Button variant={'link'}>Link</Button>
+          <Button variant={'ghost'}>Ghost</Button>
         </div>
       </div>
 
@@ -530,6 +540,87 @@ export const OutlineTints: Story = {
   ),
 }
 
+export const GhostTints: Story = {
+  render: () => (
+    <div className={'flex flex-col gap-4'}>
+      <div className={'flex flex-wrap gap-2'}>
+        <Button variant={'ghost'} tint={'default'}>
+          Default
+        </Button>
+        <Button variant={'ghost'} tint={'accent'}>
+          Accent
+        </Button>
+        <Button variant={'ghost'} tint={'red'}>
+          Red
+        </Button>
+        <Button variant={'ghost'} tint={'orange'}>
+          Orange
+        </Button>
+        <Button variant={'ghost'} tint={'amber'}>
+          Amber
+        </Button>
+        <Button variant={'ghost'} tint={'yellow'}>
+          Yellow
+        </Button>
+        <Button variant={'ghost'} tint={'lime'}>
+          Lime
+        </Button>
+        <Button variant={'ghost'} tint={'green'}>
+          Green
+        </Button>
+        <Button variant={'ghost'} tint={'emerald'}>
+          Emerald
+        </Button>
+        <Button variant={'ghost'} tint={'teal'}>
+          Teal
+        </Button>
+        <Button variant={'ghost'} tint={'cyan'}>
+          Cyan
+        </Button>
+        <Button variant={'ghost'} tint={'sky'}>
+          Sky
+        </Button>
+        <Button variant={'ghost'} tint={'blue'}>
+          Blue
+        </Button>
+        <Button variant={'ghost'} tint={'indigo'}>
+          Indigo
+        </Button>
+        <Button variant={'ghost'} tint={'violet'}>
+          Violet
+        </Button>
+        <Button variant={'ghost'} tint={'purple'}>
+          Purple
+        </Button>
+        <Button variant={'ghost'} tint={'fuchsia'}>
+          Fuchsia
+        </Button>
+        <Button variant={'ghost'} tint={'pink'}>
+          Pink
+        </Button>
+        <Button variant={'ghost'} tint={'rose'}>
+          Rose
+        </Button>
+        <Button variant={'ghost'} tint={'slate'}>
+          Slate
+        </Button>
+        <Button variant={'ghost'} tint={'gray'}>
+          Gray
+        </Button>
+        <Button variant={'ghost'} tint={'zinc'}>
+          Zinc
+        </Button>
+        <Button variant={'ghost'} tint={'neutral'}>
+          Neutral
+        </Button>
+        <Button variant={'ghost'} tint={'stone'}>
+          Stone
+        </Button>
+      </div>
+    </div>
+  ),
+}
+
 export const TintShowcase: Story = {
   render: () => (
     <div className={'flex flex-col gap-6 p-8'}>
@@ -604,6 +695,30 @@ export const TintShowcase: Story = {
             Amber
           </Button>
           <Button variant={'outline'} tint={'gray'}>
+            Gray
+          </Button>
+        </div>
+      </div>
+
+      <div>
+        <h3 className={'text-lg font-semibold mb-3'}>Ghost Tints</h3>
+        <div className={'flex flex-wrap gap-2'}>
+          <Button variant={'ghost'} tint={'red'}>
+            Red
+          </Button>
+          <Button variant={'ghost'} tint={'blue'}>
+            Blue
+          </Button>
+          <Button variant={'ghost'} tint={'green'}>
+            Green
+          </Button>
+          <Button variant={'ghost'} tint={'purple'}>
+            Purple
+          </Button>
+          <Button variant={'ghost'} tint={'amber'}>
+            Amber
+          </Button>
+          <Button variant={'ghost'} tint={'gray'}>
             Gray
           </Button>
         </div>
