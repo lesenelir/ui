@@ -405,6 +405,7 @@ export const AllAlignments: Story = {
         <div
           className={cn(
             'rounded-lg border',
+            'transition-[color,box-shadow]',
             'has-[[data-slot=input-group-control]:focus-visible]:border-ac has-[[data-slot=input-group-control]:focus-visible]:ring-ac/30 has-[[data-slot=input-group-control]:focus-visible]:ring-2'
           )}
         >
