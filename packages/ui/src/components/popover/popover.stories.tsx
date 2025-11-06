@@ -1,4 +1,14 @@
+import type React from 'react'
+import { useRef, useState } from 'react'
+
 import { Button } from '@lesenelir/ui/button'
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupText,
+  InputGroupTextarea,
+} from '@lesenelir/ui/input-group'
+import { cn } from '@lesenelir/ui/lib/utils'
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { Popover, PopoverContent, PopoverTrigger } from './popover'
@@ -183,6 +193,106 @@ export const InteractiveContent: Story = {
       </PopoverContent>
     </Popover>
   ),
+}
+
+const autoCompletionSuggestions = [
+  '123 apple',
+  '123 banana',
+  '123 orange',
+  '123 grape',
+  '123 watermelon',
+  '123 pineapple',
+  '123 mango',
+]
+
+export const SearchWithAutoComplete: Story = {
+  render: () => {
+    const [query, setQuery] = useState<string>('')
+    const [isFocused, setIsFocused] = useState<boolean>(false)
+    const containerRef = useRef<HTMLDivElement>(null)
+
+    const suggestions = autoCompletionSuggestions.filter(s =>
+      s.toLowerCase().includes(query.toLowerCase())
+    )
+
+    const showSuggestions = isFocused && query.trim() !== '' && suggestions.length > 0
+
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+      if (e.key === 'Enter') {
+        // Don't submit if IME composition is in progress
+        if (e.nativeEvent.isComposing) return
+
+        // Allow newline with Shift+Enter
+        if (e.shiftKey) return
+
+        // Submit on Enter (without Shift)
+        e.preventDefault()
+      }
+    }
+
+    return (
+      <div className={'size-[380px]'}>
+        <p className={'text-xs mb-4'}>Type "123" to see auto-completion suggestions.</p>
+
+        <div
+          ref={containerRef}
+          className={cn(
+            'rounded-3xl border overflow-hidden',
+            'has-[[data-slot=input-group-control]:focus-visible]:border-ac',
+            'has-[[data-slot=input-group-control]:focus-visible]:ring-ac/30',
+            'has-[[data-slot=input-group-control]:focus-visible]:ring-2'
+          )}
+        >
+          <InputGroup
+            className={
+              'border-0 rounded-none shadow-none has-[[data-slot=input-group-control]:focus-visible]:ring-0'
+            }
+          >
+            <InputGroupAddon align={'inline-start'}>
+              <InputGroupText>
+                <span className={'i-tabler-search'} />
+              </InputGroupText>
+            </InputGroupAddon>
+
+            <InputGroupTextarea
+              rows={1}
+              placeholder={'search for something...'}
+              className={'min-h-fit'}
+              value={query}
+              onChange={e => {
+                setQuery(e.target.value)
+              }}
+              onKeyDown={handleKeyDown}
+              onFocus={() => setIsFocused(true)}
+              onBlur={() => setTimeout(() => setIsFocused(false), 100)}
+            />
+
+            <InputGroupAddon align={'inline-end'}>
+              <InputGroupText>
+                <span className={'i-tabler-send'} />
+              </InputGroupText>
+            </InputGroupAddon>
+          </InputGroup>
+
+          {showSuggestions && (
+            <div className={'py-1 border-t overflow-y-auto flex flex-col'}>
+              {suggestions.map((suggestion, index) => (
+                <Button
+                  key={index}
+                  variant={'ghost'}
+                  className={cn(
+                    'active:scale-100 hover:bg-ac/10 rounded-none justify-start px-4 py-2 cursor-pointer transition-colors'
+                  )}
+                >
+                  {suggestion}
+                </Button>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    )
+  },
 }
 
 export const FullShowcase: Story = {
