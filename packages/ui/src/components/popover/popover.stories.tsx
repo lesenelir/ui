@@ -244,6 +244,14 @@ export const SearchWithAutoComplete: Story = {
       }
     )
 
+    const performSearch = (value: string) => {
+      const trimmed = value.trim()
+      if (trimmed === '') return
+
+      setQuery(trimmed)
+      setSelectedIndex(-1)
+    }
+
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
       if (e.key === 'Enter') {
         // Don't submit if IME composition is in progress
@@ -254,12 +262,21 @@ export const SearchWithAutoComplete: Story = {
 
         // Submit on Enter (without Shift)
         e.preventDefault()
+
+        if (selectedIndex >= 0 && selectedIndex < suggestions.length) {
+          // Use selected suggestion if any
+          performSearch(suggestions[selectedIndex] ?? query)
+        } else {
+          // Otherwise, use current query
+          performSearch(query)
+        }
       }
     }
 
     return (
       <div className={'size-[380px]'}>
         <p className={'text-xs mb-4'}>Type "123" to see auto-completion suggestions.</p>
+        <p className={'text-xs mb-4'}>SelectIndex = {selectedIndex}</p>
 
         <div
           ref={containerRef}
@@ -311,6 +328,8 @@ export const SearchWithAutoComplete: Story = {
                     'active:scale-100 hover:bg-ac/10 rounded-none justify-start px-4 py-2 cursor-pointer transition-colors',
                     selectedIndex === index && 'bg-ac/10'
                   )}
+                  onMouseEnter={() => setSelectedIndex(index)}
+                  onClick={() => performSearch(suggestion)}
                 >
                   {suggestion}
                 </Button>
