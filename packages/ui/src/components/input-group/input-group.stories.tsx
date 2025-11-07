@@ -1,5 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
+import type React from 'react'
+import { useState } from 'react'
 
+import { Button } from '@lesenelir/ui/button'
 import { Label } from '@lesenelir/ui/label'
 import type { Meta, StoryObj } from '@storybook/react'
 import { useHotkeys } from 'react-hotkeys-hook'
@@ -649,73 +651,85 @@ const autoCompletionSuggestions = [
   '123 mango',
 ]
 
-export const SearchWithAutocomplete: Story = {
+export const SearchWithAutoComplete: Story = {
   render: () => {
-    const [inputValue, setInputValue] = useState<string>('')
-    const [showSuggestions, setShowSuggestions] = useState<boolean>(false)
+    const [query, setQuery] = useState<string>('')
+    const [isFocused, setIsFocused] = useState<boolean>(false)
     const [selectedIndex, setSelectedIndex] = useState<number>(-1)
-    const containerRef = useRef<HTMLDivElement>(null)
-    const inputRef = useRef<HTMLInputElement>(null)
 
-    const filteredSuggestions = autoCompletionSuggestions.filter(suggestion =>
-      suggestion.toLowerCase().includes(inputValue.toLowerCase())
+    const suggestions = autoCompletionSuggestions.filter(s =>
+      s.toLowerCase().includes(query.toLowerCase())
     )
 
-    const shouldShowSuggestions = showSuggestions && inputValue && filteredSuggestions.length > 0
+    const showSuggestions = isFocused && query.trim() !== '' && suggestions.length > 0
 
+    // Keyboard navigation for suggestions
     useHotkeys(
       'ArrowDown',
       (e: KeyboardEvent) => {
         e.preventDefault()
-        if (shouldShowSuggestions) {
-          setSelectedIndex(prev => (prev < filteredSuggestions.length - 1 ? prev + 1 : prev))
-        }
+        setSelectedIndex(prev => (prev + 1) % suggestions.length)
       },
-      { enabled: shouldShowSuggestions, enableOnFormTags: ['INPUT'] }
+      {
+        enabled: showSuggestions,
+        enableOnFormTags: ['INPUT'],
+      }
     )
 
     useHotkeys(
       'ArrowUp',
       (e: KeyboardEvent) => {
         e.preventDefault()
-        if (shouldShowSuggestions) {
-          setSelectedIndex(prev => (prev > 0 ? prev - 1 : -1))
-        }
+        setSelectedIndex(prev => (prev - 1 + suggestions.length) % suggestions.length)
       },
-      { enabled: shouldShowSuggestions, enableOnFormTags: ['INPUT'] }
+      {
+        enabled: showSuggestions,
+        enableOnFormTags: ['INPUT'],
+      }
     )
 
-    useHotkeys(
-      'escape',
-      () => {
-        setShowSuggestions(false)
-        setSelectedIndex(-1)
-      },
-      { enabled: shouldShowSuggestions, enableOnFormTags: ['INPUT'] }
-    )
+    const performSearch = (value: string) => {
+      const trimmed = value.trim()
+      if (trimmed === '') return
 
-    useEffect(() => {
-      const handleClickOutside = (event: MouseEvent) => {
-        if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
-          setShowSuggestions(false)
-          setSelectedIndex(-1)
+      setQuery(trimmed)
+      setSelectedIndex(-1)
+      // setIsFocused(false)
+    }
+
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+      if (e.key === 'Enter') {
+        // Don't submit if IME composition is in progress
+        if (e.nativeEvent.isComposing) return
+
+        // Allow newline with Shift+Enter
+        if (e.shiftKey) return
+
+        // Submit on Enter (without Shift)
+        e.preventDefault()
+
+        if (selectedIndex >= 0 && selectedIndex < suggestions.length) {
+          // Use selected suggestion if any
+          performSearch(suggestions[selectedIndex] ?? query)
+        } else {
+          // Otherwise, use current query
+          performSearch(query)
         }
       }
-
-      document.addEventListener('mousedown', handleClickOutside)
-      return () => document.removeEventListener('mousedown', handleClickOutside)
-    }, [])
+    }
 
     return (
-      <div className={'size-[320px]'}>
+      <div className={'size-[380px]'}>
+        <p className={'text-xs mb-4'}>Type "123" to see auto-completion suggestions.</p>
+        <p className={'text-xs mb-4'}>SelectIndex = {selectedIndex}</p>
+
         <div
           className={cn(
-            'rounded-lg border',
+            'rounded-3xl border overflow-hidden',
             'has-[[data-slot=input-group-control]:focus-visible]:border-ac',
             'has-[[data-slot=input-group-control]:focus-visible]:ring-ac/30',
             'has-[[data-slot=input-group-control]:focus-visible]:ring-2'
           )}
-          ref={containerRef}
         >
           <InputGroup
             className={
@@ -729,15 +743,16 @@ export const SearchWithAutocomplete: Story = {
             </InputGroupAddon>
 
             <InputGroupInput
-              ref={inputRef}
-              placeholder={'Search fruits...'}
-              value={inputValue}
+              placeholder={'search for something...'}
+              className={'min-h-fit'}
+              value={query}
               onChange={e => {
-                setInputValue(e.target.value)
-                setShowSuggestions(true)
-                setSelectedIndex(-1)
+                setQuery(e.target.value)
+                setSelectedIndex(-1) // Reset selection when typing
               }}
-              onFocus={() => setShowSuggestions(true)}
+              onKeyDown={handleKeyDown}
+              onFocus={() => setIsFocused(true)}
+              onBlur={() => setTimeout(() => setIsFocused(false), 100)}
             />
 
             <InputGroupAddon align={'inline-end'}>
@@ -747,21 +762,26 @@ export const SearchWithAutocomplete: Story = {
             </InputGroupAddon>
           </InputGroup>
 
-          {shouldShowSuggestions && (
-            <div className={'py-1 border-t overflow-y-auto'}>
-              <div className={'flex flex-col'}>
-                {filteredSuggestions.map((suggestion, index) => (
-                  <div
-                    key={suggestion}
-                    className={cn(
-                      'px-4 py-2 cursor-pointer transition-colors hover:bg-ac/10',
-                      index === selectedIndex && 'bg-ac/10'
-                    )}
-                  >
-                    {suggestion}
-                  </div>
-                ))}
-              </div>
+          {showSuggestions && (
+            <div className={'py-1 border-t overflow-y-auto flex flex-col'}>
+              {suggestions.map((suggestion, index) => (
+                <Button
+                  key={index}
+                  variant={'ghost'}
+                  className={cn(
+                    'active:scale-100 hover:bg-ac/10 rounded-none justify-start px-4 py-2 cursor-pointer transition-colors',
+                    selectedIndex === index && 'bg-ac/10'
+                  )}
+                  onMouseEnter={() => setSelectedIndex(index)}
+                  // Use onMouseDown to fire before blur, replace onClick
+                  onMouseDown={e => {
+                    e.preventDefault()
+                    performSearch(suggestion)
+                  }}
+                >
+                  {suggestion}
+                </Button>
+              ))}
             </div>
           )}
         </div>
