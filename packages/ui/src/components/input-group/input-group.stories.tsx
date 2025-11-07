@@ -773,7 +773,11 @@ export const SearchWithAutoComplete: Story = {
                     selectedIndex === index && 'bg-ac/10'
                   )}
                   onMouseEnter={() => setSelectedIndex(index)}
-                  onClick={() => performSearch(suggestion)}
+                  // Use onMouseDown to fire before blur, replace onClick
+                  onMouseDown={e => {
+                    e.preventDefault()
+                    performSearch(suggestion)
+                  }}
                 >
                   {suggestion}
                 </Button>
