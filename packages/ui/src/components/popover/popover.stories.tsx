@@ -5,11 +5,12 @@ import { Button } from '@lesenelir/ui/button'
 import {
   InputGroup,
   InputGroupAddon,
+  InputGroupInput,
   InputGroupText,
-  InputGroupTextarea,
 } from '@lesenelir/ui/input-group'
 import { cn } from '@lesenelir/ui/lib/utils'
 import type { Meta, StoryObj } from '@storybook/react'
+import { useHotkeys } from 'react-hotkeys-hook'
 
 import { Popover, PopoverContent, PopoverTrigger } from './popover'
 
@@ -209,6 +210,7 @@ export const SearchWithAutoComplete: Story = {
   render: () => {
     const [query, setQuery] = useState<string>('')
     const [isFocused, setIsFocused] = useState<boolean>(false)
+    const [selectedIndex, setSelectedIndex] = useState<number>(-1)
     const containerRef = useRef<HTMLDivElement>(null)
 
     const suggestions = autoCompletionSuggestions.filter(s =>
@@ -217,7 +219,32 @@ export const SearchWithAutoComplete: Story = {
 
     const showSuggestions = isFocused && query.trim() !== '' && suggestions.length > 0
 
-    const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    // Keyboard navigation for suggestions
+    useHotkeys(
+      'ArrowDown',
+      (e: KeyboardEvent) => {
+        e.preventDefault()
+        setSelectedIndex(prev => (prev + 1) % suggestions.length)
+      },
+      {
+        enabled: showSuggestions,
+        enableOnFormTags: ['INPUT'],
+      }
+    )
+
+    useHotkeys(
+      'ArrowUp',
+      (e: KeyboardEvent) => {
+        e.preventDefault()
+        setSelectedIndex(prev => (prev - 1 + suggestions.length) % suggestions.length)
+      },
+      {
+        enabled: showSuggestions,
+        enableOnFormTags: ['INPUT'],
+      }
+    )
+
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
       if (e.key === 'Enter') {
         // Don't submit if IME composition is in progress
         if (e.nativeEvent.isComposing) return
@@ -254,13 +281,13 @@ export const SearchWithAutoComplete: Story = {
               </InputGroupText>
             </InputGroupAddon>
 
-            <InputGroupTextarea
-              rows={1}
+            <InputGroupInput
               placeholder={'search for something...'}
               className={'min-h-fit'}
               value={query}
               onChange={e => {
                 setQuery(e.target.value)
+                setSelectedIndex(-1) // Reset selection when typing
               }}
               onKeyDown={handleKeyDown}
               onFocus={() => setIsFocused(true)}
@@ -281,7 +308,8 @@ export const SearchWithAutoComplete: Story = {
                   key={index}
                   variant={'ghost'}
                   className={cn(
-                    'active:scale-100 hover:bg-ac/10 rounded-none justify-start px-4 py-2 cursor-pointer transition-colors'
+                    'active:scale-100 hover:bg-ac/10 rounded-none justify-start px-4 py-2 cursor-pointer transition-colors',
+                    selectedIndex === index && 'bg-ac/10'
                   )}
                 >
                   {suggestion}
