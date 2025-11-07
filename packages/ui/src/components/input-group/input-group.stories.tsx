@@ -656,7 +656,6 @@ export const SearchWithAutoComplete: Story = {
     const [query, setQuery] = useState<string>('')
     const [isFocused, setIsFocused] = useState<boolean>(false)
     const [selectedIndex, setSelectedIndex] = useState<number>(-1)
-    const containerRef = useRef<HTMLDivElement>(null)
 
     const suggestions = autoCompletionSuggestions.filter(s =>
       s.toLowerCase().includes(query.toLowerCase())
@@ -695,6 +694,7 @@ export const SearchWithAutoComplete: Story = {
 
       setQuery(trimmed)
       setSelectedIndex(-1)
+      // setIsFocused(false)
     }
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -724,7 +724,6 @@ export const SearchWithAutoComplete: Story = {
         <p className={'text-xs mb-4'}>SelectIndex = {selectedIndex}</p>
 
         <div
-          ref={containerRef}
           className={cn(
             'rounded-3xl border overflow-hidden',
             'has-[[data-slot=input-group-control]:focus-visible]:border-ac',
