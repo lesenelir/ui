@@ -1,5 +1,5 @@
 import type React from 'react'
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 
 import { Button } from '@lesenelir/ui/button'
 import {
@@ -12,7 +12,7 @@ import { cn } from '@lesenelir/ui/lib/utils'
 import type { Meta, StoryObj } from '@storybook/react'
 import { useHotkeys } from 'react-hotkeys-hook'
 
-import { Popover, PopoverContent, PopoverTrigger } from './popover'
+import { Popover, PopoverAnchor, PopoverContent, PopoverTrigger } from './popover'
 
 const meta = {
   title: 'UI/Popover',
@@ -211,7 +211,6 @@ export const SearchWithAutoComplete: Story = {
     const [query, setQuery] = useState<string>('')
     const [isFocused, setIsFocused] = useState<boolean>(false)
     const [selectedIndex, setSelectedIndex] = useState<number>(-1)
-    const containerRef = useRef<HTMLDivElement>(null)
 
     const suggestions = autoCompletionSuggestions.filter(s =>
       s.toLowerCase().includes(query.toLowerCase())
@@ -250,6 +249,7 @@ export const SearchWithAutoComplete: Story = {
 
       setQuery(trimmed)
       setSelectedIndex(-1)
+      // setIsFocused(false)
     }
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -278,48 +278,67 @@ export const SearchWithAutoComplete: Story = {
         <p className={'text-xs mb-4'}>Type "123" to see auto-completion suggestions.</p>
         <p className={'text-xs mb-4'}>SelectIndex = {selectedIndex}</p>
 
-        <div
-          ref={containerRef}
-          className={cn(
-            'rounded-3xl border overflow-hidden',
-            'has-[[data-slot=input-group-control]:focus-visible]:border-ac',
-            'has-[[data-slot=input-group-control]:focus-visible]:ring-ac/30',
-            'has-[[data-slot=input-group-control]:focus-visible]:ring-2'
-          )}
-        >
-          <InputGroup
-            className={
-              'border-0 rounded-none shadow-none has-[[data-slot=input-group-control]:focus-visible]:ring-0'
-            }
+        <Popover open={showSuggestions}>
+          <PopoverAnchor asChild>
+            <div
+              className={cn(
+                'rounded-3xl border overflow-hidden transition-all duration-200',
+                'has-[[data-slot=input-group-control]:focus-visible]:border-ac',
+                'has-[[data-slot=input-group-control]:focus-visible]:ring-ac/30',
+                'has-[[data-slot=input-group-control]:focus-visible]:ring-2',
+                // When the popover is open, only keep the top rounded corners
+                showSuggestions && 'rounded-b-none border-b-0'
+              )}
+            >
+              <InputGroup
+                className={
+                  'border-0 rounded-none shadow-none has-[[data-slot=input-group-control]:focus-visible]:ring-0'
+                }
+              >
+                <InputGroupAddon align={'inline-start'}>
+                  <InputGroupText>
+                    <span className={'i-tabler-search'} />
+                  </InputGroupText>
+                </InputGroupAddon>
+
+                <InputGroupInput
+                  placeholder={'search for something...'}
+                  className={'min-h-fit'}
+                  value={query}
+                  onChange={e => {
+                    setQuery(e.target.value)
+                    setSelectedIndex(-1) // Reset selection when typing
+                  }}
+                  onKeyDown={handleKeyDown}
+                  onFocus={() => setIsFocused(true)}
+                  onBlur={() => setTimeout(() => setIsFocused(false), 100)}
+                />
+
+                <InputGroupAddon align={'inline-end'}>
+                  <InputGroupText>
+                    <span className={'i-tabler-send'} />
+                  </InputGroupText>
+                </InputGroupAddon>
+              </InputGroup>
+            </div>
+          </PopoverAnchor>
+
+          <PopoverContent
+            className={cn(
+              'p-0 w-[var(--radix-popover-trigger-width)] overflow-hidden',
+              // When open, only keep bottom rounded corners, to connect with the search box
+              'rounded-t-none rounded-b-3xl border-t-0',
+              // Add same border styles as the search box when focused
+              'border-ac ring-ac/30 ring-2',
+              'shadow-lg'
+            )}
+            align={'start'}
+            side={'bottom'}
+            sideOffset={-1}
+            avoidCollisions={false}
+            onOpenAutoFocus={e => e.preventDefault()}
           >
-            <InputGroupAddon align={'inline-start'}>
-              <InputGroupText>
-                <span className={'i-tabler-search'} />
-              </InputGroupText>
-            </InputGroupAddon>
-
-            <InputGroupInput
-              placeholder={'search for something...'}
-              className={'min-h-fit'}
-              value={query}
-              onChange={e => {
-                setQuery(e.target.value)
-                setSelectedIndex(-1) // Reset selection when typing
-              }}
-              onKeyDown={handleKeyDown}
-              onFocus={() => setIsFocused(true)}
-              onBlur={() => setTimeout(() => setIsFocused(false), 100)}
-            />
-
-            <InputGroupAddon align={'inline-end'}>
-              <InputGroupText>
-                <span className={'i-tabler-send'} />
-              </InputGroupText>
-            </InputGroupAddon>
-          </InputGroup>
-
-          {showSuggestions && (
-            <div className={'py-1 border-t overflow-y-auto flex flex-col'}>
+            <div className={'py-1 overflow-y-auto flex flex-col border-t'}>
               {suggestions.map((suggestion, index) => (
                 <Button
                   key={index}
@@ -329,14 +348,18 @@ export const SearchWithAutoComplete: Story = {
                     selectedIndex === index && 'bg-ac/10'
                   )}
                   onMouseEnter={() => setSelectedIndex(index)}
-                  onClick={() => performSearch(suggestion)}
+                  // Use onMouseDown to fire before blur, replace onClick
+                  onMouseDown={e => {
+                    e.preventDefault()
+                    performSearch(suggestion)
+                  }}
                 >
                   {suggestion}
                 </Button>
               ))}
             </div>
-          )}
-        </div>
+          </PopoverContent>
+        </Popover>
       </div>
     )
   },
