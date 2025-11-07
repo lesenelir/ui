@@ -1,5 +1,5 @@
 import type React from 'react'
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 
 import { Button } from '@lesenelir/ui/button'
 import { Label } from '@lesenelir/ui/label'
