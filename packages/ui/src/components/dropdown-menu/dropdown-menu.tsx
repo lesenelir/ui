@@ -24,7 +24,9 @@ export type DropdownMenuRadioGroupProps = React.ComponentProps<
 >
 export type DropdownMenuRadioItemProps = React.ComponentProps<
   typeof DropdownMenuPrimitive.RadioItem
->
+> & {
+  tint?: 'default' | 'accent' | 'rose'
+}
 export type DropdownMenuLabelProps = React.ComponentProps<typeof DropdownMenuPrimitive.Label> & {
   inset?: boolean
 }
@@ -158,6 +160,7 @@ export function DropdownMenuRadioGroup({ ...props }: DropdownMenuRadioGroupProps
 export function DropdownMenuRadioItem({
   className,
   children,
+  tint = 'default',
   ...props
 }: DropdownMenuRadioItemProps) {
   return (
@@ -165,9 +168,13 @@ export function DropdownMenuRadioItem({
       data-slot={'dropdown-menu-radio-item'}
       className={cn(
         'relative flex cursor-default items-center gap-2 rounded-sm py-1.5 pr-2 pl-8 text-sm outline-hidden select-none',
-        'focus:bg-ac/10 focus:text-ac',
         "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         'data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+
+        tint === 'default' && 'focus:bg-fg focus:text-fg-rev',
+        tint === 'accent' && 'focus:bg-ac/10 focus:text-ac',
+        tint === 'rose' && 'focus:bg-rose-500/10 focus:text-rose-500',
+
         className
       )}
       {...props}
@@ -176,7 +183,7 @@ export function DropdownMenuRadioItem({
         className={'pointer-events-none absolute left-2 flex size-3.5 items-center justify-center'}
       >
         <DropdownMenuPrimitive.ItemIndicator>
-          <span className={'i-tabler-circle-filled text-fg-rev size-4'} />
+          <span className={'i-tabler-circle-filled text-fg-rev size-2'} />
         </DropdownMenuPrimitive.ItemIndicator>
       </span>
       {children}
