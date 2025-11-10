@@ -102,7 +102,7 @@ export function DropdownMenuItem({
         tint === 'default' &&
           'data-[tint=default]:*:[svg]:!text-fg-rev data-[tint=default]:text-fg-rev data-[tint=default]:focus:bg-fg/10 data-[tint=default]:focus:text-fg-rev',
         tint === 'accent' &&
-          'data-[tint=accent]:*:[svg]:!text-accent data-[tint=accent]:text-accent data-[tint=accent]:focus:bg-accent/10 data-[tint=accent]:focus:text-accent',
+          'data-[tint=accent]:*:[svg]:!text-ac data-[tint=accent]:text-ac data-[tint=accent]:focus:bg-ac/10 data-[tint=accent]:focus:text-ac',
         tint === 'rose' &&
           'data-[tint=rose]:*:[svg]:!text-rose-500 data-[tint=rose]:text-rose-500 data-[tint=rose]:focus:bg-rose-500/10 data-[tint=rose]:focus:text-rose-500',
 
