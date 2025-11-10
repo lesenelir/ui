@@ -16,7 +16,9 @@ export type DropdownMenuItemProps = React.ComponentProps<typeof DropdownMenuPrim
 }
 export type DropdownMenuCheckboxItemProps = React.ComponentProps<
   typeof DropdownMenuPrimitive.CheckboxItem
->
+> & {
+  tint?: 'default' | 'accent' | 'rose'
+}
 export type DropdownMenuRadioGroupProps = React.ComponentProps<
   typeof DropdownMenuPrimitive.RadioGroup
 >
@@ -117,6 +119,7 @@ export function DropdownMenuCheckboxItem({
   className,
   children,
   checked,
+  tint = 'default',
   ...props
 }: DropdownMenuCheckboxItemProps) {
   return (
@@ -124,9 +127,13 @@ export function DropdownMenuCheckboxItem({
       data-slot={'dropdown-menu-checkbox-item'}
       className={cn(
         'relative flex cursor-default items-center gap-2 rounded-sm py-1.5 pr-2 pl-8 text-sm outline-hidden select-none',
-        'focus:bg-ac/10 focus:text-ac',
         "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         'data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+
+        tint === 'default' && 'focus:bg-fg focus:text-fg-rev',
+        tint === 'accent' && 'focus:bg-ac/10 focus:text-ac',
+        tint === 'rose' && 'focus:bg-rose-500/10 focus:text-rose-500',
+
         className
       )}
       checked={checked}
