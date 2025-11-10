@@ -136,7 +136,7 @@ export function DropdownMenuCheckboxItem({
         className={'pointer-events-none absolute left-2 flex size-3.5 items-center justify-center'}
       >
         <DropdownMenuPrimitive.ItemIndicator>
-          <span className={'i-tabler-check text-fg-rev size-4'} />
+          <span className={'i-tabler-check size-4'} />
         </DropdownMenuPrimitive.ItemIndicator>
       </span>
       {children}
