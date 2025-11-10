@@ -1,1 +1,1 @@
-export * from './dropdown-menu.stories'
+export * from './dropdown-menu'
