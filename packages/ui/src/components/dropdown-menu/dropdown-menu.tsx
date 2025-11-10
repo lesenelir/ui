@@ -39,6 +39,7 @@ export type DropdownMenuSubTriggerProps = React.ComponentProps<
   typeof DropdownMenuPrimitive.SubTrigger
 > & {
   inset?: boolean
+  tint?: 'default' | 'accent' | 'rose'
 }
 export type DropdownMenuSubContentProps = React.ComponentProps<
   typeof DropdownMenuPrimitive.SubContent
@@ -233,6 +234,7 @@ export function DropdownMenuSub({ ...props }: DropdownMenuSubProps) {
 export function DropdownMenuSubTrigger({
   className,
   inset = false,
+  tint = 'default',
   children,
   ...props
 }: DropdownMenuSubTriggerProps) {
@@ -241,12 +243,18 @@ export function DropdownMenuSubTrigger({
       data-slot={'dropdown-menu-sub-trigger'}
       data-inset={inset}
       className={cn(
-        'data-[state=open]:bg-ac/10 data-[state=open]:text-ac',
         'flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none',
-        'focus:bg-ac/10 focus:text-ac',
         'data-[inset=true]:pl-8',
         "[&_svg:not([class*='text-'])]:text-fg-rev",
         "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+
+        tint === 'default' &&
+          'focus:bg-fg focus:text-fg-rev data-[state=open]:bg-fg data-[state=open]:text-fg-rev',
+        tint === 'accent' &&
+          'focus:bg-ac/10 focus:text-ac data-[state=open]:bg-ac/10 data-[state=open]:text-ac',
+        tint === 'rose' &&
+          'focus:bg-rose-500/10 focus:text-rose-500 data-[state=open]:bg-rose-500/10 data-[state=open]:text-rose-500',
+
         className
       )}
       {...props}
