@@ -16,4 +16,4 @@ Vitest is configured in `apps/web/vitest.config.ts` with Storybook integration a
 Follow Conventional Commits (`feat:`, `fix:`, `chore:`) as seen in recent history, and pair them with matching branch prefixes (`feat/*`, `fix/*`) so Biome CI triggers. Squash commits that only address review feedback. PRs should describe scope, testing evidence, and link to tracking issues; include screenshots or Chromatic URLs for UI changes. Ensure Biome (`pnpm biome:check`) and relevant tests are green before requesting review.
 
 ## Tooling & CI Notes
-CI runs `biome ci .` on pushes and PRs targeting `master`; replicate locally with `pnpm biome:check`. Husky’s pre-commit hook executes `pnpm lint-staged`, so keep staged files small and staged in logical groups. Node 22 and `pnpm@10.20.0` are required—use `corepack enable` if needed. EOF
+CI runs `biome ci .` on pushes and PRs targeting `master`; replicate locally with `pnpm biome:check`. Husky’s pre-commit hook executes `pnpm lint-staged`, so keep staged files small and staged in logical groups. Node 22 and `pnpm@10.21.0` are required—use `corepack enable` if needed. EOF
