@@ -1,6 +1,18 @@
 import { useState } from 'react'
 
 import { Button } from '@lesenelir/ui/button'
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from '@lesenelir/ui/dialog'
+import { Input } from '@lesenelir/ui/input'
+import { Label } from '@lesenelir/ui/label'
+import { Textarea } from '@lesenelir/ui/textarea'
 import type { Meta, StoryObj } from '@storybook/react'
 
 import {
@@ -414,6 +426,103 @@ export const ComplexExample: Story = {
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
+    )
+  },
+}
+
+export const WithDialog: Story = {
+  render: () => {
+    const [showNewDialog, setShowNewDialog] = useState(false)
+    const [showShareDialog, setShowShareDialog] = useState(false)
+
+    return (
+      <>
+        <DropdownMenu modal={false}>
+          <DropdownMenuTrigger asChild>
+            <Button variant={'outline'} size={'icon-sm'} aria-label={'Open menu'}>
+              <span className={'i-tabler-dots-vertical'} />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className={'w-40'} align={'end'}>
+            <DropdownMenuLabel>File Actions</DropdownMenuLabel>
+            <DropdownMenuGroup>
+              <DropdownMenuItem onSelect={() => setShowNewDialog(true)}>
+                New File...
+              </DropdownMenuItem>
+              <DropdownMenuItem onSelect={() => setShowShareDialog(true)}>
+                Share...
+              </DropdownMenuItem>
+              <DropdownMenuItem disabled>Download</DropdownMenuItem>
+            </DropdownMenuGroup>
+          </DropdownMenuContent>
+        </DropdownMenu>
+
+        <Dialog open={showNewDialog} onOpenChange={setShowNewDialog}>
+          <DialogContent className={'sm:max-w-[425px]'}>
+            <DialogHeader>
+              <DialogTitle>Create New File</DialogTitle>
+              <DialogDescription>
+                Provide a name for your new file. Click create when you're done.
+              </DialogDescription>
+            </DialogHeader>
+            <div className={'grid gap-4 p-4'}>
+              <div className={'grid grid-cols-4 items-center gap-4'}>
+                <Label htmlFor={'filename'} className={'text-right'}>
+                  File Name
+                </Label>
+                <Input id={'filename'} placeholder={'document.txt'} className={'col-span-3'} />
+              </div>
+            </div>
+            <DialogFooter>
+              <DialogClose asChild>
+                <Button variant={'outline'}>Cancel</Button>
+              </DialogClose>
+              <Button type={'submit'}>Create</Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
+
+        <Dialog open={showShareDialog} onOpenChange={setShowShareDialog}>
+          <DialogContent className={'sm:max-w-[425px]'}>
+            <DialogHeader>
+              <DialogTitle>Share File</DialogTitle>
+              <DialogDescription>
+                Anyone with the link will be able to view this file.
+              </DialogDescription>
+            </DialogHeader>
+            <div className={'grid gap-4 p-4'}>
+              <div className={'grid grid-cols-4 items-center gap-4'}>
+                <Label htmlFor={'email'} className={'text-right'}>
+                  Email Address
+                </Label>
+                <Input
+                  id={'email'}
+                  type={'email'}
+                  placeholder={'user@example.com'}
+                  className={'col-span-3'}
+                  autoComplete={'off'}
+                />
+              </div>
+              <div className={'grid grid-cols-4 items-center gap-4'}>
+                <Label htmlFor={'message'} className={'text-right'}>
+                  Message
+                </Label>
+                <Textarea
+                  id={'message'}
+                  placeholder={'Check out this file'}
+                  className={'col-span-3'}
+                />
+              </div>
+            </div>
+            <DialogFooter>
+              <DialogClose asChild>
+                <Button variant={'outline'}>Cancel</Button>
+              </DialogClose>
+              <Button type={'submit'}>Send Invite</Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
+      </>
     )
   },
 }
