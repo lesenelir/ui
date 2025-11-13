@@ -43,5 +43,5 @@ export function NativeSelectOption({ ...props }: NativeSelectOptionProps) {
 }
 
 export function NativeSelectOptGroup({ className, ...props }: NativeSelectOptGroupProps) {
-  return <optgroup data-slot={'native-select-optgroup'} className={cn('', className)} {...props} />
+  return <optgroup data-slot={'native-select-optgroup'} className={cn(className)} {...props} />
 }
