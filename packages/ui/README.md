@@ -19,6 +19,9 @@
 }
 ```
 
+- placeholder: text-fg-rev/50
+- default item hover: bg-border/50
+
 ### Dialog & Drawer & Sheet
 
 - Dialog is centered on the screen and used for important information or actions that require user attention.
