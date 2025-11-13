@@ -110,7 +110,7 @@ export function SelectLabel({ className, ...props }: SelectLabelProps) {
   return (
     <SelectPrimitive.Label
       data-slot={'select-label'}
-      className={cn('py-1.5 px-2 text-xs font-medium text-fg-rev/80', className)}
+      className={cn('py-1.5 px-2 text-xs font-medium text-fg-rev/40', className)}
       {...props}
     />
   )
