@@ -249,7 +249,7 @@ export function DropdownMenuSubTrigger({
         "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
 
         tint === 'default' &&
-          'focus:bg-fg focus:text-fg-rev data-[state=open]:bg-border/50 data-[state=open]:text-fg-rev',
+          'focus:bg-border/50 focus:text-fg-rev data-[state=open]:bg-border/50 data-[state=open]:text-fg-rev',
         tint === 'accent' &&
           'focus:bg-ac/10 focus:text-ac data-[state=open]:bg-ac/10 data-[state=open]:text-ac',
         tint === 'rose' &&
