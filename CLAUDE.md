@@ -67,6 +67,6 @@ Tests are configured in `apps/web/vitest.config.ts` with Storybook integration u
 
 ## Package Manager
 
-- **Required**: Node.js >= 22.0.0, pnpm 10.21.0
+- **Required**: Node.js >= 22.0.0, pnpm 10.22.0
 - **Workspace**: Uses `pnpm-workspace.yaml` for monorepo management
 - **Lock**: Committed `pnpm-lock.yaml` for reproducible builds
