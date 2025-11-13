@@ -169,12 +169,12 @@ export function SelectScrollUpButton({ className, ...props }: SelectScrollUpButt
 
 export function SelectScrollDownButton({ className, ...props }: SelectScrollDownButtonProps) {
   return (
-    <SelectPrimitive.SelectScrollDownButton
+    <SelectPrimitive.ScrollDownButton
       data-slot={'select-scroll-down-button'}
       className={cn('flex cursor-default items-center justify-center py-1', className)}
       {...props}
     >
       <span className={'i-tabler-chevron-down size-4'} />
-    </SelectPrimitive.SelectScrollDownButton>
+    </SelectPrimitive.ScrollDownButton>
   )
 }
