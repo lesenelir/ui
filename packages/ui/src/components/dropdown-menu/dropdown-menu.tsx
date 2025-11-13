@@ -105,7 +105,7 @@ export function DropdownMenuItem({
         'data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
 
         tint === 'default' &&
-          'data-[tint=default]:*:[svg]:!text-fg-rev data-[tint=default]:text-fg-rev data-[tint=default]:focus:bg-fg data-[tint=default]:focus:text-fg-rev',
+          'data-[tint=default]:*:[svg]:!text-fg-rev data-[tint=default]:text-fg-rev data-[tint=default]:focus:bg-border/50 data-[tint=default]:focus:text-fg-rev',
         tint === 'accent' &&
           'data-[tint=accent]:*:[svg]:!text-ac data-[tint=accent]:text-ac data-[tint=accent]:focus:bg-ac/10 data-[tint=accent]:focus:text-ac',
         tint === 'rose' &&
@@ -133,7 +133,7 @@ export function DropdownMenuCheckboxItem({
         "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         'data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
 
-        tint === 'default' && 'focus:bg-fg focus:text-fg-rev',
+        tint === 'default' && 'focus:bg-border/50 focus:text-fg-rev',
         tint === 'accent' && 'focus:bg-ac/10 focus:text-ac',
         tint === 'rose' && 'focus:bg-rose-500/10 focus:text-rose-500',
 
@@ -172,7 +172,7 @@ export function DropdownMenuRadioItem({
         "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         'data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
 
-        tint === 'default' && 'focus:bg-fg focus:text-fg-rev',
+        tint === 'default' && 'focus:bg-border/50 focus:text-fg-rev',
         tint === 'accent' && 'focus:bg-ac/10 focus:text-ac',
         tint === 'rose' && 'focus:bg-rose-500/10 focus:text-rose-500',
 
@@ -249,7 +249,7 @@ export function DropdownMenuSubTrigger({
         "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
 
         tint === 'default' &&
-          'focus:bg-fg focus:text-fg-rev data-[state=open]:bg-fg data-[state=open]:text-fg-rev',
+          'focus:bg-border/50 focus:text-fg-rev data-[state=open]:bg-border/50 data-[state=open]:text-fg-rev',
         tint === 'accent' &&
           'focus:bg-ac/10 focus:text-ac data-[state=open]:bg-ac/10 data-[state=open]:text-ac',
         tint === 'rose' &&

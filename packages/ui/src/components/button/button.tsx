@@ -12,7 +12,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: 'bg-fg-rev text-fg hover:bg-fg-rev/85',
-        outline: 'border hover:bg-fg',
+        outline: 'border hover:bg-border/50',
         link: 'underline-offset-2 hover:underline',
         ghost: 'text-fg-rev bg-transparent',
       },
