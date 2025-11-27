@@ -47,7 +47,7 @@ export function TooltipContent({
         data-slot={'tooltip-content'}
         sideOffset={sideOffset}
         className={cn(
-          'bg-bg drop-shadow-sm z-50 w-fit rounded-md px-3 py-1.5 text-xs text-balance origin-(--radix-tooltip-content-transform-origin)',
+          'bg-bg text-fg-rev drop-shadow-md z-50 w-fit rounded-md px-3 py-1.5 text-sm text-balance origin-(--radix-tooltip-content-transform-origin)',
           'animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95',
           'data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
           className
@@ -55,11 +55,10 @@ export function TooltipContent({
         {...props}
       >
         {children}
+        {/* https://github.com/radix-ui/primitives/discussions/868 */}
         {showArrow && (
           <TooltipPrimitive.Arrow
-            className={
-              'bg-bg fill-bg z-50 size-2.5 translate-y-[calc(-50%_-_2px)] rotate-45 rounded-[2px]'
-            }
+            className={'fill-bg z-50 [clip-path:inset(0_-10px_-10px_-10px)]'}
           />
         )}
       </TooltipPrimitive.Content>
