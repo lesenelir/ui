@@ -2,71 +2,74 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Project Architecture
+## Project Overview
 
-This is a Turborepo monorepo containing a UI component library built with React 19 and Tailwind CSS 4. The workspace structure is:
+A React 19 UI component library built on Radix Primitives with Tailwind CSS 4, using an OKLCH-based color system with `color-mix()` for natural color blending. Key differentiator from shadcn/ui: separate `variant` (structural) and `tint` (color) props.
 
-- **`apps/web/`**: Next.js application that serves as documentation site and Storybook host
-- **`packages/ui/`**: Core UI component library with reusable primitives
-- **`packages/typescript-config/`**: Shared TypeScript configurations
+## Commands
 
-Components are built on Radix Primitives with a custom OKLCH-based color system using CSS `color-mix()` functions.
-
-## Development Commands
-
-**Setup:**
 ```bash
-pnpm install  # Install all workspace dependencies
+# Install dependencies (requires Node >=22, pnpm 10)
+pnpm install
+
+# Development
+pnpm dev                           # Run all workspaces
+pnpm --filter web dev              # Next.js site at localhost:3000
+pnpm storybook                     # Storybook at localhost:6006
+
+# Build
+pnpm build                         # Build all (includes static Storybook to apps/web/public/storybook)
+
+# Type checking
+pnpm check-types                   # All workspaces
+pnpm --filter @lesenelir/ui check-types
+
+# Linting/Formatting (Biome)
+pnpm biome:check                   # Check all
+pnpm biome:fix                     # Fix all
+pnpm biome:ui:check                # UI package only
+pnpm biome:ui:fix
+
+# Testing
+pnpm --filter web vitest run       # Headless Vitest with Playwright
+
+# Scaffold new component
+pnpm --filter @lesenelir/ui generate:component "ComponentName"
 ```
 
-**Development:**
-```bash
-pnpm dev                    # Start all packages in dev mode with Turbopack
-pnpm --filter web dev       # Start only the web app
-pnpm --filter web storybook # Start Storybook on port 6006
-```
+## Architecture
 
-**Build & Production:**
-```bash
-pnpm build                       # Build all packages
-pnpm --filter web build          # Build web app and Storybook
-pnpm --filter web storybook:build # Build Storybook to public/storybook
-```
+**Monorepo Structure (Turborepo + pnpm workspaces):**
+- `apps/web` - Next.js 15 documentation site with Storybook
+- `packages/ui` - Component library (`@lesenelir/ui`)
+- `packages/typescript-config` - Shared TypeScript configs
 
-**Code Quality:**
-```bash
-pnpm check-types         # TypeScript check across all packages
-pnpm biome:check         # Lint and format check
-pnpm biome:fix           # Auto-fix lint and format issues
-pnpm biome:web:check     # Check only web app
-pnpm biome:ui:check      # Check only UI package
-```
+**Component Pattern:**
+- Components in `packages/ui/src/components/{name}/`
+- Each component folder has `index.ts` (exports) and `{name}.tsx` (implementation)
+- Uses `class-variance-authority` (cva) for variant styling
+- Components use `data-slot` attributes for styling hooks
+- Props separate `variant` (structure) from `tint` (color)
 
-**Testing:**
-```bash
-pnpm --filter web vitest run --coverage  # Run tests with coverage
-pnpm --filter web vitest                 # Run tests in watch mode
-```
+**Styling System:**
+- Theme CSS in `packages/ui/styles/` - `headwind.css` (Tailwind theme), `main.css` (animations/utilities)
+- OKLCH color tokens: `--color-bg`, `--color-fg`, `--color-ac` (accent), `--color-hl` (highlight)
+- All Tailwind colors redefined using `color-mix()` with `--mix-factor` and `--mix-base` variables
+- Custom shadows derive from `--color-ac` and `--color-bg-rev`
 
-Tests are configured in `apps/web/vitest.config.ts` with Storybook integration using Playwright browser provider.
+**Import Conventions:**
+- Components: `import { Button } from '@lesenelir/ui/button'`
+- Hooks: `import { useMediaQuery } from '@lesenelir/ui/hooks'`
+- Utils: `import { cn } from '@lesenelir/ui/lib/utils'`
+- Styles: `import '@lesenelir/ui/styles/main.css'`
 
-## Code Style & Conventions
+## Code Style
 
-- **Formatter**: Biome with 2-space indentation, 100-character lines, single quotes, minimal semicolons
-- **Components**: PascalCase for files (`ButtonGroup.tsx`), kebab-case for directories
-- **Utilities**: camelCase naming
-- **Import organization**: React first, then external packages, then internal imports with type imports grouped separately
-- **Pre-commit**: Husky runs lint-staged with Biome auto-fixes
+- Biome: 2-space indent, 100-char lines, single quotes, ES5 trailing commas, semicolons as needed
+- PascalCase for components/directories, `use*` for hooks
+- Prefer type-only imports, avoid default exports in shared UI
+- Icons from Tabler via `@egoist/tailwindcss-icons` (e.g., `i-tabler-loader-2`)
 
-## UI Library Structure
+## Commit Convention
 
-- **Components**: Located in `packages/ui/src/components/[component-name]/`
-- **Exports**: Each component has an `index.ts` barrel export
-- **Styling**: Global CSS in `packages/ui/styles/` with color tokens and Tailwind configuration
-- **Stories**: Co-located `.stories.tsx` files for Storybook documentation
-
-## Package Manager
-
-- **Required**: Node.js >= 22.0.0, pnpm 10.22.0
-- **Workspace**: Uses `pnpm-workspace.yaml` for monorepo management
-- **Lock**: Committed `pnpm-lock.yaml` for reproducible builds
+Use Conventional Commits: `feat:`, `fix:`, `chore:` with optional scopes (e.g., `feat(button): add loading state`)

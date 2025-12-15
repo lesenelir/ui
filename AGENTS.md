@@ -1,19 +1,32 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-The workspace uses Turborepo with `pnpm-workspace.yaml` grouping `apps/*` and `packages/*`. `apps/web` is the Next.js host; routes live under `src/app`, while shared UI for pages sits in `src/components`. Reusable primitives live in `packages/ui/src/components`, with supporting helpers in `packages/ui/src/lib`. TypeScript base configs are centralized in `packages/typescript-config` so new packages can extend them. Static assets (favicons, Storybook build) stay inside each app’s `public/` folder.
+- `apps/web`: Next 15 site with docs/Storybook; public assets in `public/`, routing/config in `next.config.ts`.
+- `packages/ui`: React 19 component library on Radix + Tailwind 4; components in `src/components/*`, shared hooks in `src/hooks`, theme files in `styles/*.css`.
+- `packages/typescript-config`: Shared TS configs for the app and library (strict, DOM-ready, module-next settings).
+- Root configs: `turbo.json` (pipelines), `pnpm-workspace.yaml` (workspace), `biome.json` (lint/format). Keep changes aligned with these.
 
 ## Build, Test, and Development Commands
-Run `pnpm install` once per clone to hydrate all workspaces. Use `pnpm dev` for a multi-package dev server (Turbo spawns `apps/web` via Turbopack). Ship builds with `pnpm build`, which runs every package’s `build` task and emits the Next.js output. For focused work, `pnpm --filter web dev` starts only the web app, and `pnpm --filter web storybook` serves component docs. Execute unit/interaction tests with `pnpm --filter web vitest run --coverage` and regenerate Chromatic assets with `pnpm --filter web storybook:build`.
+- `pnpm install` (Node >=22, pnpm 10) to bootstrap all workspaces.
+- `pnpm dev` runs Turborepo `dev` tasks (Next app via Turbopack).
+- `pnpm --filter web dev` starts the site at `http://localhost:3000`; `pnpm --filter web storybook` serves Storybook at `http://localhost:6006`.
+- `pnpm build` builds everything; `pnpm --filter web build` also outputs static Storybook to `apps/web/public/storybook`.
+- `pnpm check-types` or `pnpm --filter @lesenelir/ui check-types` for TypeScript validation.
+- `pnpm biome:check` / `pnpm biome:fix` for linting/formatting (scoped variants exist for `web` and `@lesenelir/ui`).
+- `pnpm --filter @lesenelir/ui generate:component "ComponentName"` scaffolds a new component folder.
 
 ## Coding Style & Naming Conventions
-Biome enforces formatting: two-space indentation, 100-character lines, single quotes, and no semicolons unless required. Prefer PascalCase for components (`ButtonGroup.tsx`), camelCase for utilities, and kebab-case for directories. Keep Tailwind classes grouped by purpose (layout → spacing → color) and emit shared tokens through `packages/ui/styles/*.css`. Let lint-staged (via `.husky/pre-commit`) fix minor issues; commit only clean trees.
+- Biome enforces 2-space indents, 100-char lines, single quotes, ES5 trailing commas, and semicolons only as needed.
+- TypeScript is strict; prefer type-only imports, keep React components typed with explicit props, and avoid default exports in shared UI.
+- Components and directories use `PascalCase`; hooks start with `use*`; local helpers can use `camelCase`.
+- Tailwind 4 + OKLCH tokens live in `styles/`; keep variant/tint props distinct when adding component APIs.
 
 ## Testing Guidelines
-Vitest is configured in `apps/web/vitest.config.ts` with Storybook integration and Playwright-powered DOM shims. Place specs beside source as `ComponentName.test.tsx` so Vitest can pick them up. Run the suite locally with `pnpm --filter web vitest`, adding `--run` in CI-style loops, and track coverage through V8 reports in `coverage/`. Visual regressions should be exercised in Storybook; capture new states before opening PRs.
+- Vitest with the Storybook addon is configured in `apps/web/vitest.config.ts` (Playwright-powered browser runs).
+- Execute `pnpm --filter web vitest run` for the headless suite; colocate tests with stories when possible.
+- Add/extend Storybook stories for new UI states; keep fixtures deterministic and accessible (keyboard/focus/color).
 
 ## Commit & Pull Request Guidelines
-Follow Conventional Commits (`feat:`, `fix:`, `chore:`) as seen in recent history, and pair them with matching branch prefixes (`feat/*`, `fix/*`) so Biome CI triggers. Squash commits that only address review feedback. PRs should describe scope, testing evidence, and link to tracking issues; include screenshots or Chromatic URLs for UI changes. Ensure Biome (`pnpm biome:check`) and relevant tests are green before requesting review.
-
-## Tooling & CI Notes
-CI runs `biome ci .` on pushes and PRs targeting `master`; replicate locally with `pnpm biome:check`. Husky’s pre-commit hook executes `pnpm lint-staged`, so keep staged files small and staged in logical groups. Node 22 and `pnpm@10.22.0` are required—use `corepack enable` if needed. EOF
+- Use Conventional Commit prefixes seen in history (`feat:`, `fix:`, `chore:`); scopes welcome. Example: `feat(button): add loading state`.
+- PRs should explain intent, link related issues, and list verification commands.
+- For UI changes, include before/after screenshots or a Storybook URL and call out accessibility implications (focus order, contrast, keyboard support).
